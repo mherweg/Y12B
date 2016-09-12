@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!--== Y12B                  ==-->
+
+<PropertyList>
+	<model>
+		<name>Y12B</name>
+		<path>Aircraft/Y12B/Models/Y12B.ac</path>
+		
+	</model>
+
+<animation>
+		<type>pick</type>
+		<object-name>cabin_door</object-name>
+		<action>
+			
+		</action>
+</animation>
+
+
+<!-- crew -->
+	<model>
+		<name>pilot</name>
+		<path>Aircraft/Y12B/Models/pilot.xml</path>
+		<nopreview/>
+		<offsets> 
+			<x-m>-7.0</x-m>
+			<y-m>0.5</y-m>
+			<z-m>0.70</z-m>
+		</offsets>
+	</model>
+<model>
+		<name>passenger</name>
+		<path>Aircraft/Y12B/Models/passenger.xml</path>
+		<nopreview/>
+		<heading>90</heading>
+		<offsets> 
+			<heading-deg>90</heading-deg>
+			<x-m>-7.0</x-m>
+			<y-m>-0.4</y-m>
+			<z-m>0.70</z-m>
+		</offsets>
+</model>
+
+	<animation>
+		<type>spin</type>
+		<object-name>left_prop</object-name>
+		<property>controls/engines/engine/throttle</property>
+		<factor>5000</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-2.74953</y-m>
+			<z-m>1.78685</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>spin</type>
+		<object-name>right_prop</object-name>
+		<property>controls/engines/engine/throttle</property>
+		<factor>5000</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>2.66148</y-m>
+			<z-m>1.78729</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!--== landing gear ==-->	
+	
+<animation>
+		<type>select</type>
+		<object-name>wheels</object-name>
+		<object-name>landing_gear</object-name>
+		<condition>
+				<property>gear/gear[0]/position-norm</property>
+		</condition>
+	</animation>
+
+<!--== door ==-->
+	<animation>
+		<type>translate</type>
+		<object-name>cabin_door</object-name>
+		<property>sim/model/Y12B/door/position-adj</property>
+		<factor>0.9</factor>
+		<axis>
+		   <x>1</x>
+		   <y>0</y>
+		   <z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

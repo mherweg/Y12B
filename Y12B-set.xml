@@ -1,0 +1,108 @@
+<PropertyList>
+	
+<autopilot>
+	<locks>
+		<heading type="string">true-heading-hold</heading>
+		<altitude type="string">altitude-hold</altitude>
+    </locks>
+    <settings>
+		<true-heading-deg type="double">90</true-heading-deg>
+		<target-altitude-ft type="double">3000</target-altitude-ft>
+    </settings>
+</autopilot>
+	
+<sim>
+	<flight-model>ufo</flight-model>
+
+ <model>
+  <path>Models/Y12B.xml</path>
+ </model>
+</sim>
+
+
+
+<input>
+	<keyboard>
+		<key n="111">
+			<name>o</name>
+			<desc>Toggle walker outside/inside</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/walker/key-triggers/outside-toggle</property>
+			</binding>
+		</key>
+		<key n="106"> 
+			<name>j</name>
+			<desc>open parachute</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>walk.open_chute()</script>
+			</binding>
+		</key>
+		<key n="107">
+			<name>k</name>
+			<desc>Toggle venting/contrails</desc>
+			<binding>
+				<command>nasal</command>
+				<script>Y12B.foo</script>
+			</binding>
+		</key>
+		
+		<key n="7">
+				<name>Ctrl-G</name>
+				<desc>Gear Up.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>controls.gearDown(-1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>controls.gearDown(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+		
+		<key n="362">
+				<name>Home</name>
+				<desc>Hover Up</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Y12B.up(1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>Y12B.up(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="363">
+				<name>End</name>
+				<desc>Hover Down</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Y12B.up(-1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>Y12B.up(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+		
+	</keyboard>
+</input>
+
+<nasal>
+	<Y12B>
+		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
+		
+	</Y12B>
+</nasal>
+</PropertyList>
+
