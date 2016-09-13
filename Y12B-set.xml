@@ -1,5 +1,6 @@
 <PropertyList>
 	
+<!--
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
@@ -10,23 +11,45 @@
 		<target-altitude-ft type="double">3000</target-altitude-ft>
     </settings>
 </autopilot>
-	
+-->
+
 <sim>
+	
+	 <startup>
+            <splash-texture>Aircraft/Y12B/splash.png</splash-texture>
+     </startup>
+	
+  <description>Harbin Y-12</description>
+   <long-description>Harbin Y-12 with UFO FDM as a test and development platform for Walker, WalkView and parachute jumping.  
+	    https://en.wikipedia.org/wiki/Harbin_Y-12
+        </long-description>
+        <tags>
+            <tag>ga</tag>
+            <tag>Harbin</tag>
+            <tag>turboprop</tag>
+            <tag>80's</tag>
+            <tag>twin-engine</tag>
+            <tag>retractable-gear</tag>
+        </tags>
+	
 	<flight-model>ufo</flight-model>
 
  <model>
   <path>Models/Y12B.xml</path>
  </model>
  
+ 
+    <sound>
+        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+    </sound>
+ 
  	<view n="0">
 		<internal>true</internal>
 		<config>
-			<!-- cockpit view values here have no effect : see Y12.nas line 206 -->
-			<x-offset-m>0.0</x-offset-m>
-			<y-offset-m>1.47</y-offset-m>
+			<x-offset-m>0.3</x-offset-m>
+			<y-offset-m>2.77</y-offset-m>
 			<z-offset-m>-7.00</z-offset-m>
-			<pitch-offset-deg>-2.0</pitch-offset-deg>
-			<roll-offset-deg>0</roll-offset-deg>
+			 <default-field-of-view-deg>90</default-field-of-view-deg>
 			<limits>
 				<enabled type="bool">false</enabled>
 			</limits>
@@ -101,10 +124,9 @@
       <from-model type="bool">true</from-model>
       <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
       <x-offset-m archive="y">  0.195 </x-offset-m>	<!-- Right -->
-      <y-offset-m archive="y">  1.355 </y-offset-m>	<!-- Up    -->
+      <y-offset-m archive="y">  2.355 </y-offset-m>	<!-- Up    -->
       <z-offset-m archive="y"> -1.289 </z-offset-m>	<!-- Back  -->
-      <pitch-offset-deg>-15</pitch-offset-deg>
-      <default-field-of-view-deg>60</default-field-of-view-deg>
+      <default-field-of-view-deg>90</default-field-of-view-deg>
       <dynamic-view type="bool">true</dynamic-view>
     </config>
   </view>
@@ -141,7 +163,22 @@
 		</key-triggers>
 	</walker>
 
- 
+  <menubar>
+        <default>
+            <menu n="100">
+                <label>Harbin Y-12B</label>
+                <enabled type="bool">true</enabled>
+                <item>
+                    <label>Autostart</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/autostart</property>
+                    </binding>
+                </item>
+                  </menu>
+        </default>
+    </menubar>
+                
  
  
  
@@ -232,8 +269,9 @@
 <nasal>
 	<Y12B>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
-		
+		<file>Aircraft/Y12B/Nasal/systems.nas</file>
 	</Y12B>
 </nasal>
+
 </PropertyList>
 

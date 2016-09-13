@@ -4,6 +4,9 @@
 <PropertyList>
 	<model>
 		<name>Y12B</name>
+		<offsets> 
+			<z-m>1.30</z-m>
+		</offsets>
 		<path>Aircraft/Y12B/Models/Y12B.ac</path>
 		
 	</model>
@@ -12,9 +15,31 @@
 		<type>pick</type>
 		<object-name>cabin_door</object-name>
 		<action>
-			
+			 <!-- TODO -->
 		</action>
 </animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>seat</object-name>
+		<object-name>seat-legs"</object-name>
+		<object-name>seat-surface"</object-name>
+		<action>
+			 <!-- TODO -->
+		</action>
+</animation>
+
+
+
+
+ <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <!-- TODO -->
+        <object-name>Lrdoor.glass</object-name>
+    </animation>
+
 
 
 <!-- crew -->
@@ -45,6 +70,7 @@
 		<type>spin</type>
 		<object-name>left_prop</object-name>
 		<property>controls/engines/engine/throttle</property>
+		<offset>10</offset>
 		<factor>5000</factor>
 		<center>
 			<x-m>0</x-m>
@@ -82,7 +108,10 @@
 		<object-name>wheels</object-name>
 		<object-name>landing_gear</object-name>
 		<condition>
-				<property>gear/gear[0]/position-norm</property>
+			 <less-than>
+				 <property>position/altitude-agl-ft</property>
+                 <value>100</value>
+           </less-than>	
 		</condition>
 	</animation>
 
