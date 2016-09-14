@@ -1,4 +1,7 @@
-<PropertyList>
+
+
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
+
 	
 <!--
 <autopilot>
@@ -36,7 +39,25 @@
 
  <model>
   <path>Models/Y12B.xml</path>
- </model>
+  
+	<crew>
+	 <pilot n="0">
+	  <pose include = "Include/ju52_pilot.xml"></pose>
+	  <gender>0</gender>
+	  <character>0</character>
+	  <outfit>2</outfit>
+	 </pilot>
+	</crew>
+
+
+<!-- outside at cabin door -->
+	<map>
+	 <default_exit>
+	  <x-offset-m type ="float">-2</x-offset-m>
+	  <y-offset-m type ="float">1.5</y-offset-m>
+	 </default_exit>
+	</map>
+</model>
  
  
     <sound>
@@ -56,9 +77,39 @@
 		</config>
 	</view>
 
-
-	<view n="100">
-		<name>Walker View</name>
+ <view n="102">
+    <name>Fixed Cabin View</name>
+    <internal archive="y">true</internal>
+    <type>lookfrom</type>
+    <config>
+      <from-model type="bool">true</from-model>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y">  0.195 </x-offset-m>	<!-- Right -->
+      <y-offset-m archive="y">  2.355 </y-offset-m>	<!-- Up    -->
+      <z-offset-m archive="y"> -1.289 </z-offset-m>	<!-- Back  -->
+      <default-field-of-view-deg>90</default-field-of-view-deg>
+      <dynamic-view type="bool">true</dynamic-view>
+    </config>
+  </view>
+  
+  
+  <view n="103">
+   <name>WalkingInside View</name>
+   <internal>true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <from-model type="bool">true</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m type="double"> 0.50 </x-offset-m>
+    <y-offset-m type="double"> 2.60 </y-offset-m>
+    <z-offset-m type="double"> 1.00 </z-offset-m>
+    <heading-offset-deg type="double"> 0.0 </heading-offset-deg>
+    <pitch-offset-deg type="double"> 0.0 </pitch-offset-deg>
+    <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
+   </config>
+  </view>
+  <view n="100">
+		<name>Walk View</name>
 		<type>lookfrom</type>
 		<enabled type="bool">false</enabled>
 		<config>
@@ -116,71 +167,7 @@
 			</limits>
 		</config>
 	</view>
- <view n="102">
-    <name>Cabin View</name>
-    <internal archive="y">true</internal>
-    <type>lookfrom</type>
-    <config>
-      <from-model type="bool">true</from-model>
-      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-      <x-offset-m archive="y">  0.195 </x-offset-m>	<!-- Right -->
-      <y-offset-m archive="y">  2.355 </y-offset-m>	<!-- Up    -->
-      <z-offset-m archive="y"> -1.289 </z-offset-m>	<!-- Back  -->
-      <default-field-of-view-deg>90</default-field-of-view-deg>
-      <dynamic-view type="bool">true</dynamic-view>
-    </config>
-  </view>
-  
-  
-  <view n="103">
-   <name>Walk View</name>
-   <internal>true</internal>
-   <config>
-    <!-- x/y/z == right/up/back -->
-    <from-model type="bool">true</from-model>
-    <from-model-idx type="int">0</from-model-idx>
-    <x-offset-m type="double"> 0.50 </x-offset-m>
-    <y-offset-m type="double"> 2.60 </y-offset-m>
-    <z-offset-m type="double"> 1.00 </z-offset-m>
-    <heading-offset-deg type="double"> 0.0 </heading-offset-deg>
-    <pitch-offset-deg type="double"> 0.0 </pitch-offset-deg>
-    <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
-   </config>
-  </view>
-  
-  
-
-	<walker>
-		<outside type="bool">false</outside>
-		<walking type="int">0</walking>
-		<walking-momentum type="bool">false</walking-momentum>
-		<speed-mps type="float">0.9</speed-mps>
-		<latitude-deg type="double">0.0</latitude-deg>
-		<longitude-deg type="double">0.0</longitude-deg>
-		<altitude-ft type="double">0.0</altitude-ft>
-		<heading-deg type="double">0.0</heading-deg>
-		<pitch-deg type="double">0.0</pitch-deg>
-		<roll-deg type="double">0.0</roll-deg>
-		<time-of-exit-sec type="double">0.0</time-of-exit-sec>
-		<altitude-at-exit-ft type="double">0.0</altitude-at-exit-ft>
-		<starting-lat type="double">0.0</starting-lat>
-		<starting-lon type="double">0.0</starting-lon>
-		<starting-trajectory-lat type="double">0.0</starting-trajectory-lat>
-		<starting-trajectory-lon type="double">0.0</starting-trajectory-lon>
-		<starting-trajectory-z-mps type="double">0.0</starting-trajectory-z-mps>
-		<time-to-zero-z-sec type="double">0.0</time-to-zero-z-sec>
-		<airborne type="bool">false</airborne>
-		<parachute-opened-altitude-ft type="double">0.0</parachute-opened-altitude-ft>
-		<parachute-opened-sec type="double">0.0</parachute-opened-sec>
-		<parachute-equipped type="bool">false</parachute-equipped>
-		<crashed type="bool">false</crashed>
-		<key-triggers>
-			<outside-toggle type="bool">false</outside-toggle>
-			<forward type="int">0</forward>
-			<slide type="int">0</slide>
-			<speed type="float">0</speed>
-		</key-triggers>
-	</walker>
+   <!-- View 110, 111: see walker-include.xml -->
 
   <menubar>
         <default>
@@ -203,8 +190,91 @@
 
 
 <input>
-	<keyboard include="Aircraft/Generic/WalkView/walk-view-keys.xml">
+	<keyboard>
 		
+		<key n="119">
+		  <name>w</name>
+		  <desc>Walk view: Walk forward.</desc>
+		  <binding>
+		   <command>nasal</command>
+		   <script>
+			 if (!walkview.forward(1.0)) {
+			 }
+		   </script>
+		  </binding>
+		  <mod-up>
+		   <binding>
+			<command>nasal</command>
+			<script>
+			  walkview.forward(0);
+			</script>
+		   </binding>
+		  </mod-up>
+		</key>
+
+ <key n="100">
+		  <name>d</name>
+		  <desc>Walk view: Side step right.</desc>
+		  <repeatable type="bool">true</repeatable>
+		  <binding>
+		   <command>nasal</command>
+		   <script>
+			 if (!walkview.side_step(0.5)) {
+			 }
+		   </script>
+		  </binding>
+		  <mod-up>
+		   <binding>
+			<command>nasal</command>
+			<script>
+			  walkview.side_step(0);
+			</script>
+		   </binding>
+		  </mod-up>	  
+  </key>
+  <key n="97">
+			  <name>a</name>
+			  <desc>Walk view: Side step left.</desc>
+			  <repeatable type="bool">true</repeatable>
+			  <binding>
+			   <command>nasal</command>
+			   <script>
+				 if (!walkview.side_step(-0.5)) {
+				 }
+			   </script>
+			  </binding>
+			  <mod-up>
+			   <binding>
+				<command>nasal</command>
+				<script>
+				  walkview.side_step(0);
+				</script>
+			   </binding>
+			  </mod-up>
+ </key>
+ <key n="115">
+			  <name>s</name>
+			  <desc>Walk view: Walk backwards.</desc>
+			  <binding>
+			   <command>nasal</command>
+			   <script>
+				 if (!walkview.forward(-1.0)) {
+					 controls.startEngine(1);
+				 }
+			   </script>
+			  </binding>
+			  <mod-up>
+			   <binding>
+				<command>nasal</command>
+				<script>
+				  walkview.forward(0);
+				  controls.startEngine(0);
+				</script>
+			   </binding>
+			  </mod-up>
+ </key>
+ 
+  <!-- Keys o and j : see walker-include.xml	-->
 		<key n="111">
 			<name>o</name>
 			<desc>Toggle walker outside/inside</desc>
@@ -214,6 +284,7 @@
 				<property>sim/walker/key-triggers/outside-toggle</property>
 			</binding>
 		</key>
+		
 		<key n="106"> 
 			<name>j</name>
 			<desc>open parachute</desc>
@@ -223,6 +294,7 @@
 				<script>walk.open_chute()</script>
 			</binding>
 		</key>
+	
 		<key n="107">
 			<name>k</name>
 			<desc>Toggle venting/contrails</desc>
@@ -262,6 +334,9 @@
 					</binding>
 				</mod-up>
 			</key>
+			
+			
+			
 	</keyboard>
 </input>
 
@@ -277,7 +352,7 @@
                                 [-0.5, 0.0, 1.0],1.7);
 
     # Create the walker for the named view and the given movement restrictions.
-    var rigger_walker = walkview.Walker.new("Walk View",
+    var rigger_walker = walkview.Walker.new("WalkingInside View",
                                             cabinConstraint);
    </script>
   </walkview>
