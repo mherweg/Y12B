@@ -21,9 +21,9 @@
 	 <startup>
             <splash-texture>Aircraft/Y12B/splash.png</splash-texture>
      </startup>
-	
-  <description>Harbin Y-12</description>
-   <long-description>Harbin Y-12 with UFO FDM as a test and development platform for Walker, WalkView and parachute jumping.  
+	<aero>Y-12B</aero>
+  <description>Harbin Y-12B</description>
+   <long-description>Harbin Y-12B with UFO FDM as a test and development platform for Walker, WalkView and parachute jumping.  
 	    https://en.wikipedia.org/wiki/Harbin_Y-12
         </long-description>
         <tags>
@@ -45,10 +45,30 @@
 	  <pose include = "Include/ju52_pilot.xml"></pose>
 	  <gender>0</gender>
 	  <character>0</character>
-	  <outfit>2</outfit>
-	 </pilot>
+	  <outfit>1</outfit>
+	 </pilot> 
 	</crew>
-
+	
+   <npc n="0">
+     <pose include = "Include/ju52_pilot.xml"></pose>
+            <gender>0</gender>
+            <character>1</character>
+           <outfit>0</outfit>
+           <hair>2</hair>
+     </npc>
+     
+     <npc n="1">
+     <pose include = "Include/walker_sit.xml"></pose>
+            <gender>0</gender>
+            <character>0</character>
+           <outfit>0</outfit>
+           
+			<headgear>1</headgear>
+			<eyewear>0</eyewear>
+			<mask>0</mask>
+			<hair>1</hair>
+			<toolr>1</toolr>
+     </npc>
 
 <!-- outside at cabin door -->
 	<map>
@@ -67,7 +87,7 @@
  	<view n="0">
 		<internal>true</internal>
 		<config>
-			<x-offset-m>0.3</x-offset-m>
+			<x-offset-m>-0.4858</x-offset-m>
 			<y-offset-m>2.77</y-offset-m>
 			<z-offset-m>-7.00</z-offset-m>
 			 <default-field-of-view-deg>90</default-field-of-view-deg>

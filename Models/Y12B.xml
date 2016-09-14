@@ -50,26 +50,51 @@
 <!-- crew -->
 <model>
 		<name>pilot</name>
-		<path>Aircraft/Y12B/Models/pilot.xml</path>
+      <path>Aircraft/Generic/Human/Models/pilot.xml</path>
+	  <name>pilot</name>
 		<nopreview/>
-		<offsets> 
-			<x-m>-7.0</x-m>
-			<y-m>0.5</y-m>
-			<z-m>0.70</z-m>
-		</offsets>
-	</model>
+      <offsets> 
+        <x-m>-7.0384</x-m>
+        <y-m>-0.4858</y-m>
+        <z-m>1.5</z-m>
+      </offsets>
+</model>
+
 <model>
-		<name>passenger</name>
-		<path>Aircraft/Y12B/Models/passenger.xml</path>
+		<name>npc0</name>
+      <path>Aircraft/Generic/Human/Models/npc0.xml</path>
 		<nopreview/>
-		<heading>90</heading>
+      <offsets> 
+        <x-m>-7.0384</x-m>
+        <y-m>0.45</y-m>
+        <z-m>1.5</z-m>
+      </offsets>
+</model>
+<model>
+		<name>npc1</name>
+		 <path>Aircraft/Generic/Human/Models/npc1.xml</path>
+		<nopreview/>
 		<offsets> 
 			<heading-deg>90</heading-deg>
-			<x-m>-7.0</x-m>
-			<y-m>-0.4</y-m>
-			<z-m>0.70</z-m>
+			<x-m>-3.2</x-m>
+			<y-m>0.65</y-m>
+			<z-m>0.90</z-m>
 		</offsets>
 </model>
+
+<animation>
+  <type>scale</type>
+  <object-name>npc1</object-name>
+  <x-offset>0.8</x-offset>
+  <y-offset>0.8</y-offset>
+  <z-offset>0.8</z-offset>
+   <center>
+   <x-m>-3.20</x-m>
+   <y-m> 0.7  </y-m>
+   <z-m> 1.8</z-m>
+  </center>
+ </animation>
+
 
 	<animation>
 		<type>spin</type>
