@@ -15,7 +15,12 @@
 		<type>pick</type>
 		<object-name>cabin_door</object-name>
 		<action>
-			 <!-- TODO -->
+			<button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/doors/cabin_door/open</property>
+            </binding>
+			 
 		</action>
 </animation>
 
@@ -43,7 +48,7 @@
 
 
 <!-- crew -->
-	<model>
+<model>
 		<name>pilot</name>
 		<path>Aircraft/Y12B/Models/pilot.xml</path>
 		<nopreview/>
