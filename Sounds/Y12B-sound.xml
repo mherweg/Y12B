@@ -296,7 +296,7 @@
             <condition>
                 <and>
                     <greater-than>
-                        <property>controls/engines/engine[1]/throttle</property>
+                        <property>controls/engines/engine[0]/throttle</property>
                         <value>0.01</value>
                     </greater-than>
                     <not>
@@ -331,8 +331,8 @@
             <property>sim/sound/engine[0]</property>
             <condition>
                 <and>
-                                        <greater-than>
-                        <property>controls/engines/engine[1]/throttle</property>
+                    <greater-than>
+                        <property>controls/engines/engine[0]/throttle</property>
                         <value>0.01</value>
                     </greater-than>
                   

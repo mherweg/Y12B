@@ -111,43 +111,6 @@ setprop("controls/electric/power-source",0);
 }
 
 
-var Wiper = {
-    new : func (wiper_prop,power_prop){
-        m = { parents : [Wiper] };
-        m.direction = 0;
-        m.delay_count = 0;
-        m.spd_factor = 0;
-        m.node = props.globals.initNode(wiper_prop);
-        m.power = props.globals.initNode(power_prop,0.0,"DOUBLE");
-        m.spd = m.node.initNode("arc-sec",1.0,"DOUBLE");
-        m.delay = m.node.initNode("delay-sec",0.0,"DOUBLE");
-        m.position = m.node.initNode("position-norm",0.0,"DOUBLE");
-        m.switch = m.node.initNode("switch",0,"BOOL");
-        return m;
-    },
-    active: func{
-    if(me.power.getValue()<=5)return;
-    var spd_factor = 1/me.spd.getValue();
-    var pos = me.position.getValue();
-    if(!me.switch.getValue()){
-        if(pos <= 0.000)return;
-        }
-    if(pos >=1.000){
-        me.direction=-1;
-        }elsif(pos <=0.000){
-        me.direction=0;
-        me.delay_count+=getprop("/sim/time/delta-sec");
-        if(me.delay_count >= me.delay.getValue()){
-            me.delay_count=0;
-            me.direction=1;
-            }
-        }
-    var wiper_time = spd_factor*getprop("/sim/time/delta-sec");
-    pos +=(wiper_time * me.direction);
-    me.position.setValue(pos);
-    }
-};
-
 var Caution_panel = {
     new : func (prop){
         m = { parents : [Caution_panel] };
@@ -188,59 +151,7 @@ var Caution_panel = {
         if(me.count==0)me.left_bank() else me.right_bank();
     },
 
-    left_bank: func{
-        if(!getprop("controls/electric/engine/generator"))me.l_gen.setValue(me.volts) else me.l_gen.setValue(0);
-        me.l_gen_oheat.setValue(0);
-        me.l_cycle400.setValue(0);
-        me.duct.setValue(0);
-        if(getprop("engines/engine[0]/n2")<30){
-            me.l_oil_psi.setValue(me.volts);
-            me.hydr_press.setValue(me.volts);
-            
-        }else{
-            me.l_oil_psi.setValue(0);
-            me.hydr_press.setValue(0);
-        }
-        if(getprop("engines/engine[0]/n2")<30 and getprop("controls/electric/fwd-boost-pump") == 0) {
-            me.fwd_boost1.setValue(me.volts);
-            me.fwd_boost2.setValue(me.volts);
-        } else {
-            me.fwd_boost1.setValue(0);
-            me.fwd_boost2.setValue(0);	    
-        }
-        if(getprop("consumables/fuel/tank/level-lbs")<75)me.fwd_fuel.setValue(me.volts) else me.fwd_fuel.setValue(0);
-        var lfdoor=getprop("controls/doors/LF-door/position-norm");
-        var rfdoor=getprop("controls/doors/RF-door/position-norm");
-        var rrdoor=getprop("controls/doors/RR-door/position-norm");
-        if(lfdoor>0.001 or rfdoor>0.001 or rrdoor>0.001)me.doors.setValue(me.volts) else me.doors.setValue(0);
-
-        me.count=1-me.count;
-    },
-
-    right_bank: func{
-    if(!getprop("controls/electric/engine[1]/generator"))me.r_gen.setValue(me.volts) else me.r_gen.setValue(0);
-    me.r_gen_oheat.setValue(0);
-    me.r_cycle400.setValue(0);
-    me.prop_reset.setValue(0);
-        if(getprop("engines/engine[1]/n2")<30){
-            me.r_oil_psi.setValue(me.volts);
-            me.hydr_press.setValue(me.volts);
-        }else{
-            me.r_oil_psi.setValue(0);
-            me.hydr_press.setValue(0);
-        }
-        if(getprop("engines/engine[1]/n2")<30 and getprop("controls/electric/aft-boost-pump") == 0) {
-            me.aft_boost1.setValue(me.volts);
-            me.aft_boost2.setValue(me.volts);
-        } else {
-            me.aft_boost1.setValue(0);
-            me.aft_boost2.setValue(0);	    
-        }
-        if(getprop("consumables/fuel/tank[1]/level-lbs")<75)me.aft_fuel.setValue(me.volts) else me.aft_fuel.setValue(0);
-        
-        me.count=1-me.count;
-    },
-
+   
     reset: func{
         me.l_gen_oheat.setValue(0);
         me.r_gen_oheat.setValue(0);
@@ -282,12 +193,6 @@ var Caution_panel = {
         me.duct.setValue(me.caution_test);
     }
 };
-
-
-
-    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts");
-
-    var Ctn_panel=Caution_panel.new("instrumentation/caution-panel");
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop("instrumentation/clock/flight-meter-hour",0);

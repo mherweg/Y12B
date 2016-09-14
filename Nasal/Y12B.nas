@@ -56,10 +56,11 @@ var update_main = func {
 		#altitude_ft_Node.setDoubleValue(altitude);
 		setprop("position/altitude-ft", altitude);
 	}
+	
 settimer(update_main, 1);
 }
 
-
+# is this needed ??
 var prestart_main = func {
 	var gnd_elev = getprop("position/ground-elev-ft");
 	var altitude = getprop("position/altitude-ft");
@@ -83,3 +84,7 @@ setlistener("sim/signals/fdm-initialized", func {
 	print (t);
 	prestart_main();
 });
+
+var cabin_door = aircraft.door.new("sim/model/Y12B/cabin_door", 2);
+var seat5 =      aircraft.door.new("sim/model/Y12B/seat5", 1);
+

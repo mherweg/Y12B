@@ -39,9 +39,6 @@
  </model>
  
  
-    <sound>
-        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
-    </sound>
  
  	<view n="0">
 		<internal>true</internal>

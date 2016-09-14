@@ -11,11 +11,39 @@
 		
 	</model>
 
+  <nasal>
+    <load>
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var cabin_door = self.getNode("instrumentation/doors/cabin_door/position-norm", 1);
+      var seat5 = self.getNode("instrumentation/doors/seat5/position-norm", 1);
+    
+      cabin_door.alias(float_0);
+           seat5.alias(float_1);
+    </load>
+
+    <unload>
+      cabin_door.unalias();
+      seat5.unalias();
+    </unload>
+  </nasal>
+
+<sound>
+  <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+</sound>
+
+
 <animation>
 		<type>pick</type>
 		<object-name>cabin_door</object-name>
 		<action>
-			 <!-- TODO -->
+			<button>0</button>
+            <repeatable>false</repeatable>
+			 <command>nasal</command>
+			<script>doors.cabin_door.toggle();</script> 
 		</action>
 </animation>
 
@@ -25,7 +53,8 @@
 		<object-name>seat-legs"</object-name>
 		<object-name>seat-surface"</object-name>
 		<action>
-			 <!-- TODO -->
+			  <command>nasal</command>
+			<script>doors.seat5.toggle();</script> 
 		</action>
 </animation>
 
@@ -119,7 +148,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>cabin_door</object-name>
-		<property>sim/model/Y12B/door/position-adj</property>
+		<property>sim/multiplay/generic/float[0]</property>
 		<factor>0.9</factor>
 		<axis>
 		   <x>1</x>
