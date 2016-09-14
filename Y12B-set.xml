@@ -114,7 +114,7 @@
   
   
   <view n="103">
-   <name>WalkingInside View</name>
+   <name>walk in cabin view</name>
    <internal>true</internal>
    <config>
     <!-- x/y/z == right/up/back -->
@@ -194,20 +194,38 @@
             <menu n="100">
                 <label>Harbin Y-12B</label>
                 <enabled type="bool">true</enabled>
-                <item>
-                    <label>Autostart</label>
-                    <binding>
-                        <command>property-toggle</command>
-                        <property>sim/model/autostart</property>
-                    </binding>
-                </item>
+                
+                    <item>
+						<label>remove cabin door</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door0/enabled</property>
+						</binding>
+					</item>
+					<item>
+						<label>remove cockpit door</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door1/enabled</property>
+						</binding>
+					</item>
+             
                   </menu>
         </default>
     </menubar>
                
 </sim>
 
-
+<controls>
+<doors>
+			<door0>
+				<enabled type="bool">true</enabled>
+			</door0>
+			<door1>
+				<enabled type="bool">true</enabled>
+			</door1>
+</doors>
+</controls>
 
 <input>
 	<keyboard>
@@ -372,11 +390,12 @@
                                 [-0.5, 0.0, 1.0],1.7);
 
     # Create the walker for the named view and the given movement restrictions.
-    var rigger_walker = walkview.Walker.new("WalkingInside View",
+    var rigger_walker = walkview.Walker.new("walk in cabin view",
                                             cabinConstraint);
    </script>
   </walkview>
 	<Y12B>
+		<file>Aircraft/Y12B/Nasal/doors.nas</file>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
 		<file>Aircraft/Y12B/Nasal/systems.nas</file>
 	</Y12B>

@@ -11,43 +11,18 @@
 		
 	</model>
 
+
+<!-- has no effect ? -->
 <animation>
-		<type>pick</type>
-		<object-name>cabin_door</object-name>
-		<action>
-			<button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/doors/cabin_door/open</property>
-            </binding>
-			 
-		</action>
-</animation>
-
-<animation>
-		<type>pick</type>
-		<object-name>seat</object-name>
-		<object-name>seat-legs"</object-name>
-		<object-name>seat-surface"</object-name>
-		<action>
-			 <!-- TODO -->
-		</action>
-</animation>
-
-
-
-
- <animation>
         <type>shader</type>
         <shader>chrome</shader>
         <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-        <!-- TODO -->
-        <object-name>Lrdoor.glass</object-name>
-    </animation>
+        <object-name>front-glass</object-name>
+</animation>
 
 
 
-<!-- crew -->
+<!-- pilot (no head in pilot view) -->
 <model>
 		<name>pilot</name>
       <path>Aircraft/Generic/Human/Models/pilot.xml</path>
@@ -60,6 +35,7 @@
       </offsets>
 </model>
 
+<!--== person sitting next to pilot ==-->	
 <model>
 		<name>npc0</name>
       <path>Aircraft/Generic/Human/Models/npc0.xml</path>
@@ -70,6 +46,8 @@
         <z-m>1.5</z-m>
       </offsets>
 </model>
+
+<!--== person in cabin ==-->	
 <model>
 		<name>npc1</name>
 		 <path>Aircraft/Generic/Human/Models/npc1.xml</path>
@@ -81,7 +59,6 @@
 			<z-m>0.90</z-m>
 		</offsets>
 </model>
-
 <animation>
   <type>scale</type>
   <object-name>npc1</object-name>
@@ -95,7 +72,7 @@
   </center>
  </animation>
 
-
+<!--== propellers ==-->	
 	<animation>
 		<type>spin</type>
 		<object-name>left_prop</object-name>
@@ -132,7 +109,6 @@
 	</animation>
 	
 <!--== landing gear ==-->	
-	
 <animation>
 		<type>select</type>
 		<object-name>wheels</object-name>
@@ -143,19 +119,91 @@
                  <value>100</value>
            </less-than>	
 		</condition>
-	</animation>
+</animation>
 
-<!--== door ==-->
-	<animation>
+<!--== cabin door ==-->
+<animation>
+		<type>pick</type>
+		<object-name>cabin_door</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Y12B.toggle_door0()</script>
+			</binding>
+		</action>
+</animation>
+
+<animation>
 		<type>translate</type>
 		<object-name>cabin_door</object-name>
-		<property>sim/model/Y12B/door/position-adj</property>
-		<factor>0.9</factor>
+		<property>controls/doors/door0/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>0.90</dep>
+			</entry>
+		</interpolation>
 		<axis>
-		   <x>1</x>
-		   <y>0</y>
-		   <z>0</z>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
 		</axis>
-	</animation>
+</animation>
+
+<!-- seat 5 -->
+<animation>
+		<type>pick</type>
+		<object-name>seat</object-name>
+		<object-name>seat-legs</object-name>
+		<object-name>seat-surface</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Y12B.toggle_door1()</script>
+			</binding>
+		</action>
+</animation>
+<animation>
+        <type>rotate</type>
+        <object-name>seat</object-name>
+		<object-name>seat-legs</object-name>
+		<object-name>seat-surface</object-name>
+        <property>controls/doors/door1/position-norm</property>
+       
+		<center>
+			<x-m>-3.2</x-m>
+			<y-m>0.903</y-m>
+			<z-m>0.4</z-m>
+		</center>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>1.0</ind><dep>-90.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+</animation>
+<animation>
+        <type>select</type>
+		<object-name>seat-legs</object-name>
+		<condition>
+			 <less-than>
+				 <property>controls/doors/door1/position-norm</property>
+                 <value>1.0</value>
+           </less-than>	
+		</condition>
+</animation>
+
+
 
 </PropertyList>
