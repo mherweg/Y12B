@@ -199,14 +199,14 @@
 						<label>remove cabin door</label>
 						<binding>
 							<command>property-toggle</command>
-							<property>controls/doors/door0/enabled</property>
+							<property>/controls/doors/door0/enabled</property>
 						</binding>
 					</item>
 					<item>
-						<label>remove cockpit door</label>
+						<label>remove seat 5</label>
 						<binding>
 							<command>property-toggle</command>
-							<property>controls/doors/door1/enabled</property>
+							<property>/controls/doors/door1/enabled</property>
 						</binding>
 					</item>
              
