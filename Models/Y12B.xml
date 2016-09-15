@@ -76,7 +76,7 @@
 
 
 <model>
-        <path>Aircraft/c182s/Models/Instruments/altimeter.xml</path>
+        <path>Aircraft/Y12B/Models/Instruments/altimeter.xml</path>
         <name>Altimeter</name>
         <offsets>
             <x-m>-7.71</x-m>
