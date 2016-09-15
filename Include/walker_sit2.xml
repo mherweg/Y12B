@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name type="string">sit2</name>
+  <loop-enabled type="bool">false</loop-enabled>
+  <loop-to type="int">0</loop-to>
+  <trigger-upon type="string">Disabled</trigger-upon>
+  <position>
+    <name type="string">sit</name>
+    <rest-sec type="double">1</rest-sec>
+    <transit-sec type="double">1</transit-sec>
+    <limb>
+      <y-deg type="double">12.4138</y-deg>
+      <z-m type="double">0</z-m>
+    </limb>
+    <limb n="1">
+      <y-deg type="double">-11.8421</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="2">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">-2.84211</z-deg>
+    </limb>
+    <limb n="3">
+      <x-deg type="double">-85</x-deg>
+      <y-deg type="double">-12.5217</y-deg>
+      <z-deg type="double">-5.11429</z-deg>
+    </limb>
+    <limb n="4">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">56.129</z-deg>
+    </limb>
+    <limb n="5">
+      <x-deg type="double">9.27711</x-deg>
+      <y-deg type="double">-33.0942</y-deg>
+    </limb>
+    <limb n="6">
+      <x-deg type="double">-74.5789</x-deg>
+      <y-deg type="double">44.2174</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="7">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">74.5161</z-deg>
+    </limb>
+    <limb n="8">
+      <x-deg type="double">2.53012</x-deg>
+      <y-deg type="double">53.6771</y-deg>
+    </limb>
+    <limb n="9">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-71.1391</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="10">
+      <y-deg type="double">72.4</y-deg>
+    </limb>
+    <limb n="11">
+      <y-deg type="double">0</y-deg>
+    </limb>
+    <limb n="12">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-73.9565</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="13">
+      <y-deg type="double">74.32</y-deg>
+    </limb>
+    <limb n="14">
+      <y-deg type="double">0</y-deg>
+    </limb>
+  </position>
+</PropertyList>

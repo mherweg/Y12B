@@ -11,25 +11,6 @@
 		
 	</model>
 
-  <nasal>
-    <load>
-      var self = cmdarg();
-
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      
-      var cabin_door = self.getNode("instrumentation/doors/cabin_door/position-norm", 1);
-      var seat5 = self.getNode("instrumentation/doors/seat5/position-norm", 1);
-    
-      cabin_door.alias(float_0);
-           seat5.alias(float_1);
-    </load>
-
-    <unload>
-      cabin_door.unalias();
-      seat5.unalias();
-    </unload>
-  </nasal>
 
 <sound>
   <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
@@ -65,36 +46,62 @@
         <type>shader</type>
         <shader>chrome</shader>
         <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-        <!-- TODO -->
-        <object-name>Lrdoor.glass</object-name>
-    </animation>
+        <object-name>front-glass</object-name>
+</animation>
 
 
 
-<!-- crew -->
-	<model>
-		<name>pilot</name>
-		<path>Aircraft/Y12B/Models/pilot.xml</path>
-		<nopreview/>
-		<offsets> 
-			<x-m>-7.0</x-m>
-			<y-m>0.5</y-m>
-			<z-m>0.70</z-m>
-		</offsets>
-	</model>
+<!-- pilot (no head in pilot view) -->
 <model>
-		<name>passenger</name>
-		<path>Aircraft/Y12B/Models/passenger.xml</path>
+		<name>pilot</name>
+      <path>Aircraft/Generic/Human/Models/pilot.xml</path>
+	  <name>pilot</name>
 		<nopreview/>
-		<heading>90</heading>
-		<offsets> 
-			<heading-deg>90</heading-deg>
-			<x-m>-7.0</x-m>
-			<y-m>-0.4</y-m>
-			<z-m>0.70</z-m>
-		</offsets>
+      <offsets> 
+        <x-m>-7.0384</x-m>
+        <y-m>-0.4858</y-m>
+        <z-m>1.5</z-m>
+      </offsets>
 </model>
 
+<!--== person sitting next to pilot ==-->	
+<model>
+		<name>npc0</name>
+      <path>Aircraft/Generic/Human/Models/npc0.xml</path>
+		<nopreview/>
+      <offsets> 
+        <x-m>-7.0384</x-m>
+        <y-m>0.45</y-m>
+        <z-m>1.5</z-m>
+      </offsets>
+</model>
+
+<!--== person in cabin ==-->	
+<model>
+		<name>npc1</name>
+		 <path>Aircraft/Generic/Human/Models/npc1.xml</path>
+		<nopreview/>
+		<offsets> 
+			<heading-deg>90</heading-deg>
+			<x-m>-3.2</x-m>
+			<y-m>0.65</y-m>
+			<z-m>0.90</z-m>
+		</offsets>
+</model>
+<animation>
+  <type>scale</type>
+  <object-name>npc1</object-name>
+  <x-offset>0.8</x-offset>
+  <y-offset>0.8</y-offset>
+  <z-offset>0.8</z-offset>
+   <center>
+   <x-m>-3.20</x-m>
+   <y-m> 0.7  </y-m>
+   <z-m> 1.8</z-m>
+  </center>
+ </animation>
+
+<!--== propellers ==-->	
 	<animation>
 		<type>spin</type>
 		<object-name>left_prop</object-name>
@@ -131,7 +138,6 @@
 	</animation>
 	
 <!--== landing gear ==-->	
-	
 <animation>
 		<type>select</type>
 		<object-name>wheels</object-name>
@@ -142,19 +148,92 @@
                  <value>100</value>
            </less-than>	
 		</condition>
-	</animation>
+</animation>
 
-<!--== door ==-->
-	<animation>
+<!--== cabin door ==-->
+<animation>
+		<type>pick</type>
+		<object-name>cabin_door</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Y12B.toggle_door0()</script>
+			</binding>
+		</action>
+</animation>
+
+<animation>
 		<type>translate</type>
 		<object-name>cabin_door</object-name>
-		<property>sim/multiplay/generic/float[0]</property>
-		<factor>0.9</factor>
+
+		<property>controls/doors/door0/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>0.90</dep>
+			</entry>
+		</interpolation>
 		<axis>
-		   <x>1</x>
-		   <y>0</y>
-		   <z>0</z>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
 		</axis>
-	</animation>
+</animation>
+
+<!-- seat 5 -->
+<animation>
+		<type>pick</type>
+		<object-name>seat</object-name>
+		<object-name>seat-legs</object-name>
+		<object-name>seat-surface</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Y12B.toggle_door1()</script>
+			</binding>
+		</action>
+</animation>
+<animation>
+        <type>rotate</type>
+        <object-name>seat</object-name>
+		<object-name>seat-legs</object-name>
+		<object-name>seat-surface</object-name>
+        <property>controls/doors/door1/position-norm</property>
+       
+		<center>
+			<x-m>-3.2</x-m>
+			<y-m>0.903</y-m>
+			<z-m>0.4</z-m>
+		</center>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>1.0</ind><dep>-90.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+</animation>
+<animation>
+        <type>select</type>
+		<object-name>seat-legs</object-name>
+		<condition>
+			 <less-than>
+				 <property>controls/doors/door1/position-norm</property>
+                 <value>1.0</value>
+           </less-than>	
+		</condition>
+</animation>
+
+
 
 </PropertyList>
