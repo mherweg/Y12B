@@ -17,41 +17,8 @@
 </sound>
 
 
-<animation>
-		<type>pick</type>
-		<object-name>cabin_door</object-name>
-		<action>
-			<button>0</button>
-            <repeatable>false</repeatable>
-			 <command>nasal</command>
-			<script>doors.cabin_door.toggle();</script> 
-		</action>
-</animation>
 
-<animation>
-		<type>pick</type>
-		<object-name>seat</object-name>
-		<object-name>seat-legs"</object-name>
-		<object-name>seat-surface"</object-name>
-		<action>
-			  <command>nasal</command>
-			<script>doors.seat5.toggle();</script> 
-		</action>
-</animation>
-
-
-
-
- <animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-        <object-name>front-glass</object-name>
-</animation>
-
-
-
-<!-- pilot (no head in pilot view) -->
+<!-- pilot (has no head in pilot view) -->
 <model>
 		<name>pilot</name>
       <path>Aircraft/Generic/Human/Models/pilot.xml</path>
@@ -76,7 +43,7 @@
       </offsets>
 </model>
 
-<!--== person in cabin ==-->	
+<!--== person sitting in cabin ==-->	
 <model>
 		<name>npc1</name>
 		 <path>Aircraft/Generic/Human/Models/npc1.xml</path>
@@ -85,9 +52,11 @@
 			<heading-deg>90</heading-deg>
 			<x-m>-3.2</x-m>
 			<y-m>0.65</y-m>
+			<!--== the pose from the bluebird has a Z offset ==-->
 			<z-m>0.90</z-m>
 		</offsets>
 </model>
+ <!--== shrink sitting person in cabin from 1.73m to 1.38m ==-->	
 <animation>
   <type>scale</type>
   <object-name>npc1</object-name>
@@ -100,6 +69,21 @@
    <z-m> 1.8</z-m>
   </center>
  </animation>
+
+
+<model>
+        <path>Aircraft/Y12B/Models/Instruments/altimeter.xml</path>
+        <name>Altimeter</name>
+        <offsets>
+            <x-m>-7.71</x-m>
+            <y-m>-0.594</y-m>
+            <z-m>2.364</z-m>
+        </offsets>
+    </model>
+
+
+
+
 
 <!--== propellers ==-->	
 	<animation>
@@ -185,6 +169,42 @@
 			<z>0.0</z>
 		</axis>
 </animation>
+
+<!--== cockpit to cabin door ==-->
+<animation>
+		<type>pick</type>
+		<object-name>cabin-cockpit-door</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>Y12B.toggle_door2()</script>
+			</binding>
+		</action>
+</animation>
+
+<animation>
+		<type>translate</type>
+		<object-name>cabin-cockpit-door</object-name>
+		<property>controls/doors/door2/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>0.60</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+</animation>
+
 
 <!-- seat 5 -->
 <animation>
