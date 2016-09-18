@@ -61,13 +61,13 @@
      <pose include = "Include/walker_sit.xml"></pose>
             <gender>0</gender>
             <character>0</character>
-           <outfit>0</outfit>
+           <outfit>1</outfit>
            
-			<headgear>1</headgear>
+			<headgear>3</headgear>
 			<eyewear>0</eyewear>
 			<mask>0</mask>
 			<hair>1</hair>
-			<toolr>1</toolr>
+			
      </npc>
 
 <!-- outside at cabin door -->

@@ -6,7 +6,7 @@
 
 	<animation>
 		<type>select</type>
-		<object-name>Chute</object-name>
+		<object-name>RoundChute</object-name>
 		<condition>
 			<and>
 				<greater-than>
@@ -23,7 +23,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>Chute</object-name>
+		<object-name>RoundChute</object-name>
 		<offset-deg>0</offset-deg>
 		<property>sim/model/walker[1]/limb[0]/y-deg</property>
 		<center>
@@ -40,7 +40,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>Chute</object-name>
+		<object-name>RoundChute</object-name>
 		<property>sim/walker/parachute-opened-sec</property>
 		<x-factor>0.3</x-factor>
 		<y-factor>0.25</y-factor>
