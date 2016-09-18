@@ -1,6 +1,6 @@
 
 
-<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
+<PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
 
 	
 <!--
@@ -72,7 +72,7 @@
 <!-- outside at cabin door -->
 	<map>
 	 <default_exit>
-	  <x-offset-m type ="float">-2</x-offset-m>
+	  <x-offset-m type ="float">-1.5</x-offset-m>
 	  <y-offset-m type ="float">1.5</y-offset-m>
 	 </default_exit>
 	</map>
@@ -188,7 +188,15 @@
 		</config>
 	</view>
    <!-- View 110, 111: see walker-include.xml -->
-
+    <view n="110">
+      <enabled type="bool">false</enabled>
+    </view>
+    <view n="111">
+      <enabled type="bool">false</enabled>
+    </view>
+    
+    
+    
   <menubar>
         <default>
             <menu n="100">

@@ -25,7 +25,7 @@
 <!-- pilot (has no head in pilot view) -->
 <model>
 		<name>pilot</name>
-      <path>Aircraft/Generic/Human/Models/pilot.xml</path>
+      <path>Aircraft/Y12B/Human/Models/pilot.xml</path>
 	  <name>pilot</name>
 		<nopreview/>
       <offsets> 
@@ -38,7 +38,7 @@
 <!--== person sitting next to pilot ==-->	
 <model>
 		<name>npc0</name>
-      <path>Aircraft/Generic/Human/Models/npc0.xml</path>
+      <path>Aircraft/Y12B/Human/Models/npc0.xml</path>
 		<nopreview/>
       <offsets> 
         <x-m>-7.0384</x-m>
@@ -50,7 +50,7 @@
 <!--== person sitting in cabin ==-->	
 <model>
 		<name>npc1</name>
-		 <path>Aircraft/Generic/Human/Models/npc1.xml</path>
+		 <path>Aircraft/Y12B/Human/Models/npc1.xml</path>
 		<nopreview/>
 		<offsets> 
 			<heading-deg>90</heading-deg>

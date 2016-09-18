@@ -5,7 +5,7 @@
 <!--
 <nasal>
     <load>
-      update.add("Aircraft/Generic/Human/Models/Themes", "sim/multiplay/generic/string[10]");
+      update.add("Aircraft/Y12B/Human/Models/Themes", "sim/multiplay/Y12B/string[10]");
     </load>
     <unload>
       livery_update.stop();
@@ -15,7 +15,7 @@
 
  <model>
 	<name>male</name>
-  <path>Aircraft/Generic/Human/Models/walker-inc.xml</path>
+  <path>Aircraft/Y12B/Human/Models/walker-inc.xml</path>
  </model>
 
 
@@ -43,17 +43,17 @@
 
  <model>
 	<name>female</name>
-  <path>Aircraft/Generic/Human/Models/walker-inc.xml</path>
+  <path>Aircraft/Y12B/Human/Models/walker-inc.xml</path>
 
  <overlay>
 	<models>
-		<char0-path>Aircraft/Generic/Human/Models/amelia.xml</char0-path>
-		<char1-path>Aircraft/Generic/Human/Models/amelia.xml</char1-path>
-		<char2-path>Aircraft/Generic/Human/Models/amelia.xml</char2-path>
-		<outfit0>Aircraft/Generic/Human/Models/outfit/default-f.xml</outfit0>
-		<outfit1>Aircraft/Generic/Human/Models/outfit/flightsuit-f.xml</outfit1>
-		<outfit2>Aircraft/Generic/Human/Models/outfit/airliner-f.xml</outfit2>
-		<outfit3>Aircraft/Generic/Human/Models/outfit/airliner-f.xml</outfit3>
+		<char0-path>Aircraft/Y12B/Human/Models/amelia.xml</char0-path>
+		<char1-path>Aircraft/Y12B/Human/Models/amelia.xml</char1-path>
+		<char2-path>Aircraft/Y12B/Human/Models/amelia.xml</char2-path>
+		<outfit0>Aircraft/Y12B/Human/Models/outfit/default-f.xml</outfit0>
+		<outfit1>Aircraft/Y12B/Human/Models/outfit/flightsuit-f.xml</outfit1>
+		<outfit2>Aircraft/Y12B/Human/Models/outfit/airliner-f.xml</outfit2>
+		<outfit3>Aircraft/Y12B/Human/Models/outfit/airliner-f.xml</outfit3>
 	</models>
 
 	<limbs>
@@ -119,7 +119,7 @@
 
 
 <model>
-  <path>Aircraft/Generic/Human/Models/chute.xml</path>
+  <path>Aircraft/Y12B/Human/Models/chute.xml</path>
   <offsets>
    <z-m>0.9</z-m>
   </offsets>

@@ -294,7 +294,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     print("system  ...Check");
     Shutdown();
      settimer(update_systems, 1.1);
-    settimer(annunciators, 1.2);
+    
 });
 
 
@@ -347,10 +347,6 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 ##### Main ###########
 
 
-var annunciators = func {
-    Ctn_panel.update();
-    settimer(annunciators, 0.5);
-    }
 
 var update_eng_sound = func {
     var tst1 = (getprop("controls/engines/engine[0]/throttle") * 1);
@@ -387,24 +383,7 @@ var update_throttles = func {
 }
 
 var update_systems = func {
-    var lfdoor_pos = getprop("controls/doors/LF-door/position-norm");
-    var rfdoor_pos = getprop("controls/doors/RF-door/position-norm");
-    var rrdoor_pos = getprop("controls/doors/RR-door/position-norm");
-    var lrdoorf_pos = getprop("controls/doors/LR-door-F/position-norm");
-    var lrdoorr_pos = getprop("controls/doors/LR-door-R/position-norm");
-    var baggdoor_pos = getprop("controls/doors/Baggage.door/position-norm");
-    var power = getprop("/controls/switches/master-panel");
-    flight_meter();
-    wiper.active();
-    var wind = getprop("velocities/airspeed-kt");
-    if(wind>40){
-        if(getprop("controls/doors/LF-door/open"))setprop("controls/doors/LF-door/open",0);
-        if(getprop("controls/doors/RF-door/open"))setprop("controls/doors/RF-door/open",0);
-        if(getprop("controls/doors/LR-door-F/open"))setprop("controls/doors/LR-door-F/open",0);
-        if(getprop("controls/doors/LR-door-R/open"))setprop("controls/doors/LR-door-R/open",0);
-        if(getprop("controls/doors/RR-door/open"))setprop("controls/doors/RR-door/open",0);
-        if(getprop("controls/doors/Baggage.door/open"))setprop("controls/doors/Baggage.door/",0);
-    }
+    
     update_throttles();
     update_eng_sound();
     settimer(update_systems, 0);
