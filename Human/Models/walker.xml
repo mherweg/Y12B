@@ -120,10 +120,22 @@
 
 <model>
   <path>Aircraft/Y12B/Human/Models/chute.xml</path>
+  
   <offsets>
    <z-m>0.9</z-m>
   </offsets>
 </model>
+
+
+<!-- does not fit
+<model>
+<path>Aircraft/Y12B/Human/Models/backpack.xml</path>
+   <offsets>
+   <z-m>0.9</z-m>
+  </offsets>
+</model>
+-->
+
 
 
 </PropertyList>
