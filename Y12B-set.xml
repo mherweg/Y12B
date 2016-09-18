@@ -87,9 +87,11 @@
  	<view n="0">
 		<internal>true</internal>
 		<config>
-			<x-offset-m>-0.4858</x-offset-m>
-			<y-offset-m>2.77</y-offset-m>
-			<z-offset-m>-7.00</z-offset-m>
+			<x-offset-m>0.4858</x-offset-m>
+			<y-offset-m>2.5</y-offset-m>
+			<z-offset-m>-1.70</z-offset-m>
+			 <heading-offset-deg type="double">-90.0</heading-offset-deg>
+			  <pitch-offset-deg type="double">-20.0 </pitch-offset-deg>
 			 <default-field-of-view-deg>90</default-field-of-view-deg>
 			<limits>
 				<enabled type="bool">false</enabled>
