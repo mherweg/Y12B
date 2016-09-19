@@ -135,7 +135,7 @@
 		<type>lookfrom</type>
 		<enabled type="bool">false</enabled>
 		<config>
-			<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+			<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
 			<eye-alt-ft-path>sim/walker/altitude-ft</eye-alt-ft-path>
 			<eye-heading-deg-path>sim/walker/heading-deg</eye-heading-deg-path>
 			<eye-lat-deg-path>sim/walker/latitude-deg</eye-lat-deg-path>
@@ -239,7 +239,10 @@
 	<engines>
 		<engine>
 			 <!-- 0.1= 388knots -->
-		<throttle type="double">0.05</throttle>
+			<throttle type="double">0.05</throttle>
+		</engine>
+		<engine n="1">
+			<throttle type="double">0.05</throttle>
 		</engine>
 	</engines>
 </controls>
