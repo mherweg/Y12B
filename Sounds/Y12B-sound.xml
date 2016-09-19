@@ -813,19 +813,19 @@
         </elevator>
                                       <!--   DOORS  -->
 
-  <!-- LF DOOR  -->
+  <!-- Cabin DOOR  -->
         <doors>
-            <name>lfdoor</name>
+            <name>cabin_door close</name>
             <mode>once</mode>
-            <path>Aircraft/Y12B/Sounds/dhc6-door_close.wav</path>
+            <path>Aircraft/Y12B/Sounds/dhc6-door_open.wav</path>
             <condition>
                 <not>
-                    <property>/controls/doors/LF-door/open</property>
+                    <property>/controls/doors/door0/position-norm</property>
                     <value>1</value>
                 </not>
             </condition>
             <volume>
-                <property>sim/signals/fdm-initialized</property>
+                <property>sim/sound/doors</property>
                 <factor>1</factor>
             </volume>
             <position>
@@ -834,19 +834,19 @@
                 <z>0.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <max-dist>10.0</max-dist>
         </doors>
 
         <doors>
-            <name>lfdoor open</name>
+            <name>cabin_door open</name>
             <mode>once</mode>
             <path>Aircraft/Y12B/Sounds/dhc6-door_open.wav</path>
                 <condition>
-                    <property>/controls/doors/LF-door/open</property>
-                    <value>1</value>
+                    <property>/controls/doors/door0/position-norm</property>
+                    <value>0</value>
                 </condition>
             <volume>
-                <property>sim/signals/fdm-initialized</property>
+                <property>sim/sound/doors</property>
                 <factor>1</factor>
             </volume>
             <position>
@@ -855,23 +855,23 @@
                 <z>0.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <max-dist>10.0</max-dist>
         </doors>
 
-  <!-- rf DOOR  -->
+  <!-- cabin-cockpit DOOR  -->
 
         <doors>
-            <name>rfdoor</name>
+            <name>ccdoor open</name>
             <mode>once</mode>
-            <path>Aircraft/Y12B/Sounds/dhc6-door_close.wav</path>
+            <path>Aircraft/Y12B/Sounds/dhc6-door_open.wav</path>
             <condition>
                     <not>
-                    <property>/controls/doors/RF-door/open</property>
+                    <property>/controls/doors/door2/position-norm</property>
                     <value>1</value>
                     </not>
             </condition>
             <volume>
-                <property>sim/signals/fdm-initialized</property>
+                <property>sim/sound/doors</property>
                 <factor>1</factor>
             </volume>
             <position>
@@ -880,28 +880,30 @@
                 <z>0.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <max-dist>10.0</max-dist>
         </doors>
 
-        <doors>
-            <name>rfdoor open</name>
+		<doors>
+            <name>ccdoor close</name>
             <mode>once</mode>
             <path>Aircraft/Y12B/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/RF-door/open</property>
+            <condition>
+                   
+                    <property>/controls/doors/door2/position-norm</property>
                     <value>1</value>
-                </condition>
+                   
+            </condition>
             <volume>
-                <property>sim/signals/fdm-initialized</property>
+                <property>sim/sound/doors</property>
                 <factor>1</factor>
             </volume>
             <position>
                 <x>-3</x>
-                <y>0.5</y>
+                <y>-0.5</y>
                 <z>0.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <max-dist>10.0</max-dist>
         </doors>
 
 
