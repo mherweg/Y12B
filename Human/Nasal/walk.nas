@@ -91,6 +91,10 @@ var measure_extmov_count = 0;
 var measure_sec = 0;
 var measure_alt = 0;
 var last_elapsed_sec = 0;
+#chz debug use  #####################
+var measure_drift_count1 = 0;
+var measure_drift_count2 = 0;
+#chz end   ########################
 
 # ===== functions ======
 var normheading = func (a) {
@@ -419,6 +423,9 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 
 
 	measure_extmov_count += 1;
+    #chz: artificial adjust latitude-deg in each loop
+	#measure_drift_count = measure_drift_count + 0.00001; # maybe 0.00001 is better.
+	#chz end 
 	var c_view = getprop("sim/current-view/view-number");
 	if (c_view == view.indexof("Walker Orbit View")) {
 		var head_v = 360 - getprop("sim/walker/model-heading-deg");
@@ -443,7 +450,9 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 	}
 	var head_w = normheading(head_v + walk_heading);
 	if (!moved) {
-		setprop("sim/walker/model-heading-deg" , 360 - head_v);
+	#xuy
+		#setprop("sim/walker/model-heading-deg" , 360 - head_v);
+	#xuy	
 	}
 	var elapsed_sec = getprop("sim/time/elapsed-sec");
 	if (falling) {
@@ -505,7 +514,10 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 				zero_xy_sec = 10.0;
 			}
 		}
+		#应在此处添加forward代码
 		parabola = sin(90 - zero_xy_sec ) * zero_xy_sec - (0.096 * zero_xy_sec * zero_xy_sec / 2);
+		#posx2 = posx2 + 1;
+		#posy2 = posy2 + 2;
 		if (parachute_drag and zero_xy_sec < 7) {
 			posy2 = starting_lat + (lat_vector * parabola) + (lat_vector * parachute_drag);
 			posx2 = starting_lon + (lon_vector * parabola) + (lon_vector * parachute_drag);
@@ -617,12 +629,13 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 				posz2 = posz_geo;
 				walker_model.land(posx2,posy2,posz_geo);
 			} else {
-				#if (getprop("logging/walker-position")) {
+				if (getprop("logging/walker-position")) {
 				#MH
-				#	print(sprintf("falling_lat= %11.8f lon= %13.8f altitude= %9.2f elapsed_fall_sec= %5.2f speed_ft/s= %7.2f chute_drag= %4.2f",posy2,posx2,posz1,elapsed_fall_sec,((measure_alt-posz2)/(elapsed_sec - last_elapsed_sec)),parachute_drag));
+					print(sprintf("falling_lat= %11.8f lon= %13.8f altitude= %9.2f elapsed_fall_sec= %5.2f speed_ft/s= %7.2f chute_drag= %4.2f",posy2,posx2,posz1,elapsed_fall_sec,((measure_alt-posz2)/(elapsed_sec - last_elapsed_sec)),parachute_drag));
+				}	
 					measure_alt = posz2;
 					last_elapsed_sec = elapsed_sec;
-				#}
+				
 			}
 		} else {
 			walker_model.land(posx2,posy2,posz_geo);
@@ -785,9 +798,9 @@ setlistener("sim/current-view/heading-offset-deg", func(n) {
 });
 
 var get_out = func (loc) {
-################
-print(sprintf("get out !"));
-##############
+	################
+	print(sprintf("get out !"));
+	##############
 	var c_view = getprop("sim/current-view/view-number");
 	var head_add = 0;
 	if (c_view == 0) {	# remember point of exit
@@ -880,7 +893,8 @@ print(sprintf("get out !"));
 
 var get_in = func (loc) {
 	walker_model.remove();
-#	var c_view = getprop("sim/current-view/view-number");
+    #MH 
+	var c_view = getprop("sim/current-view/view-number");
 	# the following section is aircraft specific for locations of entry hatches and doors
 #	var new_pos = 4;
 #	var c_pos = getprop("sim/model/bluebird/crew/cockpit-position");
@@ -958,8 +972,9 @@ var get_in = func (loc) {
 	setprop("sim/walker/parachute-opened-altitude-ft", 0);
 	parachute_deployed_sec = 0;
 	setprop("sim/walker/parachute-opened-sec", 0);
-	#setprop("sim/view[110]/enabled", 0);
-	#setprop("sim/view[111]/enabled", 0);
+	#MH
+	setprop("sim/view[100]/enabled", 0);
+	setprop("sim/view[101]/enabled", 0);
 }
 
 var reinit_walker = func {
@@ -973,6 +988,7 @@ var reinit_walker = func {
 	setprop("sim/walker/parachute-opened-altitude-ft", 0);
 	parachute_deployed_sec = 0;
 	setprop("sim/walker/parachute-opened-sec", 0);
+	#
 	#setprop("sim/walker/key-triggers/outside-toggle",1);
 	#walker_model.remove();
 }
@@ -1042,7 +1058,7 @@ setlistener("engines/engine[3]/fuel-px-psi", func(n) {
 
 
 
-	setlistener("sim/model/bluebird/crew/walker/visible", func(n) {
+	setlistener("sim/model/crew/walker/visible", func(n) {
 		if (n.getValue()) {
 			if (getprop("sim/walker/outside")) {
 				walker_model.add();
