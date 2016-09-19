@@ -289,7 +289,7 @@ var main_loop = func {
 	#setprop("sim/walker/key-triggers/outside-toggle","true");
 	
 	#}
-	####
+	####MH
 	settimer(main_loop, 0.01)
 }
 

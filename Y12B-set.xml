@@ -3,18 +3,20 @@
 <PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
 
 	
-<!--
+
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
 		<altitude type="string">altitude-hold</altitude>
+      <!--  <speed type="string">speed-with-throttle</speed> see below: controls/engines...-->
     </locks>
     <settings>
 		<true-heading-deg type="double">90</true-heading-deg>
 		<target-altitude-ft type="double">3000</target-altitude-ft>
+		<target-speed-kt>200</target-speed-kt>
     </settings>
 </autopilot>
--->
+
 
 <sim>
 	
@@ -88,8 +90,8 @@
 			<x-offset-m>0.4858</x-offset-m>
 			<y-offset-m>2.5</y-offset-m>
 			<z-offset-m>-1.70</z-offset-m>
-			 <heading-offset-deg type="double">-90.0</heading-offset-deg>
-			  <pitch-offset-deg type="double">-20.0 </pitch-offset-deg>
+			 <heading-offset-deg type="double">0.0</heading-offset-deg>
+			  <pitch-offset-deg type="double">0.0 </pitch-offset-deg>
 			 <default-field-of-view-deg>90</default-field-of-view-deg>
 			<limits>
 				<enabled type="bool">false</enabled>
@@ -225,14 +227,21 @@
 </sim>
 
 <controls>
-<doors>
-			<door0>
-				<enabled type="bool">true</enabled>
-			</door0>
-			<door1>
-				<enabled type="bool">true</enabled>
-			</door1>
-</doors>
+	<doors>
+				<door0>
+					<enabled type="bool">true</enabled>
+				</door0>
+				<door1>
+					<enabled type="bool">true</enabled>
+				</door1>
+	</doors>
+
+	<engines>
+		<engine>
+			 <!-- 0.1= 388knots -->
+		<throttle type="double">0.05</throttle>
+		</engine>
+	</engines>
 </controls>
 
 <input>

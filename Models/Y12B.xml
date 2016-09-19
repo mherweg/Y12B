@@ -24,9 +24,8 @@
 
 <!-- pilot (has no head in pilot view) -->
 <model>
-		<name>pilot</name>
-      <path>Aircraft/Y12B/Human/Models/pilot.xml</path>
-	  <name>pilot</name>
+	<name>pilot</name>
+      <path>Aircraft/Y12B/Human/Models/pilot.xml</path>  
 		<nopreview/>
       <offsets> 
         <x-m>-7.0384</x-m>
