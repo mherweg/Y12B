@@ -281,12 +281,18 @@
             <mode>looped</mode>
             <path>Sounds/wind1.wav</path>
             <condition>
-                        <property>sim/current-view/internal</property>
+				
+                     <greater-than>
+                        <property>/velocities/airspeed-kt</property>
+                        <value>90.0</value>
+                    </greater-than>   
+              
              </condition>
             <volume>
                 <property>/controls/doors/door0/position-norm</property>
                 <factor>1</factor>
             </volume>
+           
             <position>
                 <x>-1</x>
                 <y>-1.0</y>
