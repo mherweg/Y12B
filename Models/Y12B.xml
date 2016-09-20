@@ -11,6 +11,11 @@
 		
 	</model>
 
+
+    <sound>
+        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+    </sound>
+
 <!--
 <animation>
         <type>shader</type>
@@ -92,7 +97,7 @@
 	<animation>
 		<type>spin</type>
 		<object-name>left_prop</object-name>
-		<property>controls/engines/engine/throttle</property>
+		<property>controls/engines/engine[1]/throttle</property>
 		<offset>10</offset>
 		<factor>5000</factor>
 		<center>
