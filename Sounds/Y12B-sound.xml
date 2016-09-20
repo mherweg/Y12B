@@ -23,11 +23,11 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/engine[0]</property>
+                <property>controls/engines/engine[0]/throttle</property>
                 <factor>1.2</factor>
             </volume>
             <pitch>
-                <property>sim/sound/engine[0]</property>
+                <property>controls/engines/engine[0]/throttle</property>
                 <factor>1.1</factor>
                 <offset>0.5</offset>
             </pitch>
@@ -58,12 +58,12 @@
                  </and>
             </condition>
             <volume>
-                <property>sim/sound/engine[0]</property>
+                <property>controls/engines/engine[0]/throttle</property>
                 <factor>1.0</factor>
                 <offset>0.3</offset>
             </volume>
             <pitch>
-                <property>sim/sound/engine[0]</property>
+                <property>controls/engines/engine[0]/throttle</property>
                 <factor>1.1</factor>
                 <offset>0.5</offset>
             </pitch>
@@ -95,12 +95,12 @@
                </and>
             </condition>
             <volume>
-                <property>sim/sound/engine[1]</property>
+                <property>controls/engines/engine[1]/throttle</property>
                 <factor>1.2</factor>
                 <offset>0.0</offset>
             </volume>
             <pitch>
-                <property>sim/sound/engine[1]</property>
+                <property>controls/engines/engine[1]/throttle</property>
                 <factor>1.1</factor>
                 <offset>0.5</offset>
             </pitch>
@@ -129,12 +129,12 @@
                  </and>
             </condition>
             <volume>
-                <property>sim/sound/engine[1]</property>
+                <property>controls/engines/engine[1]/throttle</property>
                 <factor>1.0</factor>
                 <offset>0.3</offset>
             </volume>
             <pitch>
-                <property>sim/sound/engine[1]</property>
+                <property>controls/engines/engine[1]/throttle</property>
                 <factor>1.1</factor>
                 <offset>0.5</offset>
             </pitch>
@@ -276,7 +276,7 @@
                                       <!--   DOORS  -->
 
   <!-- Cabin DOOR  -->
-        <doors>
+        <door>
             <name>cabin_door wind</name>
             <mode>looped</mode>
             <path>Sounds/wind1.wav</path>
@@ -294,10 +294,10 @@
             </position>
             <reference-dist>0.5</reference-dist>
             <max-dist>10.0</max-dist>
-        </doors>
+        </door>
 
        
-  <doors>
+  <door>
             <name>cabin_door moving</name>
             <mode>looped</mode>
             <path>Aircraft/Y12B/Sounds/rumble.wav</path>
@@ -315,8 +315,8 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/doors</property>
-                <factor>1</factor>
+                
+                <factor>0.7</factor>
             </volume>
             <position>
                 <x>-3</x>
@@ -325,13 +325,13 @@
             </position>
             <reference-dist>0.5</reference-dist>
             <max-dist>10.0</max-dist>
-        </doors>
+        </door>
 
 
 
   <!-- cabin-cockpit DOOR  -->
 
-        <doors>
+        <door>
             <name>ccdoor moving</name>
             <mode>looped</mode>
             <path>Aircraft/Y12B/Sounds/rumble.wav</path>
@@ -349,8 +349,8 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/doors</property>
-                <factor>1</factor>
+                
+                <factor>0.3</factor>
             </volume>
             <position>
                 <x>-6</x>
@@ -359,9 +359,9 @@
             </position>
             <reference-dist>0.5</reference-dist>
             <max-dist>10.0</max-dist>
-        </doors>
+        </door>
 
-		<doors>
+		<door>
             <name>ccdoor close</name>
             <mode>once</mode>
             <path>Aircraft/Y12B/Sounds/dhc6-door_open.wav</path>
@@ -372,8 +372,8 @@
                    
             </condition>
             <volume>
-                <property>sim/sound/doors</property>
-                <factor>1</factor>
+               
+                <factor>0.2</factor>
             </volume>
             <position>
                 <x>-3</x>
@@ -382,7 +382,7 @@
             </position>
             <reference-dist>0.5</reference-dist>
             <max-dist>10.0</max-dist>
-        </doors>
+        </door>
 
     </fx>
 

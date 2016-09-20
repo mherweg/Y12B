@@ -417,7 +417,7 @@
 	<Y12B>
 		<file>Aircraft/Y12B/Nasal/doors.nas</file>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
-		<file>Aircraft/Y12B/Nasal/systems.nas</file>
+		
 	</Y12B>
 </nasal>
 
