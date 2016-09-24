@@ -12,17 +12,24 @@
 	</model>
 
 
-<sound>
-  <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
-</sound>
+    <sound>
+        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+    </sound>
 
-
+<!--
+<animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <object-name>windscreen</object-name>
+        <object-name>windscreen-inside</object-name>
+</animation>
+ -->
 
 <!-- pilot (has no head in pilot view) -->
 <model>
-		<name>pilot</name>
-      <path>Aircraft/Generic/Human/Models/pilot.xml</path>
-	  <name>pilot</name>
+	<name>pilot</name>
+      <path>Aircraft/Y12B/Human/Models/pilot.xml</path>  
 		<nopreview/>
       <offsets> 
         <x-m>-7.0384</x-m>
@@ -34,7 +41,7 @@
 <!--== person sitting next to pilot ==-->	
 <model>
 		<name>npc0</name>
-      <path>Aircraft/Generic/Human/Models/npc0.xml</path>
+      <path>Aircraft/Y12B/Human/Models/npc0.xml</path>
 		<nopreview/>
       <offsets> 
         <x-m>-7.0384</x-m>
@@ -46,7 +53,7 @@
 <!--== person sitting in cabin ==-->	
 <model>
 		<name>npc1</name>
-		 <path>Aircraft/Generic/Human/Models/npc1.xml</path>
+		 <path>Aircraft/Y12B/Human/Models/npc1.xml</path>
 		<nopreview/>
 		<offsets> 
 			<heading-deg>90</heading-deg>
@@ -89,7 +96,7 @@
 	<animation>
 		<type>spin</type>
 		<object-name>left_prop</object-name>
-		<property>controls/engines/engine/throttle</property>
+		<property>controls/engines/engine[1]/throttle</property>
 		<offset>10</offset>
 		<factor>5000</factor>
 		<center>
@@ -254,6 +261,7 @@
 		</condition>
 </animation>
 
-
+ 
+ 
 
 </PropertyList>

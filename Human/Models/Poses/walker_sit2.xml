@@ -33,7 +33,6 @@
     <limb n="5">
       <x-deg type="double">9.27711</x-deg>
       <y-deg type="double">-33.0942</y-deg>
-       <hand-pose type="double">0</hand-pose>
     </limb>
     <limb n="6">
       <x-deg type="double">-74.5789</x-deg>
@@ -47,7 +46,6 @@
     <limb n="8">
       <x-deg type="double">2.53012</x-deg>
       <y-deg type="double">53.6771</y-deg>
-       <hand-pose type="double">1</hand-pose>
     </limb>
     <limb n="9">
       <x-deg type="double">0</x-deg>

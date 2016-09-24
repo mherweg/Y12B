@@ -1,20 +1,22 @@
 
 
-<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
+<PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
 
 	
-<!--
+
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
 		<altitude type="string">altitude-hold</altitude>
+      <!--  <speed type="string">speed-with-throttle</speed> see below: controls/engines...-->
     </locks>
     <settings>
 		<true-heading-deg type="double">90</true-heading-deg>
 		<target-altitude-ft type="double">3000</target-altitude-ft>
+		<target-speed-kt>200</target-speed-kt>
     </settings>
 </autopilot>
--->
+
 
 <sim>
 	
@@ -61,32 +63,40 @@
      <pose include = "Include/walker_sit.xml"></pose>
             <gender>0</gender>
             <character>0</character>
-           <outfit>0</outfit>
-           
-			<headgear>1</headgear>
+           <outfit>1</outfit>
+			<headgear>3</headgear>
 			<eyewear>0</eyewear>
 			<mask>0</mask>
 			<hair>1</hair>
-			<toolr>1</toolr>
+			
      </npc>
 
 <!-- outside at cabin door -->
 	<map>
 	 <default_exit>
-	  <x-offset-m type ="float">-2</x-offset-m>
+	  <x-offset-m type ="float">-1.5</x-offset-m>
 	  <y-offset-m type ="float">1.5</y-offset-m>
 	 </default_exit>
 	</map>
 </model>
+<<<<<<< HEAD
  
  
+=======
+
+    <sound>
+        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+    </sound>
+>>>>>>> 93d1f90a4023624a5bec2e67af35b004893bc426
  
  	<view n="0">
 		<internal>true</internal>
 		<config>
-			<x-offset-m>-0.4858</x-offset-m>
-			<y-offset-m>2.77</y-offset-m>
-			<z-offset-m>-7.00</z-offset-m>
+			<x-offset-m>0.4858</x-offset-m>
+			<y-offset-m>2.5</y-offset-m>
+			<z-offset-m>-1.70</z-offset-m>
+			 <heading-offset-deg type="double">0.0</heading-offset-deg>
+			  <pitch-offset-deg type="double">0.0 </pitch-offset-deg>
 			 <default-field-of-view-deg>90</default-field-of-view-deg>
 			<limits>
 				<enabled type="bool">false</enabled>
@@ -130,7 +140,7 @@
 		<type>lookfrom</type>
 		<enabled type="bool">false</enabled>
 		<config>
-			<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+			<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
 			<eye-alt-ft-path>sim/walker/altitude-ft</eye-alt-ft-path>
 			<eye-heading-deg-path>sim/walker/heading-deg</eye-heading-deg-path>
 			<eye-lat-deg-path>sim/walker/latitude-deg</eye-lat-deg-path>
@@ -185,7 +195,15 @@
 		</config>
 	</view>
    <!-- View 110, 111: see walker-include.xml -->
-
+    <view n="110">
+      <enabled type="bool">false</enabled>
+    </view>
+    <view n="111">
+      <enabled type="bool">false</enabled>
+    </view>
+    
+    
+    
   <menubar>
         <default>
             <menu n="100">
@@ -214,14 +232,24 @@
 </sim>
 
 <controls>
-<doors>
-			<door0>
-				<enabled type="bool">true</enabled>
-			</door0>
-			<door1>
-				<enabled type="bool">true</enabled>
-			</door1>
-</doors>
+	<doors>
+				<door0>
+					<enabled type="bool">true</enabled>
+				</door0>
+				<door1>
+					<enabled type="bool">true</enabled>
+				</door1>
+	</doors>
+
+	<engines>
+		<engine>
+			 <!-- 0.1= 388knots -->
+			<throttle type="double">0.05</throttle>
+		</engine>
+		<engine n="1">
+			<throttle type="double">0.05</throttle>
+		</engine>
+	</engines>
 </controls>
 
 <input>
@@ -394,7 +422,7 @@
 	<Y12B>
 		<file>Aircraft/Y12B/Nasal/doors.nas</file>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
-		<file>Aircraft/Y12B/Nasal/systems.nas</file>
+		
 	</Y12B>
 </nasal>
 
