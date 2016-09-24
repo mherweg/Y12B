@@ -79,16 +79,10 @@
 	 </default_exit>
 	</map>
 </model>
-<<<<<<< HEAD
- 
- 
-=======
 
     <sound>
         <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
     </sound>
->>>>>>> 93d1f90a4023624a5bec2e67af35b004893bc426
- 
  	<view n="0">
 		<internal>true</internal>
 		<config>

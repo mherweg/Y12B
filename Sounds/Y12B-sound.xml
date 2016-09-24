@@ -49,11 +49,7 @@
             <property>sim/sound/engine[0]</property>
             <condition>
                 <and>
-<<<<<<< HEAD
                     <greater-than>
-=======
-                                        <greater-than>
->>>>>>> 93d1f90a4023624a5bec2e67af35b004893bc426
                         <property>controls/engines/engine[0]/throttle</property>
                         <value>0.01</value>
                     </greater-than>
