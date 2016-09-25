@@ -463,9 +463,9 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 	}
 	
 	##################################4秒开伞###################################
-	if (elapsed_fall_sec > 4) {
-			open_chute();
-		}
+	#if (elapsed_fall_sec > 4) {
+	#		open_chute();
+	#	}
 	
 	
 	#############################################################################
@@ -543,11 +543,11 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 			
 ########下降速度##	##	#	######
 #down_velocity_level:control move up/down
-var down_velocity_level = 1;
-var tmp_down = getprop("engines/engine[2]/oil-pressure-psi");
-if ((tmp_down == nil) or (tmp_down == 0)) {tmp_down = 1};
-down_velocity_level = tmp_down;
-print(sprintf("tmp_down %5.8f",tmp_down));
+var down_velocity_level = 10;
+#var tmp_down = getprop("engines/engine[2]/oil-pressure-psi");
+#if ((tmp_down == nil) or (tmp_down == 0)) {tmp_down = 1};
+#down_velocity_level = tmp_down;
+#print(sprintf("down_velocity_level %5.8f",down_velocity_level));
 
 ###########################################
 
@@ -574,6 +574,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 			
 		var dist_traveled_z = 0;	# feet
 		if (posz_geo < posz1) {	# ground is below walker
+		print(sprintf("posz_geo = %5.8f, posz1 = %5.8f",posz_geo,posz1));
 			dist_traveled_z = -32.185 * time_to_top_sec * time_to_top_sec / 2;	# upward half of arc
 			var elapsed1 = elapsed_fall_sec - time_to_top_sec;
 				# excludes wind resistance and cross section of projectile. Assume negligible for now.
@@ -583,16 +584,16 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 				# to go along with the new walker model visibility.
 				# also needs to be improved is loss of acceleration due to drag forces
 				if (elapsed_fall_sec > (time_to_top_sec + 5.358)) {	# time to reach terminal velocity
-					dist_traveled_z += 461.99 + ((elapsed1 - 5.358) * 172);
+					dist_traveled_z += 461.99 + ((elapsed1 - 5.358) * 172) ;
 				} else {	# 9.81m/s/s up to terminal velocity 172ft/s 54m/s spread eagle
-					dist_traveled_z += 32.185 * elapsed1 * elapsed1 / 2;
+					dist_traveled_z += 32.185 * elapsed1 * elapsed1 / 2 ;
 				}
 			} else {	# started going up, arch to zero_z before falling
-				dist_traveled_z += 32.185 * elapsed1 * elapsed1 / 2;
+				dist_traveled_z += 32.185 * elapsed1 * elapsed1 / 2 * down_velocity_level;
 				if (getprop("logging/walker-debug")) {
 					print(sprintf("time_to_top_sec= %6.2f elapsed1= %6.2f  dist_traveled_z_ft = %8.3f  z_vector_mps= %6.2f exit_alt= %9.3f posz1= %9.3f posz2= %9.3f" , time_to_top_sec,elapsed1,dist_traveled_z,z_vector_mps,getprop("sim/walker/altitude-at-exit-ft"),posz1,(getprop("sim/walker/altitude-at-exit-ft")-posz1)));
 				}
-			}
+			} 
 			if (parachute_ft) {	# chute open
 				# need to better model deceleration due to opening of chute, change in surface area.
 				######################
@@ -612,7 +613,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 			}
 			##################
 			#MH
-		#	print(sprintf("time_to_top_sec= %6.2f elapsed1= %6.2f  dist_traveled_z_ft = %8.3f  z_vector_mps= %6.2f exit_alt= %9.3f posz1= %9.3f posz2= %9.3f" , time_to_top_sec,elapsed1,dist_traveled_z,z_vector_mps,getprop("sim/walker/altitude-at-exit-ft"),posz1,(getprop("sim/walker/altitude-at-exit-ft")-posz1)));
+			print(sprintf("time_to_top_sec= %6.2f elapsed1= %6.2f  dist_traveled_z_ft = %8.3f  z_vector_mps= %6.2f exit_alt= %9.3f posz1= %9.3f posz2= %9.3f" , time_to_top_sec,elapsed1,dist_traveled_z,z_vector_mps,getprop("sim/walker/altitude-at-exit-ft"),posz1,(getprop("sim/walker/altitude-at-exit-ft")-posz1)));
 			##################
 			
 			posz2 = getprop("sim/walker/altitude-at-exit-ft") - dist_traveled_z;
@@ -637,7 +638,11 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 					last_elapsed_sec = elapsed_sec;
 				
 			}
-		} else {
+		}elsif(posz_geo < posz1 - posz_geo == 16 ){
+		#10 meters
+			print(sprintf("10 meters"));
+		}
+		else {
 			walker_model.land(posx2,posy2,posz_geo);
 			posz2 = posz_geo;
 		}
