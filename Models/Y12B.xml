@@ -167,7 +167,7 @@
 			</entry>
 			<entry>
 				<ind>1.00</ind>
-				<dep>0.90</dep>
+				<dep>0.85</dep>
 			</entry>
 		</interpolation>
 		<axis>
@@ -261,7 +261,49 @@
 		</condition>
 </animation>
 
+<!-- jump signal lights -->
+
+
+<!-- light1: yellow -->
+<animation> 
+  <type>material</type> 
+  <object-name>signal-light1</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>0.0</blue>
+   <factor-prop>controls/lighting/signal-light1</factor-prop>
+  </emission>
+</animation>
  
- 
+
+<!-- light2: red -->
+<animation> 
+  <type>material</type> 
+  <object-name>signal-light2</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>0.0</green>
+   <blue>0.0</blue>
+   <factor-prop>controls/lighting/signal-light2</factor-prop>
+  </emission>
+</animation>
+
+
+<!-- light3: green -->
+<animation> 
+  <type>material</type> 
+  <object-name>signal-light3</object-name>
+  <emission>
+   <red>0.0</red>
+   <green>1.0</green>
+   <blue>0.0</blue>
+   <factor-prop>controls/lighting/signal-light3</factor-prop>
+  </emission>
+</animation>
+
+
+
+
 
 </PropertyList>
