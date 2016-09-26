@@ -28,8 +28,8 @@
 
 <!-- pilot (has no head in pilot view) -->
 <model>
-	<name>pilot</name>
-      <path>Aircraft/Y12B/Human/Models/pilot.xml</path>  
+	<name>npc3</name>
+      <path>Aircraft/Y12B/Human/Models/npc3.xml</path>  
 		<nopreview/>
       <offsets> 
         <x-m>-7.0384</x-m>
@@ -76,6 +76,34 @@
    <z-m> 1.8</z-m>
   </center>
  </animation>
+
+<!--== jump commander in cabin ==-->	
+<model>
+		<name>npc2</name>
+		 <path>Aircraft/Y12B/Human/Models/npc2.xml</path>
+		<nopreview/>
+		<offsets> 
+			<heading-deg>270</heading-deg>
+			<x-m>-0.2</x-m>
+			<y-m>0.40</y-m>
+			<!--== the pose from the bluebird has a Z offset ==-->
+			<z-m>1.10</z-m>
+		</offsets>
+</model>
+ <!--== shrink commander ==-->	
+<animation>
+  <type>scale</type>
+  <object-name>npc2</object-name>
+  <x-offset>0.8</x-offset>
+  <y-offset>0.8</y-offset>
+  <z-offset>0.8</z-offset>
+   <center>
+   <x-m>-3.20</x-m>
+   <y-m> 0.7  </y-m>
+   <z-m> 1.8</z-m>
+  </center>
+ </animation>
+
 
 
 <model>

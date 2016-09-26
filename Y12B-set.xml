@@ -42,23 +42,30 @@
  <model>
   <path>Models/Y12B.xml</path>
   
-	<crew>
-	 <pilot n="0">
+  
+   <!--  pilot -->
+	<npc n="3">
 	  <pose include = "Include/ju52_pilot.xml"></pose>
 	  <gender>0</gender>
 	  <character>0</character>
 	  <outfit>1</outfit>
-	 </pilot> 
-	</crew>
+	  <headgear>1</headgear>
+			<eyewear>1</eyewear>
+			<mask>0</mask>
+			<hair>1</hair>
+	</npc> 
 	
+	 <!--  copilot -->
    <npc n="0">
      <pose include = "Include/ju52_pilot.xml"></pose>
             <gender>0</gender>
             <character>1</character>
            <outfit>0</outfit>
+             <headgear>1</headgear>
            <hair>2</hair>
      </npc>
      
+      <!--  person on seat 5 -->
      <npc n="1">
      <pose include = "Include/walker_sit.xml"></pose>
             <gender>0</gender>
@@ -68,8 +75,42 @@
 			<eyewear>0</eyewear>
 			<mask>0</mask>
 			<hair>1</hair>
-			
      </npc>
+
+     <!--  jump commander 
+     ready: /controls/lighting/signal-light1
+     jump! /controls/lighting/signal-light3
+     -->
+     <npc n="2">
+     <pose include = "Human/Models/Animations/commander_lift_right_arm.xml">
+
+      <position>
+		 <limb n="3">
+			 <x-deg type="double">80</x-deg>
+			 <y-deg type="double">180</y-deg>
+	     </limb>
+	     <limb n="5">
+			 <hand-pose>2</hand-pose>
+		</limb>	 
+			 
+      </position> 
+     
+     </pose>
+    
+            <gender>0</gender>
+            <character>0</character>
+           <outfit>1</outfit>
+			<headgear>3</headgear>
+			<eyewear>0</eyewear>
+			<mask>0</mask>
+			<hair>1</hair>
+     </npc>
+
+
+
+
+
+
 
 <!-- outside at cabin door -->
 	<map>
@@ -205,17 +246,21 @@
                 <enabled type="bool">true</enabled>
                 
                     <item>
-						<label>remove cabin door</label>
+						<label>ready</label>
 						<binding>
 							<command>property-toggle</command>
-							<property>/controls/doors/door0/enabled</property>
+							<property>controls/lighting/signal-light1</property>
 						</binding>
 					</item>
 					<item>
-						<label>remove seat 5</label>
+						<label>jump</label>
 						<binding>
 							<command>property-toggle</command>
-							<property>/controls/doors/door1/enabled</property>
+							<property>controls/lighting/signal-light3</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/signal-light1</property>
 						</binding>
 					</item>
              
