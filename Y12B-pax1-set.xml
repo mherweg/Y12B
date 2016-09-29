@@ -22,8 +22,21 @@
 
   <model>
    <path>Aircraft/Y12B/Models/Y12B-pax1.xml</path>
-   <!-- MP cockpit switches (sorry.. :) -->
    <variant type="int">0</variant>
+   
+   
+     <npc n="1">
+     <pose include = "Include/walker_sit.xml"></pose>
+            <gender>0</gender>
+            <character>0</character>
+           <outfit>0</outfit>
+			<headgear>0</headgear>
+			<eyewear>0</eyewear>
+			<mask>0</mask>
+			<hair>1</hair>
+     </npc>
+   
+   
   </model>
 
   <remote>
@@ -57,6 +70,23 @@
     <roll-offset-deg type="double">0</roll-offset-deg>
    </config>
   </view>
+  
+   <view n="103">
+   <name>walk in cabin view</name>
+   <internal>true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <from-model type="bool">true</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m type="double"> 0.0 </x-offset-m>
+    <y-offset-m type="double"> 2.60 </y-offset-m>
+    <z-offset-m type="double"> -6.00 </z-offset-m>
+    <heading-offset-deg type="double">179.0</heading-offset-deg>
+    <pitch-offset-deg type="double"> 0.0 </pitch-offset-deg>
+    <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
+   </config>
+  </view>
+  
 
 
   <multiplay>
@@ -85,7 +115,30 @@
   </menubar>
 
  </sim>
-
+<input>
+	<keyboard>
+		
+		<key n="119">
+		  <name>w</name>
+		  <desc>Walk view: Walk forward.</desc>
+		  <binding>
+		   <command>nasal</command>
+		   <script>
+			 if (!walkview.forward(1.0)) {
+			 }
+		   </script>
+		  </binding>
+		  <mod-up>
+		   <binding>
+			<command>nasal</command>
+			<script>
+			  walkview.forward(0);
+			</script>
+		   </binding>
+		  </mod-up>
+		</key>
+	</keyboard>
+</input>
 
 <nasal>
   <walkview>
