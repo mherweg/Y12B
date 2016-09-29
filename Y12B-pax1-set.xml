@@ -9,7 +9,7 @@
 <!--
   Usage: fgfs - -prop:/sim/remote/pilot-callsign="callsign" - -aircraft=Y12B-pax1
 -->
-<PropertyList>
+<PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
 
  <sim>
 
@@ -37,6 +37,14 @@
      </npc>
    
    
+<!-- outside at cabin door -->
+	<map>
+	 <default_exit>
+	  <x-offset-m type ="float">-1.5</x-offset-m>
+	  <y-offset-m type ="float">1.5</y-offset-m>
+	 </default_exit>
+	</map>
+	
   </model>
 
   <remote>
@@ -86,6 +94,66 @@
     <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
    </config>
   </view>
+  
+   <view n="100">
+		<name>Walk View</name>
+		<type>lookfrom</type>
+		<enabled type="bool">false</enabled>
+		<config>
+			<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			<eye-alt-ft-path>sim/walker/altitude-ft</eye-alt-ft-path>
+			<eye-heading-deg-path>sim/walker/heading-deg</eye-heading-deg-path>
+			<eye-lat-deg-path>sim/walker/latitude-deg</eye-lat-deg-path>
+			<eye-lon-deg-path>sim/walker/longitude-deg</eye-lon-deg-path>
+			<eye-pitch-deg-path>sim/walker/pitch-deg</eye-pitch-deg-path>
+			<eye-roll-deg-path>sim/walker/roll-deg</eye-roll-deg-path>
+			<ground-level-nearplane-m type="double">0.5</ground-level-nearplane-m>
+			<x-offset-m type="double">0.0</x-offset-m>
+			<y-offset-m type="double">2.1</y-offset-m>
+			<z-offset-m type="double">9.4</z-offset-m>
+			<limits>
+				<enabled type="bool">false</enabled>
+			</limits>
+		</config>
+	</view>
+
+	<view n="101">
+		<name>Walker Orbit View</name>
+		<type>lookat</type>
+		<enabled type="bool">false</enabled>
+		<config>
+			<from-model type="bool">false</from-model>
+			<from-model-idx type="int">0</from-model-idx>
+			<at-model type="bool">false</at-model>
+			<at-model-idx type="int">100</at-model-idx>
+			<eye-alt-ft-path>sim/walker/altitude-ft</eye-alt-ft-path>
+			<eye-heading-deg-path>sim/walker/heading-deg</eye-heading-deg-path>
+			<eye-lat-deg-path>sim/walker/latitude-deg</eye-lat-deg-path>
+			<eye-lon-deg-path>sim/walker/longitude-deg</eye-lon-deg-path>
+			<eye-pitch-deg-path>sim/walker/pitch-deg</eye-pitch-deg-path>
+			<eye-roll-deg-path>sim/walker/roll-deg</eye-roll-deg-path>
+			<target-alt-ft-path>sim/walker/altitude-ft</target-alt-ft-path>
+			<target-heading-deg-path>sim/walker/heading-deg</target-heading-deg-path>
+			<target-lat-deg-path>sim/walker/latitude-deg</target-lat-deg-path>
+			<target-lon-deg-path>sim/walker/longitude-deg</target-lon-deg-path>
+			<target-pitch-deg-path>sim/walker/pitch-deg</target-pitch-deg-path>
+			<target-roll-deg-path>sim/walker/roll-deg</target-roll-deg-path>
+			<target-x-offset-m type="double">0</target-x-offset-m>
+			<target-y-offset-m type="double">1.5</target-y-offset-m>
+			<target-z-offset-m type="double">0</target-z-offset-m>
+			<ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+			<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+			<x-offset-m type="double">0</x-offset-m>
+			<y-offset-m type="double">1</y-offset-m>
+			<z-offset-m type="double">5</z-offset-m>
+			<heading-offset-deg>0</heading-offset-deg>
+			<pitch-offset-deg>0</pitch-offset-deg>
+			<roll-offset-deg>0</roll-offset-deg>
+			<limits>
+				<enabled type="bool">false</enabled>
+			</limits>
+		</config>
+	</view>
   
 
 
@@ -137,6 +205,29 @@
 		   </binding>
 		  </mod-up>
 		</key>
+		
+			<key n="111">
+			<name>o</name>
+			<desc>Toggle walker outside/inside</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/walker/key-triggers/outside-toggle</property>
+			</binding>
+		</key>
+		
+		<key n="106"> 
+			<name>j</name>
+			<desc>open parachute</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>walk.open_chute()</script>
+			</binding>
+		</key>
+	
+		
+		
 	</keyboard>
 </input>
 
