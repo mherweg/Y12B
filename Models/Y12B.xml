@@ -16,6 +16,30 @@
         <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
     </sound>
 
+<nasal>
+  <load>
+   ##############################################################################
+   # The on-load Nasal is not executed when this file is loaded as the user
+   # aircraft.
+   ##############################################################################
+   var rplayer = cmdarg();
+   # Set up property aliases for animations.
+   rplayer.getNode("controls/doors/door0/position-norm", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[0]"));
+   rplayer.getNode("controls/doors/door2/position-norm", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[1]"));
+   rplayer.getNode("controls/engines/engine/throttle", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+   rplayer.getNode("controls/engines/engine[1]/throttle", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+       
+   ##############################################################################
+  
+  </load>
+</nasal>
+
+
+
 <!--
 <animation>
         <type>shader</type>
@@ -26,7 +50,7 @@
 </animation>
  -->
 
-<!-- pilot (has no head in pilot view) -->
+<!-- pilot  -->
 <model>
 	<name>npc3</name>
       <path>Aircraft/Y12B/Human/Models/npc3.xml</path>  

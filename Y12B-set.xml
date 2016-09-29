@@ -41,7 +41,7 @@
 	<flight-model>ufo</flight-model>
 
  <model>
-  <path>Models/Y12B.xml</path>
+  <path>Aircraft/Y12B/Models/Y12B.xml</path>
   
   
    <!--  pilot -->
@@ -279,6 +279,20 @@
                   </menu>
         </default>
     </menubar>
+           
+           
+           
+<multiplay>
+	<generic>
+   <!-- MP  property -->
+   <float n="0" alias="/controls/doors/door0/position-norm"/>
+   <float n="1" alias="/controls/doors/door2/position-norm"/>
+   <float n="2" alias="/controls/engines/engine/throttle"/>
+   <float n="3" alias="/controls/engines/engine[1]/throttle"/>
+   
+   </generic>
+</multiplay>
+           
                
 </sim>
 
@@ -478,10 +492,6 @@
    <pilot-callsign type="string"></pilot-callsign>
 </remote>
 
-<multiplay>
-   <!-- MP  property -->
-   <generic><string n="0" type="string"></string></generic>
-</multiplay>
   
 <nasal>
   <walkview>
