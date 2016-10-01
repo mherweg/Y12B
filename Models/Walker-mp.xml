@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<model>
+	<name>Walker MP</name>
+	<path>Aircraft/Y12B/Human/Models/walker.xml</path>
+</model>
+
+<model>
+	<path>Aircraft/ufo/Models/cursor.ac</path>
+</model>
+
+<nasal>
+  <load>
+   ##############################################################################
+   # The on-load Nasal is not executed when this file is loaded as the user
+   # aircraft.
+   ##############################################################################
+ #  var rplayer = cmdarg();
+   # Set up property aliases for animations.
+  # rplayer.getNode("sim/walker/altitude-ft", 1).
+   #  alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
+     
+ #  rplayer.getNode("sim/walker/latitude-deg", 1).
+  #   alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
+     
+  # rplayer.getNode("sim/walker/longitude-deg", 1).
+   #  alias(rplayer.getNode("sim/multiplay/generic/float[6]"));
+     
+  # rplayer.getNode("", 1).
+  #   alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
+     
+
+  </load>
+</nasal>
+
+
+
+
+</PropertyList>

@@ -2,9 +2,9 @@
 
 # maximum speed -----------------------------------------------------------------------------------
 
-var maxspeed = props.globals.getNode("engines/engine/speed-max-mps");
+var maxspeed = 500;
 var speed = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000];
-var current = 7;
+var current = 5;
 
 
 controls.flapsDown = func(x) {
@@ -51,7 +51,7 @@ var update_main = func {
 	var init_agl= 1.3;
 	var gnd_elev = getprop("position/ground-elev-ft");  # ground elevation
 	var altitude = getprop("position/altitude-ft");  # aircraft altitude
-	if (altitude < gnd_elev){
+	if (altitude < (gnd_elev -1) ){
 		altitude = gnd_elev + init_agl;
 		#altitude_ft_Node.setDoubleValue(altitude);
 		setprop("position/altitude-ft", altitude);
@@ -85,6 +85,7 @@ setlistener("sim/signals/fdm-initialized", func {
 	prestart_main();
 });
 
-var cabin_door = aircraft.door.new("sim/model/Y12B/cabin_door", 2);
-var seat5 =      aircraft.door.new("sim/model/Y12B/seat5", 1);
+# see doors.nas
+#var cabin_door = aircraft.door.new("sim/model/Y12B/cabin_door", 2);
+#var seat5 =      aircraft.door.new("sim/model/Y12B/seat5", 1);
 

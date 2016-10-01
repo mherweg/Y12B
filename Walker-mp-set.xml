@@ -9,11 +9,11 @@
 <!--
   Usage: fgfs - -prop:/sim/remote/pilot-callsign="callsign" - -aircraft=Y12B-pax1
 -->
-<PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
+<PropertyList include="Aircraft/Y12B/Human/Include/walker-mp-include.xml">
 
  <sim>
 
-  <description>Y12B passenger</description>
+  <description>Multiplayer Walker</description>
   <author>Martin Herweg</author>
   <status>experimental</status>
   <aircraft-version>0.1</aircraft-version>
@@ -21,20 +21,8 @@
   <flight-model>null</flight-model>
 
   <model>
-   <path>Aircraft/Y12B/Models/Y12B-pax1.xml</path>
+   <path>Aircraft/Y12B/Models/Walker-mp.xml</path>
    <variant type="int">0</variant>
-   
-   
-     <npc n="1">
-     <pose include = "Include/walker_sit.xml"></pose>
-            <gender>0</gender>
-            <character>0</character>
-           <outfit>0</outfit>
-			<headgear>0</headgear>
-			<eyewear>0</eyewear>
-			<mask>0</mask>
-			<hair>1</hair>
-     </npc>
    
    
 <!-- outside at cabin door -->
@@ -161,9 +149,9 @@
 <menubar>
    <default>
     <menu n="100">
-     <label>Y12B passenger 1</label>
+     <label>MP-Walker</label>
      <item>
-      <label>Select MP-pilot</label>
+      <label>Select MP-aircraft</label>
       <binding>
        <command>nasal</command>
        <script>
@@ -269,7 +257,7 @@
    <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
   </dual_control_tools>
   <aircraft_dual_control>
-   <file>Aircraft/Y12B/Nasal/Y12B-dual-control.nas</file>
+   <file>Aircraft/Y12B/Nasal/Y12B-walker-dual-control.nas</file>
   </aircraft_dual_control>
   <dual_control>
    <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>

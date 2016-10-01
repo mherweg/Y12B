@@ -283,14 +283,30 @@
            
            
 <multiplay>
+	 <surface-positions>
+		<elevator-pos-norm>100.123</elevator-pos-norm>
+	</surface-positions>
+
 	<generic>
-   <!-- MP  property -->
+   <!-- MP  properties -->
+   
+   <!--cabin door -->
    <float n="0" alias="/controls/doors/door0/position-norm"/>
+   <!-- cabin to cockpit door -->
    <float n="1" alias="/controls/doors/door2/position-norm"/>
+   <!-- turning propellers -->
    <float n="2" alias="/controls/engines/engine/throttle"/>
    <float n="3" alias="/controls/engines/engine[1]/throttle"/>
    
+   <!--alt-ft -->
+   <float n="4" alias="/sim/walker/altitude-ft"/>
+   <!-- lat -->
+   <float n="5" alias="/sim/walker/latitude-deg"/>
+   <!-- lon -->
+   <float n="6" alias="/sim/walker/longitude-deg"/>
+   
    </generic>
+      
 </multiplay>
            
                
@@ -525,49 +541,6 @@
   </dual_control>
 	
 </nasal>
-
-<!--
-   Define some extra MP enabled properties for communication information
-   to the copilot.
- -->
- <rotors>
-  <main>
-   <blade>
-    <!-- MP Final throttle cmd -->
-    <position-deg type="double">0.0</position-deg>
-    <!-- MP Final mixture cmd -->
-    <flap-deg type="double">0.0</flap-deg>
-   </blade>
-   <blade>
-    <!-- position-deg type="double">0.0</position-deg -->
-    <!-- flap-deg type="double">0.0</flap-deg -->
-   </blade>
-   <blade>
-    <!-- MP TDM property/action # -->
-    <!-- position-deg type="double">0.0</position-deg -->
-    <!-- MP TDM property value/action argument -->
-    <!-- flap-deg type="double">0.0</flap-deg -->
-   </blade>
-   <blade>
-    <!-- MP TC indicated turn rate --> 
-    <position-deg type="double">0.0</position-deg>
-    <!-- MP TC indicated slip skid -->
-    <flap-deg type="double">0.0</flap-deg>
-   </blade>
-   <!-- MP Final elevator trim -->
-   <rpm type="double">0.0</rpm>
-  </main>
-  <tail>
-   <!-- rpm type="double">0.0</rpm -->
-   <blade>
-    <!-- MP HSI indicated heading -->
-    <position-deg type="double">0.0</position-deg>
-   </blade>
-   <blade>
-    <!-- position-deg type="double">0.0</position-deg -->
-   </blade>
-  </tail>
- </rotors>
 
 
 </PropertyList>

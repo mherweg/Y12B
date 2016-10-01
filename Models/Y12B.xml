@@ -31,7 +31,7 @@
    rplayer.getNode("controls/engines/engine/throttle", 1).
      alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
    rplayer.getNode("controls/engines/engine[1]/throttle", 1).
-     alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+     alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
        
    ##############################################################################
   
