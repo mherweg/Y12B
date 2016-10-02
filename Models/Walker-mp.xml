@@ -14,24 +14,89 @@
 
 
 <nasal>
-  <load>
+  <load><![CDATA[
+	  
+	  
+	  
    ##############################################################################
    # The on-load Nasal is not executed when this file is loaded as the user
    # aircraft.
    ##############################################################################
    var rplayer = cmdarg();
    
+   
+    print("remote walker loading...");
+    var timer = maketimer(10, func(){
+        print("remote walker still here!");
+   
+   
+   #hip, body
+   rplayer.getNode("sim/model/walker[1]/limb[0]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[0]"));
+   rplayer.getNode("sim/model/walker[1]/limb[0]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[1]"));   
+ 
+   #chest
+   rplayer.getNode("sim/model/walker[1]/limb[1]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+   rplayer.getNode("sim/model/walker[1]/limb[1]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
+
+   rplayer.getNode("sim/model/walker[1]/limb[2]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
+   rplayer.getNode("sim/model/walker[1]/limb[2]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
+   
    #right arm
-   rplayer.getNode("sim/model/walker[1]/limb[3]/x-deg", 1).
-     alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
-   rplayer.getNode("sim/model/walker[1]/limb[3]/y-deg", 1).
-     alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
-   rplayer.getNode("sim/model/walker[1]/limb[3]/z-deg", 1).
-     alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
+   rplayer.getNode("sim/model/walker[1]/limb[3]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
+   rplayer.getNode("sim/model/walker[1]/limb[3]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
+   rplayer.getNode("sim/model/walker[1]/limb[3]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
+   #right arm2  
+   rplayer.getNode("sim/model/walker[1]/limb[4]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[10]"));  
        
-   ##############################################################################
+   #right hand
+   rplayer.getNode("sim/model/walker[1]/limb[5]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[11]"));
+   rplayer.getNode("sim/model/walker[1]/limb[5]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[12]"));
   
-  </load>
+   #pose  
+   rplayer.getNode("sim/model/walker[1]/limb[5]/hand-pose", 1).alias(rplayer.getNode("sim/multiplay/surface-positions/speedbrake-pos-norm"));
+      
+   #left arm
+   rplayer.getNode("sim/model/walker[1]/limb[6]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[13]"));
+   rplayer.getNode("sim/model/walker[1]/limb[6]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[14]"));
+   rplayer.getNode("sim/model/walker[1]/limb[6]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[15]"));
+   #left arm2
+   rplayer.getNode("sim/model/walker[1]/limb[7]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[16]"));
+   #left hand
+   rplayer.getNode("sim/model/walker[1]/limb[8]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[17]"));
+   rplayer.getNode("sim/model/walker[1]/limb[8]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[18]"));
+ 
+   #pose 
+   rplayer.getNode("sim/model/walker[1]/limb[8]/hand-pose", 1).alias(rplayer.getNode("sim/multiplay/surface-positions/flap-pos-norm"));
+   
+   #right leg1
+   rplayer.getNode("sim/model/walker[1]/limb[9]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[19]"));
+   rplayer.getNode("sim/model/walker[1]/limb[9]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[20]"));
+   rplayer.getNode("sim/model/walker[1]/limb[9]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[21]"));    
+   #right leg2
+   rplayer.getNode("sim/model/walker[1]/limb[10]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[22]"));   
+    
+   #right foot
+   rplayer.getNode("sim/model/walker[1]/limb[11]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[23]"));   
+     
+    
+   #left leg1
+   rplayer.getNode("sim/model/walker[1]/limb[12]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[24]"));
+   rplayer.getNode("sim/model/walker[1]/limb[12]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[25]"));
+   rplayer.getNode("sim/model/walker[1]/limb[12]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[26]"));   
+    
+   #left leg2
+   rplayer.getNode("sim/model/walker[1]/limb[13]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[27]"));
+    
+   #left foot
+   rplayer.getNode("sim/model/walker[1]/limb[14]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[28]"));   
+    
+   ##############################################################################
+   
+   });
+    timer.start();
+   
+   
+  ]]></load>
 </nasal>    
 
 
