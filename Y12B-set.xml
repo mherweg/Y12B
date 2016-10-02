@@ -125,6 +125,8 @@
     <sound>
         <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
     </sound>
+    
+    
  	<view n="0">
 		<internal>true</internal>
 		<config>
@@ -140,9 +142,29 @@
 		</config>
 	</view>
 
+
+<view n="1">
+	<config>
+		<target-y-offset-m type="double">2.0</target-y-offset-m>
+		 <default-field-of-view-deg>80</default-field-of-view-deg>
+	</config>
+</view>
+
+<view n="2">
+	<config>
+		<enabled archive="y" type="bool">false</enabled>
+	</config>
+</view>
+
+<view n="5">
+	<config>
+		<enabled archive="y" type="bool">false</enabled>
+	</config>
+</view>
+
  <view n="102">
     <name>Fixed Cabin View</name>
-    <internal archive="y">true</internal>
+    <internal>true</internal>
     <type>lookfrom</type>
     <config>
       <from-model type="bool">true</from-model>
@@ -314,12 +336,9 @@
 
 <controls>
 	<doors>
-				<door0>
-					<enabled type="bool">true</enabled>
-				</door0>
-				<door1>
-					<enabled type="bool">true</enabled>
-				</door1>
+		<door2>
+			<position-norm type="float">1.0</position-norm >
+		</door2>			
 	</doors>
 
 	<engines>

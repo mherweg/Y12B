@@ -185,6 +185,11 @@
    <!-- lon -->
    <float n="6" alias="/sim/walker/longitude-deg"/>
    
+   <!-- right arm-->
+   <float n="7" alias="/sim/model/walker[1]/limb[3]/x-deg"/>
+   <float n="8" alias="/sim/model/walker[1]/limb[3]/y-deg"/>
+   <float n="9" alias="/sim/model/walker[1]/limb[3]/z-deg"/>
+ 
    </generic>
       
 </multiplay>

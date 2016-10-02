@@ -4,7 +4,7 @@
 <PropertyList>
 	<name type="string">open_parachute</name>
 	<loop-enabled type="bool">false</loop-enabled>
-	<loop-to type="int">6</loop-to>
+	<loop-to type="int">7</loop-to>
 	<trigger-upon type="string">Open-Parachute</trigger-upon>
 	<position>
 		<name type="string">spread eagle 0</name>
@@ -398,7 +398,7 @@
 	</position>
 	<position n="6">
 		<name type="string">parachute open 6</name>
-		<rest-sec type="double">59</rest-sec>
+		<rest-sec type="double">1</rest-sec>
 		<transit-sec type="double">1</transit-sec>
 		<limb>
 			<y-deg type="double">0</y-deg>
@@ -461,4 +461,74 @@
 			<y-deg type="double">0</y-deg>
 		</limb>
 	</position>
+	
+	 <position n="7">
+    <name type="string">hang at chute</name>
+    <rest-sec type="double">59</rest-sec>
+    <transit-sec type="double">1</transit-sec>
+    <limb>
+      <y-deg type="double">0</y-deg>
+      <z-m type="double">0</z-m>
+    </limb>
+    <limb n="1">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="2">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="3">
+      <x-deg type="double">-85</x-deg>
+      <y-deg type="double">26.3793</y-deg>
+      <z-deg type="double">-106</z-deg>
+    </limb>
+    <limb n="4">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">82.1656</z-deg>
+    </limb>
+    <limb n="5">
+      <x-deg type="double">26.1905</x-deg>
+      <y-deg type="double">7.2</y-deg>
+      <hand-pose type="double">1</hand-pose>
+    </limb>
+    <limb n="6">
+      <x-deg type="double">-85</x-deg>
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">-106</z-deg>
+    </limb>
+    <limb n="7">
+      <y-deg type="double">0</y-deg>
+      <z-deg type="double">95.5414</z-deg>
+    </limb>
+    <limb n="8">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-14.4</y-deg>
+      <hand-pose type="double">2</hand-pose>
+    </limb>
+    <limb n="9">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-67.9655</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="10">
+      <y-deg type="double">107.263</y-deg>
+    </limb>
+    <limb n="11">
+      <y-deg type="double">-13.6957</y-deg>
+    </limb>
+    <limb n="12">
+      <x-deg type="double">0</x-deg>
+      <y-deg type="double">-62.3793</y-deg>
+      <z-deg type="double">0</z-deg>
+    </limb>
+    <limb n="13">
+      <y-deg type="double">97.7895</y-deg>
+    </limb>
+    <limb n="14">
+      <y-deg type="double">10.7609</y-deg>
+    </limb>
+  </position>
+	
+	
 </PropertyList>

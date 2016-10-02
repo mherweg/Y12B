@@ -19,23 +19,21 @@
    # The on-load Nasal is not executed when this file is loaded as the user
    # aircraft.
    ##############################################################################
- #  var rplayer = cmdarg();
-   # Set up property aliases for animations.
-  # rplayer.getNode("sim/walker/altitude-ft", 1).
-   #  alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
-     
- #  rplayer.getNode("sim/walker/latitude-deg", 1).
-  #   alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
-     
-  # rplayer.getNode("sim/walker/longitude-deg", 1).
-   #  alias(rplayer.getNode("sim/multiplay/generic/float[6]"));
-     
-  # rplayer.getNode("", 1).
-  #   alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
-     
-
+   var rplayer = cmdarg();
+   
+   #right arm
+   rplayer.getNode("sim/model/walker[1]/limb[3]/x-deg", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
+   rplayer.getNode("sim/model/walker[1]/limb[3]/y-deg", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
+   rplayer.getNode("sim/model/walker[1]/limb[3]/z-deg", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
+       
+   ##############################################################################
+  
   </load>
-</nasal>
+</nasal>    
+
 
 
 
