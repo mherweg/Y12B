@@ -40,15 +40,13 @@
 
 
 
-<!--
-<animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-        <object-name>windscreen</object-name>
-        <object-name>windscreen-inside</object-name>
-</animation>
- -->
+<effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>wings</object-name>
+</effect>
+
+
 
 <!-- pilot  -->
 <model>

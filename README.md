@@ -15,7 +15,7 @@ j to open parachute
 Y12B-pax1 is a passenger/parachute jumper that can connect to the Y12B aircraft via "dual-control" protocol.
 More than one passengers can connect to the same aircraft.
 
-Known issue: it uses WalkView and Walker Milestone 4 - Players can not see each other.
+Known issue: It uses WalkView and Walker Milestone 4 - Players can not see each other.
 
 To addess this issue, I will make a stand alone walker "aircraft":  Walker-mp
 

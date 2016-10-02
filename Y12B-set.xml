@@ -542,6 +542,30 @@
 	
 </nasal>
 
+<ai>
+	<models>
+		<multiplayer>
+			<sim>
+				<walker>
+					<character>1</character>
+					<outfit>0</outfit>
+					<gender>0</gender>
+				</walker>
+			</sim>
+		</multiplayer>
+		<multiplayer n="1">
+			<sim>
+				<walker>
+					<character>1</character>
+					<outfit>0</outfit>
+					<gender>0</gender>
+				</walker>
+			</sim>
+		</multiplayer>
+		
+	</models>
+</ai>
+
 
 </PropertyList>
 

@@ -48,7 +48,7 @@ var up = func(dir) {
 
 # avoid going under ground
 var update_main = func {
-	var init_agl= 1.3;
+	var init_agl= -0.3;
 	var gnd_elev = getprop("position/ground-elev-ft");  # ground elevation
 	var altitude = getprop("position/altitude-ft");  # aircraft altitude
 	if (altitude < (gnd_elev -1) ){
@@ -68,7 +68,7 @@ var prestart_main = func {
 		main_loop_id += 1;
 		settimer(prestart_main, 0.1);
 	} else {
-		print ("Harbin Y-12B");
+		print ("Y-12B.nas - prestart_main");
 		update_main();
 	}
 }

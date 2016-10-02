@@ -7,9 +7,11 @@
 	<path>Aircraft/Y12B/Human/Models/walker.xml</path>
 </model>
 
+<!-- debug -->
 <model>
 	<path>Aircraft/ufo/Models/cursor.ac</path>
 </model>
+
 
 <nasal>
   <load>
