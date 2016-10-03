@@ -4,6 +4,7 @@
 <PropertyList>
 	<path>round_chute.ac</path>
 
+
 	<animation>
 		<type>select</type>
 		<object-name>RoundChute</object-name>
@@ -11,15 +12,16 @@
 			<and>
 				<greater-than>
 					<property>sim/walker/parachute-opened-sec</property>
-					<value>0</value>
+					<value>0.0</value>
 				</greater-than>
 				<greater-than>
 					<property>sim/walker/parachute-opened-altitude-ft</property>
-					<value>0</value>
+					<value>0.0</value>
 				</greater-than>
 			</and>
 		</condition>
 	</animation>
+
 
 	<animation>
 		<type>rotate</type>

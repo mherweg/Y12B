@@ -204,6 +204,10 @@
 	   <!-- foo -->
 	   <float n="19" alias="/sim/model/walker[1]/limb[9]/x-deg"/>
 	   
+	   <int n="0"   alias="/sim/walker/character"/>
+	   <int n="1"   alias="/sim/walker/outfit"/>
+	   <int n="2"   alias="/sim/walker/gender"/>
+	  
 	  
    </generic>
       
@@ -213,13 +217,13 @@
 
 
 <surface-positions>
-	  <!--not needed? alt-ft -->
+	  <!--not needed? alt-ft 
 		<elevator-pos-norm alias="/sim/walker/altitude-ft"/>
-	   <!--not needed? lat -->
+	 
 		<left-aileron-pos-norm alias="/sim/walker/latitude-deg"/>
-	   <!--not needed? lon -->
-		<right-aileron-pos-norm alias="/sim/walker/longitude-deg"/>
 	   
+		<right-aileron-pos-norm alias="/sim/walker/longitude-deg"/>
+	   -->
 		<flap-pos-norm       alias="/sim/model/walker[1]/limb[5]/hand-pose"/>
 		<speedbrake-pos-norm alias="/sim/model/walker[1]/limb[8]/hand-pose"/>
 	
@@ -244,16 +248,14 @@
 			<compression-norm alias="/sim/model/walker[1]/limb[14]/y-deg"/>
 			<position-norm    alias="/sim/model/walker[1]/limb/z-m"/>
 		</gear>
-</gear>
-	<!--	
-		<tailhook>
-			<position-norm    alias="/sim/model/walker[1]/limb[]/-deg"/>
-		</tailhook>
+
 		<launchbar>
-			<position-norm          alias="/sim/model/walker[1]/limb[]/-deg"/>
-			<holdback-position-norm alias="/sim/model/walker[1]/limb[]/-deg"/>
+			<position-norm          alias="/sim/walker/parachute-opened-sec"/>
+			<holdback-position-norm alias="/sim/walker/parachute-opened-altitude-ft"/>
 		</launchbar>
-	</gear>
+</gear>
+	
+	<!--
 	<canopy>
 		<position-norm alias="/sim/model/walker[1]/limb[]/-deg"/>
 	</canopy>
@@ -341,6 +343,8 @@
 </nasal>
 
 
+<!-- hack: make 2 MP players visible (only if they are Walker-mp! ) -->
+<!--  todo: use generic int for that -->
 <ai>
 	<models>
 		<multiplayer>

@@ -103,6 +103,14 @@
    #whole body up/down    
    rplayer.getNode("sim/model/walker[1]/limb/z-m", 1).alias(rplayer.getNode("gear/gear[4]/position-norm"));   
  
+   rplayer.getNode("sim/walker/parachute-opened-sec", 1).alias(rplayer.getNode("gear/launchbar/position-norm"));   
+   rplayer.getNode("sim/walker/parachute-opened-altitude-ft", 1).alias(rplayer.getNode("gear/launchbar/holdback-position-norm"));   
+ 
+   rplayer.getNode("sim/walker/character", 1).alias(rplayer.getNode("sim/multiplay/generic/int[0]"));
+   rplayer.getNode("sim/walker/outfit", 1).alias(rplayer.getNode("sim/multiplay/generic/int[1]"));
+   rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode("sim/multiplay/generic/int[2]"));
+ 
+ 
    ##############################################################################
    
   
