@@ -2,9 +2,9 @@
 
 # maximum speed -----------------------------------------------------------------------------------
 
-var maxspeed = 500;
+var maxspeed = props.globals.getNode("engines/engine/speed-max-mps");
 var speed = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000];
-var current = 5;
+var current = 7;
 
 
 controls.flapsDown = func(x) {

@@ -287,7 +287,7 @@
 		  </mod-up>
 		</key>
 		
-			<key n="111">
+		<key n="111">
 			<name>o</name>
 			<desc>Toggle walker outside/inside</desc>
 			<repeatable>false</repeatable>
@@ -332,13 +332,13 @@
 	</Y12B>
 	
   <dual_control_tools>
-   <file>Aircraft/Generic/DualControl/dual-control-tools.nasXXX</file>
+   <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
   </dual_control_tools>
   <aircraft_dual_control>
-   <file>Aircraft/Y12B/Nasal/Y12B-walker-dual-control.nasXXX</file>
+   <file>Aircraft/Y12B/Nasal/Y12B-walker-dual-control.nas</file>
   </aircraft_dual_control>
   <dual_control>
-   <file>Aircraft/Generic/DualControl/copilot-dual-control.nasXXX</file>
+   <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>
   </dual_control>
 </nasal>
 

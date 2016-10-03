@@ -2,23 +2,17 @@
 
 <PropertyList>
 
- 
-
   <text>
     <alignment>center-bottom</alignment>
-  <axis-alignment>yz-plane</axis-alignment>
+    <axis-alignment>yz-plane</axis-alignment>
     <type type="string">text-value</type>
     <property type="string">sim/multiplay/generic/string[1]</property>
     <format type="string">%s</format>
     <font>arial_black.txf</font>
     <character-size>0.5</character-size>
     <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <draw-alignment type="bool">false</draw-alignment>
-   
+    <draw-alignment type="bool">false</draw-alignment>   
   </text>
-
-
-
 
 <model>
 	<name>Walker MP</name>
@@ -39,10 +33,8 @@
    ##############################################################################
    var rplayer = cmdarg();
    
-   
-    print("############remote walker loading...##############");
+   print("############remote walker loading...##############");
     
-   
    #right hand pose  
    rplayer.getNode("sim/model/walker[1]/limb[5]/hand-pose", 1).alias(rplayer.getNode("surface-positions/speedbrake-pos-norm"));
    
@@ -118,9 +110,6 @@
    rplayer.getNode("sim/multiplay/callsign", 1).alias(rplayer.getNode("sim/multiplay/generic/string[1]"));
  
    ##############################################################################
-   
-  
-   
   </load>
 </nasal>    
 
