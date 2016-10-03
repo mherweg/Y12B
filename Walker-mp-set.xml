@@ -208,7 +208,7 @@
 	   <int n="1"   alias="/sim/walker/outfit"/>
 	   <int n="2"   alias="/sim/walker/gender"/>
 	  
-	  
+	   <string n="1" alias="/sim/multiplay/callsign"/>
    </generic>
       
 </multiplay>

@@ -444,12 +444,12 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 		var parachute_drag = 0;
 		var zero_xy_sec = (elapsed_fall_sec < 10 ? elapsed_fall_sec : 10.0);
 		###########
-		print(sprintf("zero_xy_sec %d",zero_xy_sec));
+		#print(sprintf("zero_xy_sec %d",zero_xy_sec));
 		###########
 		if (parachute_ft) {	# chute open
 		###############
 		    setprop("engines/engine[3]/mp-osi",10);
-			print(sprintf("parachute opened!"));
+			#print(sprintf("parachute opened!"));
 		###############
 			setprop("sim/walker/parachute-opened-sec", (elapsed_sec - parachute_deployed_sec - 1.0));
 			# chute starts to add drag at 1 second, fully open at 3 sec. Slows to 17 ft/sec
@@ -517,7 +517,7 @@ if (roll_deg_get == nil)
 	{
 		roll_deg_get = 0;
 	}
-print(sprintf("roll_deg_get %5.8f",roll_deg_get));
+#print(sprintf("roll_deg_get %5.8f",roll_deg_get));
 setprop("sim/walker/roll-deg",roll_deg_get);
 
 #########################################################################
@@ -525,7 +525,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 			
 		var dist_traveled_z = 0;	# feet
 		if (posz_geo < posz1) {	# ground is below walker
-		print(sprintf("posz_geo = %5.8f, posz1 = %5.8f",posz_geo,posz1));
+		#print(sprintf("posz_geo = %5.8f, posz1 = %5.8f",posz_geo,posz1));
 			dist_traveled_z = -32.185 * time_to_top_sec * time_to_top_sec / 2;	# upward half of arc
 			var elapsed1 = elapsed_fall_sec - time_to_top_sec;
 				# excludes wind resistance and cross section of projectile. Assume negligible for now.
@@ -548,7 +548,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 			if (parachute_ft) {	# chute open
 				# need to better model deceleration due to opening of chute, change in surface area.
 				######################
-				print(sprintf("parachute opened!"));
+				#print(sprintf("parachute opened!"));
 				setprop("engines/engine[3]/mp-osi",10);
 				######################
 				
@@ -564,7 +564,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 			}
 			##################
 			#MH
-			print(sprintf("time_to_top_sec= %6.2f elapsed1= %6.2f  dist_traveled_z_ft = %8.3f  z_vector_mps= %6.2f exit_alt= %9.3f posz1= %9.3f posz2= %9.3f" , time_to_top_sec,elapsed1,dist_traveled_z,z_vector_mps,getprop("sim/walker/altitude-at-exit-ft"),posz1,(getprop("sim/walker/altitude-at-exit-ft")-posz1)));
+			#print(sprintf("time_to_top_sec= %6.2f elapsed1= %6.2f  dist_traveled_z_ft = %8.3f  z_vector_mps= %6.2f exit_alt= %9.3f posz1= %9.3f posz2= %9.3f" , time_to_top_sec,elapsed1,dist_traveled_z,z_vector_mps,getprop("sim/walker/altitude-at-exit-ft"),posz1,(getprop("sim/walker/altitude-at-exit-ft")-posz1)));
 			##################
 			
 			posz2 = getprop("sim/walker/altitude-at-exit-ft") - dist_traveled_z;
@@ -660,11 +660,11 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 	#degree_roll为获取的转动参数，将其付给sim/current-view/heading-offset-deg
 	var walker_psi = getprop("sim/current-view/heading-offset-deg");
 	var degree_roll = getprop("engines/engine/oil-pressure-psi");
-	print(sprintf("degree_roll %d",degree_roll));
+	#print(sprintf("degree_roll %d",degree_roll));
 	if(degree_roll != nil)
 	{
 		walker_psi = walker_psi + degree_roll/36;
-		print(sprintf("walker_psi %d",walker_psi));
+		#print(sprintf("walker_psi %d",walker_psi));
 		if(c_view == view.indexof("Walk View"))
 			{
 			
@@ -672,9 +672,9 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 			}
 		#先获取当前模型的转动角度
 		var model_turn = getprop("sim/walker/model-heading-deg");
-		print(sprintf("model_turn %d",model_turn));
+		#print(sprintf("model_turn %d",model_turn));
 		#model_turn = model_turn ;
-		print(sprintf("model_turn %d",model_turn));
+		#print(sprintf("model_turn %d",model_turn));
 		#然后将其转换成弧度值，将其付给sim/walker/model-heading-deg，有时需要放大和缩小
 		var turn_add = degree_roll/36000*1000;
 		if (turn_add == nil) {turn_add = 0;}
@@ -683,7 +683,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 		model_turn = model_turn + degree_roll/36000*1000;
 		}
 		
-		print(sprintf("model_turn + degree_roll :%d",model_turn ));
+		#print(sprintf("model_turn + degree_roll :%d",model_turn ));
 		if (model_turn != nil)
 		{setprop("sim/walker/model-heading-deg",model_turn);}
 	}
@@ -704,18 +704,18 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 	degree_head = 0;
 	}
 	
-	print(sprintf(" xuy:speed_level=%5.8f, degree_head=%5.8f",speed_level,degree_head));
+	#print(sprintf(" xuy:speed_level=%5.8f, degree_head=%5.8f",speed_level,degree_head));
 	
 	var degree_proc = degree_head;
 	
 
-	print(sprintf("xuy: degree_head=%5.8f",degree_head));
+	#print(sprintf("xuy: degree_head=%5.8f",degree_head));
 	var posy2_t = speed_level*cos(degree_proc);
 	var posx2_t = speed_level*sin(degree_proc);
-	print(sprintf(" xuy:posy2_t=%5.8f, posx2_t=%5.8f",posy2_t,posx2_t));
+	#print(sprintf(" xuy:posy2_t=%5.8f, posx2_t=%5.8f",posy2_t,posx2_t));
 	
 	
-	print(sprintf(" chz1:latitude %13.8f longitude %13.8f",posy2,posx2));
+	#print(sprintf(" chz1:latitude %13.8f longitude %13.8f",posy2,posx2));
 	
 	measure_drift_count1 = getprop("sim/walker/latitude-deg");
 	measure_drift_count2 = getprop("sim/walker/longitude-deg");
@@ -732,7 +732,7 @@ setprop("sim/walker/roll-deg",roll_deg_get);
 	}
 	
 	
-	print(sprintf(" xuy:measure_drift_count1 %13.8f measure_drift_count2 %13.8f",measure_drift_count1,measure_drift_count2));
+	#print(sprintf(" xuy:measure_drift_count1 %13.8f measure_drift_count2 %13.8f",measure_drift_count1,measure_drift_count2));
 	
 	last_altitude = posz2;
 	setprop("sim/walker/altitude-ft", posz2);
@@ -955,6 +955,7 @@ var reinit_walker = func {
 }
 
 var init_common = func {
+	print("walk-mp.nas init_common"); 
 	setlistener("sim/walker/time-of-exit-sec", func(n) exit_time_sec = n.getValue());
 
 	setlistener("sim/walker/parachute-opened-altitude-ft", func(n) parachute_ft = n.getValue());
@@ -1045,7 +1046,8 @@ setlistener("engines/engine[3]/fuel-px-psi", func(n) {
 		reinit_walker();
 	});
 }
-settimer(init_common,0);
+settimer(init_common,0.1);
+# ...only once.
 
 
 #var theme_dialog = gui.OverlaySelector.new("Select Theme", "Aircraft/Generic/Human/Models/Themes", "sim/walker/theme-name", nil, "sim/multiplay/generic/string[10]");

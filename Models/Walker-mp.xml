@@ -2,6 +2,24 @@
 
 <PropertyList>
 
+ 
+
+  <text>
+    <alignment>center-bottom</alignment>
+  <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">text-value</type>
+    <property type="string">sim/multiplay/generic/string[1]</property>
+    <format type="string">%s</format>
+    <font>arial_black.txf</font>
+    <character-size>0.5</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <draw-alignment type="bool">false</draw-alignment>
+   
+  </text>
+
+
+
+
 <model>
 	<name>Walker MP</name>
 	<path>Aircraft/Y12B/Human/Models/walker.xml</path>
@@ -11,19 +29,6 @@
 <model>
 	<path>Aircraft/ufo/Models/cursor.ac</path>
 </model>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <nasal>
   <load>
@@ -110,6 +115,7 @@
    rplayer.getNode("sim/walker/outfit", 1).alias(rplayer.getNode("sim/multiplay/generic/int[1]"));
    rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode("sim/multiplay/generic/int[2]"));
  
+   rplayer.getNode("sim/multiplay/callsign", 1).alias(rplayer.getNode("sim/multiplay/generic/string[1]"));
  
    ##############################################################################
    
