@@ -8,7 +8,7 @@
 	<trigger-upon type="string">Standing</trigger-upon>
 	<position>
 		<name type="string">standing quiet 0</name>
-		<rest-sec type="float">30</rest-sec>
+		<rest-sec type="float">10</rest-sec>
 		<transit-sec type="float">1</transit-sec>
 		<limb>
 			<y-deg type="float">0</y-deg>
@@ -75,7 +75,7 @@
 	</position>
 	<position n="1">
 		<name type="string">look around right 1</name>
-		<rest-sec type="float">10</rest-sec>
+		<rest-sec type="float">1</rest-sec>
 		<transit-sec type="float">1.5</transit-sec>
 		<limb>
 			<y-deg type="float">0</y-deg>
@@ -208,7 +208,7 @@
 	<trigger-upon type="string">Standing</trigger-upon>
 	<position n="3">
 		<name type="string">standing 0.3</name>
-		<rest-sec type="float">10</rest-sec>
+		<rest-sec type="float">5</rest-sec>
 		<transit-sec type="float">0.5</transit-sec>
 		<limb>
 			<y-deg type="float">0</y-deg>
@@ -728,7 +728,7 @@
 	</position>
 	<position n="11">
 		<name type="string">standing 0.11</name>
-		<rest-sec type="float">15</rest-sec>
+		<rest-sec type="float">5</rest-sec>
 		<transit-sec type="float">0.5</transit-sec>
 		<limb>
 			<y-deg type="float">0</y-deg>

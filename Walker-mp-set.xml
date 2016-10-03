@@ -171,19 +171,7 @@
      
       
 <multiplay>
-	<surface-positions>
-	  <!--alt-ft -->
-	   <elevator-pos-norm alias="/sim/walker/altitude-ft"/>
-	   <!-- lat -->
-	   <left-aileron-pos-norm alias="/sim/walker/latitude-deg"/>
-	   <!-- lon -->
-	   <right-aileron-pos-norm alias="/sim/walker/longitude-deg"/>
-	   
-	   <flap-pos-norm       alias="/sim/model/walker[1]/limb[5]/hand-pose"/>
-	   <speedbrake-pos-norm alias="/sim/model/walker[1]/limb[8]/hand-pose"/>
-	   
-   </surface-positions>
-   
+	
    <generic>
 	   <!-- foo -->
 	   <float n="0" alias="/sim/model/walker[1]/limb[0]/y-deg"/>
@@ -216,28 +204,63 @@
 	   <!-- foo -->
 	   <float n="19" alias="/sim/model/walker[1]/limb[9]/x-deg"/>
 	   
-	   
-	   <!-- bar 
-	   <float n="20" alias="/sim/model/walker[1]/limb[9]/y-deg"/>
-	   <float n="21" alias="/sim/model/walker[1]/limb[9]/z-deg"/>
-	   
-	   <float n="22" alias="/sim/model/walker[1]/limb[10]/y-deg"/>
-	   <float n="23" alias="/sim/model/walker[1]/limb[11]/y-deg"/>
-	   
-	   <float n="24" alias="/sim/model/walker[1]/limb[12]/x-deg"/>
-	   <float n="25" alias="/sim/model/walker[1]/limb[12]/y-deg"/>
-	   <float n="26" alias="/sim/model/walker[1]/limb[12]/z-deg"/>
-	   
-	   <float n="27" alias="/sim/model/walker[1]/limb[13]/y-deg"/>
-	   <float n="28" alias="/sim/model/walker[1]/limb[14]/y-deg"/>
-	   
-	   -->
 	  
    </generic>
       
 </multiplay>
            
 </sim>
+
+
+<surface-positions>
+	  <!--not needed? alt-ft -->
+		<elevator-pos-norm alias="/sim/walker/altitude-ft"/>
+	   <!--not needed? lat -->
+		<left-aileron-pos-norm alias="/sim/walker/latitude-deg"/>
+	   <!--not needed? lon -->
+		<right-aileron-pos-norm alias="/sim/walker/longitude-deg"/>
+	   
+		<flap-pos-norm       alias="/sim/model/walker[1]/limb[5]/hand-pose"/>
+		<speedbrake-pos-norm alias="/sim/model/walker[1]/limb[8]/hand-pose"/>
+	
+		<wing-pos-norm       alias="/sim/model/walker[1]/limb[9]/y-deg"/>
+		<wing-fold-pos-norm  alias="/sim/model/walker[1]/limb[9]/z-deg"/>
+</surface-positions>
+   
+<gear>
+		<gear n="1">
+			<compression-norm alias="/sim/model/walker[1]/limb[10]/y-deg"/>
+			<position-norm    alias="/sim/model/walker[1]/limb[11]/y-deg"/>
+		</gear>
+		 <gear n="2">
+			<compression-norm alias="/sim/model/walker[1]/limb[12]/x-deg"/>
+			<position-norm    alias="/sim/model/walker[1]/limb[12]/y-deg"/>
+		</gear>
+		 <gear n="3">
+			<compression-norm alias="/sim/model/walker[1]/limb[12]/z-deg"/>
+			<position-norm    alias="/sim/model/walker[1]/limb[13]/y-deg"/>
+		</gear>
+		 <gear n="4">
+			<compression-norm alias="/sim/model/walker[1]/limb[14]/y-deg"/>
+			<position-norm    alias="/sim/model/walker[1]/limb/z-m"/>
+		</gear>
+</gear>
+	<!--	
+		<tailhook>
+			<position-norm    alias="/sim/model/walker[1]/limb[]/-deg"/>
+		</tailhook>
+		<launchbar>
+			<position-norm          alias="/sim/model/walker[1]/limb[]/-deg"/>
+			<holdback-position-norm alias="/sim/model/walker[1]/limb[]/-deg"/>
+		</launchbar>
+	</gear>
+	<canopy>
+		<position-norm alias="/sim/model/walker[1]/limb[]/-deg"/>
+	</canopy>
+	-->
+   
+
+
  
 <input>
 	<keyboard>
