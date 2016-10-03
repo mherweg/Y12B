@@ -215,9 +215,12 @@
 	   <float n="18" alias="/sim/model/walker[1]/limb[8]/y-deg"/>
 	   <!-- foo -->
 	   <float n="19" alias="/sim/model/walker[1]/limb[9]/x-deg"/>
+	   
+	   
+	   <!-- bar 
 	   <float n="20" alias="/sim/model/walker[1]/limb[9]/y-deg"/>
 	   <float n="21" alias="/sim/model/walker[1]/limb[9]/z-deg"/>
-	   <!-- foo -->
+	   
 	   <float n="22" alias="/sim/model/walker[1]/limb[10]/y-deg"/>
 	   <float n="23" alias="/sim/model/walker[1]/limb[11]/y-deg"/>
 	   
@@ -227,6 +230,8 @@
 	   
 	   <float n="27" alias="/sim/model/walker[1]/limb[13]/y-deg"/>
 	   <float n="28" alias="/sim/model/walker[1]/limb[14]/y-deg"/>
+	   
+	   -->
 	  
    </generic>
       
@@ -302,13 +307,13 @@
 	</Y12B>
 	
   <dual_control_tools>
-   <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+   <file>Aircraft/Generic/DualControl/dual-control-tools.nasXXX</file>
   </dual_control_tools>
   <aircraft_dual_control>
-   <file>Aircraft/Y12B/Nasal/Y12B-walker-dual-control.nas</file>
+   <file>Aircraft/Y12B/Nasal/Y12B-walker-dual-control.nasXXX</file>
   </aircraft_dual_control>
   <dual_control>
-   <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>
+   <file>Aircraft/Generic/DualControl/copilot-dual-control.nasXXX</file>
   </dual_control>
 </nasal>
 
