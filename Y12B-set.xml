@@ -288,7 +288,7 @@
 							<property>controls/lighting/signal-light1</property>
 						</binding>
 					</item>
-             
+             <!-- not needed
 					<item>
 						<label>Select MP passenger</label>
 						<binding>
@@ -298,7 +298,7 @@
 						</script>
 						</binding>
 					</item>
-					 
+				 -->	 
              
                   </menu>
         </default>
@@ -534,8 +534,9 @@
 
   
 <nasal>
+	<!-- disabled walkview 
   <walkview>
-   <file>Aircraft/Generic/WalkView/walkview.nasXXX</file>
+   <file>Aircraft/Generic/WalkView/walkview.nas</file>
    <script>
     # a 1.7m wide strip  path running in the fore-aft direction.
     
@@ -548,6 +549,7 @@
                                             cabinConstraint);
    </script>
   </walkview>
+  -->
 	<Y12B>
 		<file>Aircraft/Y12B/Nasal/doors.nas</file>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
@@ -566,6 +568,9 @@
 	
 </nasal>
 
+
+<!-- static way of making up to 2 MP players visible 
+.. as a fallback to the dynamic MP properties, that the Walker-mp has now -->  
 <ai>
 	<models>
 		<multiplayer>

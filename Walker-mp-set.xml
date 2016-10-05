@@ -18,7 +18,7 @@
   <status>experimental</status>
   <aircraft-version>0.1</aircraft-version>
 
-  <flight-model>null</flight-model>
+  <flight-model>ufo</flight-model>
 
   <model>
    <path>Aircraft/Y12B/Models/Walker-mp.xml</path>
@@ -149,7 +149,7 @@
 <menubar>
    <default>
     <menu n="100">
-     <label>MP-Walker</label>
+     <label>Walker-mp</label>
      <item>
       <label>Select MP-aircraft</label>
       <binding>
@@ -207,11 +207,20 @@
 	   <int n="0"   alias="/sim/walker/character"/>
 	   <int n="1"   alias="/sim/walker/outfit"/>
 	   <int n="2"   alias="/sim/walker/gender"/>
+	   <int n="3"   alias="/sim/walker/outside"/>
+	   
 	  
 	   <string n="1" alias="/sim/multiplay/callsign"/>
    </generic>
       
 </multiplay>
+         
+ <import>
+        <path>Huds/Sets/controls.xml</path>
+        <x-offset>-100</x-offset>
+        <y-offset>70</y-offset>
+</import>         
+         
            
 </sim>
 
@@ -306,7 +315,70 @@
 				<script>walk.open_chute()</script>
 			</binding>
 		</key>
-	
+		
+		<!-- see Y12B.nas for this addition to the UFO FDM -->
+		<key n="362">
+				<name>Home</name>
+				<desc>Hover Up</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Y12B.up(1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>Y12B.up(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="363">
+				<name>End</name>
+				<desc>Hover Down</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Y12B.up(-1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>Y12B.up(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+			
+			<key n="44">
+				<name>,</name>
+				<desc>skew left</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>Y12B.leftright(-1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>Y12B.leftright(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+			
+			<key n="46">
+				<name>.</name>
+				<desc>skew right</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>Y12B.leftright(1)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>Y12B.leftright(0)</script>
+					</binding>
+				</mod-up>
+			</key>
+			
 	</keyboard>
 </input>
 
@@ -314,8 +386,8 @@
   <walkview>
    <file>Aircraft/Generic/WalkView/walkview.nas</file>
    <script>
-    # The keel walk-way is a long narrow path running in the fore-aft direction.
-    # Additionally there is a path to the side engine cars.
+    # The cabin walk-way is a 1.7m wide path running in the fore-aft direction.
+    
     var cabinConstraint =
          walkview.LinePlane.new([-5.55, 0.0, 1.0],
                                 [-0.5, 0.0, 1.0],1.7);
@@ -326,7 +398,7 @@
    </script>
   </walkview>
 	<Y12B>
-		<file>Aircraft/Y12B/Nasal/doors.nas</file>
+		
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
 		
 	</Y12B>

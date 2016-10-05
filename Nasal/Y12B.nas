@@ -45,6 +45,23 @@ var up = func(dir) {
 	vert_factor += 0.25;
 }
 
+#UFO: slide left or right
+var hor_factor = 1;
+var leftright = func(dir) {
+	if (!dir)
+		return hor_factor = 1;
+	var lat = getprop("position/latitude-deg");
+    var lon = getprop("position/longitude-deg");
+    var alt = getprop("position/altitude-ft");
+    var heading = getprop("orientation/heading-deg");
+  	var ep = geo.Coord.new();
+	ep.set_latlon(lat, lon,alt);
+	ep.apply_course_distance(heading+90, 0.15 * hor_factor * dir);
+	setprop("/position/latitude-deg", ep.lat());
+	setprop("/position/longitude-deg", ep.lon());
+	hor_factor += 0.50;
+}
+
 
 # avoid going under ground
 var update_main = func {
@@ -84,8 +101,4 @@ setlistener("sim/signals/fdm-initialized", func {
 	print (t);
 	prestart_main();
 });
-
-# see doors.nas
-#var cabin_door = aircraft.door.new("sim/model/Y12B/cabin_door", 2);
-#var seat5 =      aircraft.door.new("sim/model/Y12B/seat5", 1);
 

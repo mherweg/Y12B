@@ -2,27 +2,52 @@
 
 <PropertyList>
 
-  <text>
+<!-- label with players callsign -->
+<text>
+	  <name>Callsign</name>
+	  <offsets> 
+			<z-m>1.2</z-m>
+			<x-m>0.1</x-m>
+		</offsets>
     <alignment>center-bottom</alignment>
     <axis-alignment>yz-plane</axis-alignment>
     <type type="string">text-value</type>
     <property type="string">sim/multiplay/generic/string[1]</property>
     <format type="string">%s</format>
     <font>arial_black.txf</font>
-    <character-size>0.5</character-size>
+    <character-size>0.1</character-size>
     <character-aspect-ratio type="double">1.0</character-aspect-ratio>
     <draw-alignment type="bool">false</draw-alignment>   
-  </text>
+</text>
+<animation>
+        <type>material</type>
+        <object-name>Callsign</object-name>
+        <emission>
+                <red>1.0</red>
+                <green>0.8</green>
+                <blue>0.0</blue>
+        </emission>
+</animation>
 
 <model>
-	<name>Walker MP</name>
+	<name>Walker-mp</name>
 	<path>Aircraft/Y12B/Human/Models/walker.xml</path>
 </model>
+<!-- hide walker when inside cabin-->
+<animation>
+        <type>select</type>
+		<object-name>Walker-mp</object-name>
+	<!--	<object-name>Callsign</object-name>  -->
+		<condition>
+				 <property>/sim/walker/outside</property>
+		</condition>
+</animation>
 
-<!-- debug -->
+<!-- for debugging 
 <model>
 	<path>Aircraft/ufo/Models/cursor.ac</path>
 </model>
+-->
 
 <nasal>
   <load>
@@ -104,9 +129,10 @@
    rplayer.getNode("sim/walker/parachute-opened-altitude-ft", 1).alias(rplayer.getNode("gear/launchbar/holdback-position-norm"));   
  
    rplayer.getNode("sim/walker/character", 1).alias(rplayer.getNode("sim/multiplay/generic/int[0]"));
-   rplayer.getNode("sim/walker/outfit", 1).alias(rplayer.getNode("sim/multiplay/generic/int[1]"));
-   rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode("sim/multiplay/generic/int[2]"));
- 
+   rplayer.getNode("sim/walker/outfit", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[1]"));
+   rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[2]"));
+   rplayer.getNode("sim/walker/outside", 1).alias(rplayer.getNode("sim/multiplay/generic/int[3]"));
+   
    rplayer.getNode("sim/multiplay/callsign", 1).alias(rplayer.getNode("sim/multiplay/generic/string[1]"));
  
    ##############################################################################
