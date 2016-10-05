@@ -2,16 +2,6 @@
 
 
 <PropertyList>
-<!--
-<nasal>
-    <load>
-      update.add("Aircraft/Y12B/Human/Models/Themes", "sim/multiplay/Y12B/string[10]");
-    </load>
-    <unload>
-      livery_update.stop();
-    </unload>
-  </nasal>
--->
 
  <model>
 	<name>male</name>
@@ -30,16 +20,6 @@
    </equals>
   </condition>
  </animation>
-
-<!--
- <animation>
-  <type>scale</type>
-  <object-name>male</object-name>
-  <x-offset>1.1</x-offset>
-  <y-offset>1.0</y-offset>
-  <z-offset>0.9</z-offset>
- </animation>
--->
 
  <model>
 	<name>female</name>
@@ -104,27 +84,19 @@
    </equals>
   </condition>
  </animation>
-<!--
- <animation>
-  <type>scale</type>
-  <object-name>female</object-name>
-  <x-offset>1.07</x-offset>
-  <y-offset>1.082</y-offset>
-  <z-offset>1.082</z-offset>
- </animation>
 
-0.075 up
-0.0092 aft
--->
 
 
 <model>
-  <path>Aircraft/Y12B/Human/Models/chute.xml</path>
-  
+  <!-- old: <path>Aircraft/Y12B/Human/Models/chute.xml</path>   -->
+  <path>Aircraft/Y12B/Human/Models/round_chute.xml</path>
   <offsets>
-   <z-m>0.9</z-m>
+   <z-m>1.4</z-m>
+   <heading-deg>-90</heading-deg>
   </offsets>
 </model>
+
+
 
 
 <!-- does not fit
