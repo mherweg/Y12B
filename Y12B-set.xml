@@ -2,18 +2,18 @@
 
 <PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
 
- <!--	
+ <!--	97 knots = 50m/s , 500m in 10 sec, 3km in 1 minute
 
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
 		<altitude type="string">altitude-hold</altitude>
-    
+		<speed>speed-with-throttle</speed>
     </locks>
     <settings>
 		<true-heading-deg type="double">90</true-heading-deg>
 		<target-altitude-ft type="double">3000</target-altitude-ft>
-		<target-speed-kt>200</target-speed-kt>
+		<target-speed-kt>97</target-speed-kt>
     </settings>
 </autopilot>
 
@@ -333,6 +333,13 @@
                
 </sim>
 
+<engines>
+	<engine>
+		<!-- ufo max speed change  with [ and ] -->
+			<speed-max-mps>100</speed-max-mps>
+	</engine>
+</engines>
+
 <controls>
 	<doors>
 		<door2>
@@ -350,7 +357,6 @@
 		</engine>
 	</engines>
 	
-	
 	<lighting>
 		<!-- 0 or false :off -->
 		<!--1 or true  :on -->
@@ -365,8 +371,6 @@
 		<signal-light3 type="bool">0</signal-light3>
 	</lighting>
 		
-	
-	
 </controls>
 
 <input>

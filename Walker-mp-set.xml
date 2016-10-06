@@ -46,7 +46,7 @@
   </remote>
  
   
-   <view n="0">
+ <view n="0">
    <name>Passenger View</name>
    <type>lookfrom</type>
    <config>
@@ -152,9 +152,6 @@
 		</config>
 	</view>
   
-
-
-
 <menubar>
    <default>
     <menu n="100">
@@ -169,11 +166,56 @@
        </script>
       </binding>
      </item>
+     <item>
+      <label>Outfit: green, rigged</label>
+      <binding>
+       <command>property-assign</command>
+       <property>/sim/walker/outfit</property>
+       <value>1</value>
+      </binding>
+      <binding>
+       <command>property-assign</command>
+       <property>/sim/walker/character</property>
+       <value>0</value>
+      </binding>
+      <binding>
+       <command>property-assign</command>
+       <property>/sim/walker/headgear</property>
+       <value>3</value>
+      </binding>
+     </item>
+     
+      <item>
+      <label>Outfit: soldierVR, not rigged</label>
+      <binding>
+       <command>property-assign</command>
+       <property>/sim/walker/outfit</property>
+       <value>5</value>
+      </binding>
+      <binding>
+       <command>property-assign</command>
+       <property>/sim/walker/character</property>
+       <value>5</value>
+      </binding>
+      <binding>
+       <command>property-assign</command>
+       <property>/sim/walker/headgear</property>
+       <value>0</value>
+      </binding>
+     </item>
+     
+     
+     
     </menu>
    </default>
   </menubar>
 
-     
+<!-- custom HeadUpDisplay (press h)-->     
+<import>
+        <path>Huds/Sets/controls.xml</path>
+        <x-offset>-100</x-offset>
+        <y-offset>70</y-offset>
+</import>      
      
      
      
@@ -225,12 +267,7 @@
    </generic>
       
 </multiplay>
-         
- <import>
-        <path>Huds/Sets/controls.xml</path>
-        <x-offset>-100</x-offset>
-        <y-offset>70</y-offset>
-</import>         
+            
          
            
 </sim>

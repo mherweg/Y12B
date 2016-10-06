@@ -2,6 +2,11 @@
 
 <PropertyList>
 	<path>soldierVR-body.ac</path>
+	<offsets> 
+			<z-m>-0.7</z-m>
+	</offsets>
+	
+	
 	<animation>
 		<enable-hot type="bool">false</enable-hot>
 	</animation>

@@ -26,25 +26,13 @@
 	
 	<sim n="0">
 		<model n="0">
-			<crew>
-				<cockpit-position type="int">0</cockpit-position>
-				<pilot>
-					<chair-back type="int">0</chair-back>
-					<visible type="bool">true</visible>
-				</pilot>
-				<walker>
-					<visible type="bool">true</visible>
-					<x-offset-m type="float">-0.8</x-offset-m>
-					<y-offset-m type="float">1.2</y-offset-m>
-					<z-offset-m type="float">0.0</z-offset-m>
-					<head-offset-deg type="float">0.0</head-offset-deg>
-				</walker>
-			</crew>
+			
 			<map>
 				<default_exit>
 
 				</default_exit>
 			</map>
+			
 			<walker n="1">
 				<animate>
 					<dialog-position type="int">0</dialog-position>
@@ -154,22 +142,24 @@
 		</model>
 		
 	<walker>
-		<character>0</character>
+		<character>5</character>
 		<!-- male -->
 		<gender>0</gender>
-		<!--  green -->
-		<outfit>1</outfit>
-		<hair>1</hair>
-		<!--  helmet -->
-		<headgear>3</headgear>
+		<!--  1=green  5=soldier VR-->
+		<outfit>5</outfit>
+		<hair>0</hair>
+		<!--  headgear=3 - helmet -->
+		<headgear>0</headgear>
 		<eyewear>0</eyewear>
 		<tools>0</tools>
 		<outside type="bool">false</outside>
 		<walking type="int">0</walking>
 		<walking-momentum type="bool">false</walking-momentum>
 		<speed-mps type="float">0.9</speed-mps>
+		
 		<latitude-deg type="float">0.0</latitude-deg>
 		<longitude-deg type="float">0.0</longitude-deg>
+		
 		<altitude-ft type="float">0.0</altitude-ft>
 		<heading-deg type="float">0.0</heading-deg>
 		<pitch-deg type="float">0.0</pitch-deg>
