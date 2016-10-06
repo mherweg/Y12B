@@ -251,12 +251,12 @@
 				
                      <greater-than>
                         <property>/velocities/airspeed-kt</property>
-                        <value>90.0</value>
+                        <value>40.0</value>
                     </greater-than>   
               
              </condition>
             <volume>
-                <property>/controls/doors/door0/position-norm</property>
+                <property>sim/multiplay/generic/float</property>
                 <factor>0.9</factor>
             </volume>
            
@@ -266,7 +266,7 @@
                 <z>2.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>20.0</max-dist>
+            <max-dist>50.0</max-dist>
         </door>
 
        
@@ -277,12 +277,12 @@
             <condition>
 				<and>
                     <less-than>
-                    <property>/controls/doors/door0/position-norm</property>
+                    <property>sim/multiplay/generic/float</property>
                     <value>1.0</value>
                     </less-than>
                     
                     <greater-than>
-                    <property>/controls/doors/door0/position-norm</property>
+                    <property>sim/multiplay/generic/float</property>
                     <value>0.0</value>
                     </greater-than>
                 </and>
@@ -297,7 +297,7 @@
                 <z>2.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>10.0</max-dist>
+            <max-dist>100.0</max-dist>
         </door>
 
 
@@ -311,12 +311,12 @@
             <condition>
 				<and>
                     <less-than>
-                    <property>/controls/doors/door2/position-norm</property>
+                    <property>sim/multiplay/generic/float[1]</property>
                     <value>1.0</value>
                     </less-than>
                     
                     <greater-than>
-                    <property>/controls/doors/door2/position-norm</property>
+                    <property>sim/multiplay/generic/float[1]</property>
                     <value>0.0</value>
                     </greater-than>
                 </and>
@@ -333,8 +333,45 @@
                 <z>2.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>10.0</max-dist>
+            <max-dist>100.0</max-dist>
         </door>
+
+		<light>
+            <name>ready-signal</name>
+            <path>Sounds/dhc6-alarm.wav</path>
+            <condition>
+                <equals>
+                    <property>sim/multiplay/generic/int[0]</property>
+                    <value>2</value>
+                </equals>
+            </condition>
+             <position>
+                <x>-3</x>
+                <y>0.0</y>
+                <z>2.5</z>
+            </position>
+            <reference-dist>1.0</reference-dist>
+            <max-dist>200.0</max-dist>
+        </light>
+
+		<light>
+            <name>jump-signal</name>
+            <path>Sounds/dhc6-cabinalert.wav</path>
+            <condition>
+                <equals>
+                    <property>sim/multiplay/generic/int[0]</property>
+                    <value>3</value>
+                </equals>
+            </condition>
+             <position>
+                <x>-3</x>
+                <y>0.0</y>
+                <z>2.5</z>
+            </position>
+            <reference-dist>1.0</reference-dist>
+            <max-dist>200.0</max-dist>
+        </light>
+
 
 
     </fx>

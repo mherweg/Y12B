@@ -73,6 +73,15 @@ var update_main = func {
 		#altitude_ft_Node.setDoubleValue(altitude);
 		setprop("position/altitude-ft", altitude);
 	}
+	#auto gear
+	var agl= altitude-gnd_elev;
+	print (agl);
+	if (agl > 300){
+			setprop("/controls/gear/gear-down", 0);
+		}	else {
+			setprop("/controls/gear/gear-down", 1);
+		}	
+	
 	
 settimer(update_main, 1);
 }

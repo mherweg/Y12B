@@ -120,7 +120,7 @@
 </model>
 
     <sound>
-        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+        <path>Aircraft/Y12B/Sounds/Y12B-mp-sound.xml</path>
     </sound>
     
     
@@ -174,7 +174,7 @@
     </config>
   </view>
   
-  <!--	disabled in cabin walk view to make outside walking possible.
+  <!--	disabled in cabin walk view to make outside walking(with walk.nas.orig) possible.
   <view n="103">
    <name>walk in cabin view</name>
    <internal>true</internal>
@@ -267,22 +267,28 @@
                 <label>Harbin Y-12B</label>
                 <enabled type="bool">true</enabled>
                 
-                    <item>
-						<label>ready</label>
+                   <item>
+						<label>red: wait</label>
 						<binding>
-							<command>property-toggle</command>
-							<property>controls/lighting/signal-light1</property>
+							<command>property-assign</command>
+							<property>controls/lighting/signal-light</property>
+							<value>1</value>
+						</binding>
+					</item>
+                    <item>
+						<label>yellow: ready</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/lighting/signal-light</property>
+							<value>2</value>
 						</binding>
 					</item>
 					<item>
-						<label>jump</label>
+						<label>green: jump</label>
 						<binding>
-							<command>property-toggle</command>
-							<property>controls/lighting/signal-light3</property>
-						</binding>
-						<binding>
-							<command>property-toggle</command>
-							<property>controls/lighting/signal-light1</property>
+							<command>property-assign</command>
+							<property>controls/lighting/signal-light</property>
+							<value>3</value>
 						</binding>
 					</item>
              <!-- not needed
@@ -318,6 +324,7 @@
    <!-- turning propellers -->
    <float n="2" alias="/controls/engines/engine/throttle"/>
    <float n="3" alias="/controls/engines/engine[1]/throttle"/>
+   <int   n="0" alias="/controls/lighting/signal-light"/>
    
    <!--alt-ft -->
    <float n="4" alias="/sim/walker/altitude-ft"/>
@@ -346,6 +353,9 @@
 			<position-norm type="float">1.0</position-norm >
 		</door2>			
 	</doors>
+	<gear>
+		<gear-down type="int">1</gear-down>
+	</gear>
 
 	<engines>
 		<engine>
@@ -358,17 +368,10 @@
 	</engines>
 	
 	<lighting>
-		<!-- 0 or false :off -->
-		<!--1 or true  :on -->
-		  
-		<!--yellow --> 
-		<signal-light1 type="bool">0</signal-light1>
+		<!-- 0  :off -->
+		<!-- 1 red  , 2=yellow, 3=green -->
+		<signal-light type="int">1</signal-light>
 		
-		<!--red -->
-		<signal-light2 type="bool">0</signal-light2>
-		
-		<!--green -->
-		<signal-light3 type="bool">0</signal-light3>
 	</lighting>
 		
 </controls>

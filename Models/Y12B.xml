@@ -13,7 +13,7 @@
 
 
     <sound>
-        <path>Aircraft/Y12B/Sounds/Y12B-sound.xml</path>
+        <path>Aircraft/Y12B/Sounds/Y12B-mp-sound.xml</path>
     </sound>
 
 <nasal>
@@ -32,6 +32,9 @@
      alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
    rplayer.getNode("controls/engines/engine[1]/throttle", 1).
      alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
+   
+   rplayer.getNode("controls/lighting/signal-light", 1).
+     alias(rplayer.getNode("sim/multiplay/generic/int[0]"));
        
    ##############################################################################
   
@@ -39,7 +42,7 @@
 </nasal>
 
 
-
+<!-- can not see any effect?!  -->
 <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
@@ -184,11 +187,9 @@
 		<object-name>wheels</object-name>
 		<object-name>landing_gear</object-name>
 		<condition>
-			 <less-than>
-				 <property>position/altitude-agl-ft</property>
-                 <value>100</value>
-           </less-than>	
-		</condition>
+				 <property>controls/gear/gear-down</property>
+        </condition>        
+		
 </animation>
 
 <!--== cabin door ==-->
@@ -314,28 +315,39 @@
 <!-- jump signal lights -->
 
 
-<!-- light1: yellow -->
+<!-- light1: red -->
 <animation> 
   <type>material</type> 
   <object-name>signal-light1</object-name>
-  <emission>
-   <red>1.0</red>
-   <green>1.0</green>
-   <blue>0.0</blue>
-   <factor-prop>controls/lighting/signal-light1</factor-prop>
-  </emission>
-</animation>
- 
-
-<!-- light2: red -->
-<animation> 
-  <type>material</type> 
-  <object-name>signal-light2</object-name>
+  <condition>
+			 <equals>
+				 <property>controls/lighting/signal-light</property>
+                 <value>1</value>
+           </equals>	
+  </condition>
   <emission>
    <red>1.0</red>
    <green>0.0</green>
    <blue>0.0</blue>
-   <factor-prop>controls/lighting/signal-light2</factor-prop>
+  </emission>
+</animation>
+ 
+
+<!-- light2: yellow -->
+<animation> 
+  <type>material</type> 
+  <object-name>signal-light2</object-name>
+  <condition>
+			 <equals>
+				 <property>controls/lighting/signal-light</property>
+                 <value>2</value>
+           </equals>	
+  </condition>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>0.0</blue>
+   
   </emission>
 </animation>
 
@@ -344,11 +356,17 @@
 <animation> 
   <type>material</type> 
   <object-name>signal-light3</object-name>
+  <condition>
+			 <equals>
+				 <property>controls/lighting/signal-light</property>
+                 <value>3</value>
+           </equals>	
+  </condition>
   <emission>
    <red>0.0</red>
    <green>1.0</green>
    <blue>0.0</blue>
-   <factor-prop>controls/lighting/signal-light3</factor-prop>
+  
   </emission>
 </animation>
 
