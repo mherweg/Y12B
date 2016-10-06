@@ -56,7 +56,7 @@
 			<hair>1</hair>
 	</npc> 
 	
-	 <!--  copilot -->
+   <!--  copilot 
    <npc n="0">
      <pose include = "Include/ju52_pilot.xml"></pose>
             <gender>0</gender>
@@ -65,17 +65,18 @@
              <headgear>1</headgear>
            <hair>2</hair>
      </npc>
+     -->
      
       <!--  person on seat 5 -->
      <npc n="1">
-     <pose include = "Include/walker_sit.xml"></pose>
+   <!-- outfit5=soldierVR has no poses  <pose include = "Include/walker_sit.xml"></pose>   -->
             <gender>0</gender>
-            <character>0</character>
-           <outfit>1</outfit>
-			<headgear>3</headgear>
+            <character>5</character>
+            <outfit>5</outfit>
+			<headgear>0</headgear>
 			<eyewear>0</eyewear>
 			<mask>0</mask>
-			<hair>1</hair>
+			<hair>0</hair>
      </npc>
 
      <!--  jump commander 
@@ -84,7 +85,6 @@
      -->
      <npc n="2">
      <pose include = "Human/Models/Animations/commander_lift_right_arm.xml">
-
       <position>
 		 <limb n="3">
 			 <x-deg type="double">80</x-deg>
@@ -92,12 +92,9 @@
 	     </limb>
 	     <limb n="5">
 			 <hand-pose>2</hand-pose>
-		</limb>	 
-			 
+		</limb>	  
       </position> 
-     
      </pose>
-    
             <gender>0</gender>
             <character>0</character>
            <outfit>1</outfit>

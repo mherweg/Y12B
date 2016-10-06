@@ -23,11 +23,15 @@
 		<char0-path>Aircraft/Y12B/Human/Models/waldo.xml</char0-path>
 		<char1-path>Aircraft/Y12B/Human/Models/caleb.xml</char1-path>
 		<char2-path>Aircraft/Y12B/Human/Models/marty.xml</char2-path>
+		<char5-path>Aircraft/Y12B/Human/Models/soldierVR.xml</char5-path>
+		
 		<outfit0>Aircraft/Y12B/Human/Models/outfit/default-m.xml</outfit0>
 		<outfit1>Aircraft/Y12B/Human/Models/outfit/flightsuit-m.xml</outfit1>
 		<outfit2>Aircraft/Y12B/Human/Models/outfit/airliner-m.xml</outfit2>
 		<outfit3>Aircraft/Y12B/Human/Models/outfit/dirtysuit.xml</outfit3>
 		<outfit4>Aircraft/Y12B/Human/Models/outfit/coat-m.xml</outfit4>
+	    <outfit5>Aircraft/Y12B/Human/Models/outfit/soldierVR.xml</outfit5>
+	
 	</models>
 	
 	
@@ -289,6 +293,21 @@
   </condition>
  </animation>
 
+<model>
+	<name>char5</name>
+  <path alias="../../models/char5-path"/>
+ </model>
+ <animation>
+  <type>select</type>
+  <object-name>char5</object-name>
+  <condition>
+   <equals>
+		<property alias="../../../../appearence-props/character"/>
+    <value>5</value>
+   </equals>
+  </condition>
+ </animation>
+
 
 <!-- Outfits -->
 
@@ -362,6 +381,21 @@
    <equals>
 		<property alias="../../../../appearence-props/outfit"/>
     <value>4</value>
+   </equals>
+  </condition>
+ </animation>
+
+<model> 
+  <path alias="../../models/outfit5"/>
+		<name>outfit5</name>
+	</model>
+ <animation>
+  <type>select</type>
+  <object-name>outfit5</object-name>
+  <condition>
+   <equals>
+		<property alias="../../../../appearence-props/outfit"/>
+    <value>5</value>
    </equals>
   </condition>
  </animation>

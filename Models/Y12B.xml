@@ -81,8 +81,8 @@
 			<heading-deg>90</heading-deg>
 			<x-m>-3.2</x-m>
 			<y-m>0.65</y-m>
-			<!--== the pose from the bluebird has a Z offset ==-->
-			<z-m>0.90</z-m>
+			<!--== the pose from the bluebird has a Z offset of 0.9 ==-->
+			<z-m>0.1</z-m>
 		</offsets>
 </model>
  <!--== shrink sitting person in cabin from 1.73m to 1.38m ==-->	

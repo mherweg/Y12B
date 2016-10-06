@@ -22,7 +22,8 @@
   <status>experimental</status>
   <aircraft-version>0.1</aircraft-version>
 
-  <flight-model>ufo</flight-model>
+ <!-- <flight-model>  ufo  or null </flight-model>   -->
+      <flight-model>ufo</flight-model>
 
   <model>
    <path>Aircraft/Y12B/Models/Walker-mp.xml</path>
@@ -39,9 +40,11 @@
 	
   </model>
 
+
   <remote>
-   <pilot-callsign type="string">LittleC</pilot-callsign>
+   <pilot-callsign type="string">Y-pilot</pilot-callsign>
   </remote>
+ 
   
    <view n="0">
    <name>Passenger View</name>
@@ -424,11 +427,35 @@
 
 
 <!-- hack: make 2 MP players visible (only if they are Walker-mp! ) -->
-<!--  todo: use generic int for that -->
+<!--  done: use generic int for character,outfit, gender, outside -->
 <ai>
 	<models>
 		<multiplayer>
 			<sim>
+			<model>	
+				<!-- person sitting in Y12B. Y12B has to be the first in the list of players-->
+				<npc n="1">
+					<!--   pose include = "Include/walker_sit.xml"   -->
+					<gender>0</gender>
+					<character>5</character>
+					<outfit>5</outfit>
+					<headgear>0</headgear>
+					<eyewear>0</eyewear>
+					<mask>0</mask>
+					<hair>0</hair>	
+				</npc>
+				 <!--  pilot -->
+				<npc n="3">
+				  <pose include = "Include/ju52_pilot.xml"></pose>
+				  <gender>0</gender>
+				  <character>0</character>
+				  <outfit>1</outfit>
+				  <headgear>1</headgear>
+						<eyewear>1</eyewear>
+						<mask>0</mask>
+						<hair>1</hair>
+				</npc> 
+			</model>
 				<walker>
 					<character>1</character>
 					<outfit>0</outfit>
@@ -436,6 +463,7 @@
 				</walker>
 			</sim>
 		</multiplayer>
+		
 		<multiplayer n="1">
 			<sim>
 				<walker>
