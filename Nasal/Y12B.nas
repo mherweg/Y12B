@@ -75,7 +75,7 @@ var update_main = func {
 	}
 	#auto gear
 	var agl= altitude-gnd_elev;
-	print (agl);
+	#print (agl);
 	if (agl > 300){
 			setprop("/controls/gear/gear-down", 0);
 		}	else {

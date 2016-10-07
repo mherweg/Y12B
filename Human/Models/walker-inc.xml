@@ -217,37 +217,6 @@
   </condition>
  </animation>
 
-<!-- Tool right Hand 
-
- <animation>
-	<name>toolright</name>
-  <object-name>tool1r</object-name>
- </animation>	
-
-	<model> 
-		<path>Aircraft/Y12B/Human/Models/equipment/m1911.xml</path>
-		<name>tool1r</name>
-	<offsets>
-		<x-m>0.02795</x-m>
-		<y-m>0.81761</y-m>
-		<z-m>0.46898</z-m>
-		<pitch-deg>-90</pitch-deg>
-		<heading-deg></heading-deg>
-		<roll-deg>90.0</roll-deg>
-	</offsets>
-	</model>
- <animation>
-  <type>select</type>
-  <object-name>tool1r</object-name>
-  <condition>
-   <equals>
-		<property alias="../../../../appearence-props/toolr"/>
-    <value>1</value>
-   </equals>
-  </condition>
- </animation>
-
--->
 
 <!-- Character -->
  <model>

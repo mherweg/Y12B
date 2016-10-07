@@ -150,6 +150,7 @@
 		<hair>0</hair>
 		<!--  headgear=3 - helmet -->
 		<headgear>0</headgear>
+		<!-- TODO: orange glases fpr soldierVR -->
 		<eyewear>0</eyewear>
 		<tools>0</tools>
 		<outside type="bool">false</outside>
@@ -157,10 +158,10 @@
 		<walking-momentum type="bool">false</walking-momentum>
 		<speed-mps type="float">0.9</speed-mps>
 		
-		<latitude-deg type="float">0.0</latitude-deg>
-		<longitude-deg type="float">0.0</longitude-deg>
+		<latitude-deg type="float">31.12665764</latitude-deg>
+		<longitude-deg type="float">113.90406021</longitude-deg>
 		
-		<altitude-ft type="float">0.0</altitude-ft>
+		<altitude-ft type="float">50.0</altitude-ft>
 		<heading-deg type="float">0.0</heading-deg>
 		<pitch-deg type="float">0.0</pitch-deg>
 		<roll-deg type="float">0.0</roll-deg>
@@ -203,20 +204,6 @@
 						</binding>
 					</item>
 
-					<item>
-						<label>Select Theme</label>
-						<binding>
-                <command>nasal</command>
-                <script>walk.theme_dialog.toggle()</script>
-              </binding>
-					</item>
-					<item>
-						<label>Select Equipment</label>
-						<binding>
-                <command>nasal</command>
-                <script>walk.equip_dialog.toggle()</script>
-              </binding>
-					</item>
 					<item>
 						<label>Toggle Walker outside</label>
 						<binding>

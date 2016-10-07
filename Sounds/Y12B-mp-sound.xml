@@ -38,7 +38,7 @@
 		<z>2.33</z>
 	</position>
 	<reference-dist>2.0</reference-dist>
-	<max-dist>2000.0</max-dist>
+	<max-dist>1000.0</max-dist>
 </prop>
 
  <!-- Engine 1 interiour sound-->
@@ -63,7 +63,7 @@
 	</volume> 
 	<volume>
 		<property>controls/engines/engine[0]/throttle</property>
-		<factor>1</factor>
+		<factor>0.5</factor>
 	</volume>
 	<pitch>
 		 <property>controls/engines/engine[0]/throttle</property>
@@ -76,7 +76,7 @@
 		<z>2.33</z>
 	</position>
 	<reference-dist>2.0</reference-dist>
-	<max-dist>2000.0</max-dist>
+	<max-dist>1000.0</max-dist>
 </propI>
 
 
@@ -84,8 +84,7 @@
 
         <prop>
             <name>propeller2</name>
-            <reference-dist>20.0</reference-dist>
-            <max-dist>5000.0</max-dist>
+           
             <mode>looped</mode>
             <path>Aircraft/Y12B/Sounds/fullpower.wav</path>
             <property>sim/sound/engine[1]</property>
@@ -115,6 +114,8 @@
                 <y>2.6</y>
                 <z>2.33</z>
             </position>
+             <reference-dist>2.0</reference-dist>
+            <max-dist>1000.0</max-dist>
         </prop>
 <!-- Engine 2 internal -->
         <prop>
@@ -136,7 +137,7 @@
             </condition>
             <volume>
                 <property>controls/engines/engine[1]/throttle</property>
-                <factor>1.0</factor>
+                <factor>0.5</factor>
                 <offset>0.3</offset>
             </volume>
             

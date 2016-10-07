@@ -2,7 +2,23 @@
 
 <PropertyList include="Aircraft/Y12B/Human/Include/walker-include.xml">
 
- <!--	97 knots = 50m/s , 500m in 10 sec, 3km in 1 minute
+<!--	
+#dropzone
+lon=113.90406021 
+lat=31.12665764
+
+#start. fly 3km (60 seconds at 97knots) heading 90
+lon=113.872558
+lat=31.12665764
+heading=90
+
+#start. fly 500m (10 seconds at 97knots) heading 90
+lon=113.899014
+lat=31.12665764
+heading=90
+
+97 knots = 50m/s , 500m in 10 sec, 3km in 1 minute 
+-->
 
 <autopilot>
 	<locks>
@@ -17,7 +33,7 @@
     </settings>
 </autopilot>
 
--->
+
 
 <sim>
 	

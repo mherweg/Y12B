@@ -220,9 +220,10 @@ var main_loop = func {
 	if (c_view == 0 and getprop("sim/walker/walking-momentum")) {
 		# inside aircraft
 #		bluebird.walk_about_cabin(0.1, walk_heading);
-		moved = 1;
+#MH		moved = 1;
 	}
 	if (getprop("sim/walker/outside")) {
+		
 		if (falling or getprop("sim/walker/walking-momentum")) {
 			ext_mov(moved);
 		}
@@ -255,13 +256,13 @@ var main_loop = func {
 		}
 	}
     ####
-	#var jump_signal = getprop ("engines/engine[3]/oil-pressure-psi");
-	#if (jump_signal == 10) 
-	#{
-	#print(sprintf("jump signal received!"));
-	#setprop("sim/walker/key-triggers/outside-toggle","true");
+	var jump_signal = getprop ("engines/engine[3]/oil-pressure-psi");
+	if (jump_signal == 10) 
+	{
+	print(sprintf("jump signal received!"));
+	setprop("sim/walker/key-triggers/outside-toggle","true");
 	
-	#}
+	}
 	####MH
 	settimer(main_loop, 0.01)
 }
@@ -379,7 +380,7 @@ setprop("engines/engine[1]/mp-osi", altitude_fg);
 	#chz end 
 	var c_view = getprop("sim/current-view/view-number");
 	if (c_view == view.indexof("Walker Orbit View")) {
-		var head_v = 360 - getprop("sim/walker/model-heading-deg");
+		var head_v = 360 - getprop("orientation/heading-deg");
 	} else {
 		var head_v = getprop("sim/current-view/heading-offset-deg");
 	}
@@ -768,6 +769,7 @@ var get_out = func (loc) {
 	################
 	print(sprintf("get out !"));
 	##############
+	
 	var c_view = getprop("sim/current-view/view-number");
 	var head_add = 0;
 	if (c_view == 0) {	
@@ -850,6 +852,11 @@ var get_out = func (loc) {
 	setprop("sim/walker/starting-lon", new_coord[1]);
 	walk_factor = 1.0;
 	walker_model.add();
+	
+	#### MH dual-control disconnect ####
+	setprop("sim/remote/pilot-callsign", "no-no");
+	dual_control.main.reset();
+
 }
 
 var get_in = func (loc) {
@@ -936,6 +943,10 @@ var get_in = func (loc) {
 	#MH
 	setprop("sim/view[100]/enabled", 0);
 	setprop("sim/view[101]/enabled", 0);
+	
+	#### MH dual-control re-connect - not working yet ####
+	setprop("sim/remote/pilot-callsign", "Y-pilot");
+	
 }
 
 var reinit_walker = func {

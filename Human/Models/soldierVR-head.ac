@@ -5,7 +5,7 @@ OBJECT world
 name "Blender_export__soldierVR-head.ac"
 kids 2
 OBJECT poly
-name "Soldier_hair.001"
+name "hair"
 loc 0.0000000 -0.2826406 0.0000000
 texture "Ex_11.png"
 texrep 1 1
@@ -753,7 +753,7 @@ refs 3
 71 0.682800 0.427800
 kids 0
 OBJECT poly
-name "Soldier_head.001"
+name "head"
 loc 0.0000000 -0.2826406 0.0000000
 texture "Ex_01.png"
 texrep 1 1

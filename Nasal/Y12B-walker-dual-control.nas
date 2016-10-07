@@ -64,7 +64,9 @@ var pilot_disconnect_copilot = func {
 var copilot_connect_pilot = func (pilot) {
     # Initialize Nasal wrappers for copilot pick anaimations.
     set_copilot_wrappers(pilot);
-
+    
+    print (" Y12B-walker-dual-control.nas: copilot_connect_pilot");
+    
     return
         [
          ######################################################################
@@ -79,7 +81,7 @@ var copilot_connect_pilot = func (pilot) {
 ######################################################################
 var copilot_disconnect_pilot = func {
     # Reset local sound properties.
-
+    print (" Y12B-walker-dual-control.nas: copilot_disconnect_pilot");
 #    p = "/gear/gear[0]/wow";
 #    props.globals.getNode(p).unalias();
 #    props.globals.getNode(p).setValue(0);
