@@ -31,6 +31,7 @@
 		<outfit3>Aircraft/Y12B/Human/Models/outfit/dirtysuit.xml</outfit3>
 		<outfit4>Aircraft/Y12B/Human/Models/outfit/coat-m.xml</outfit4>
 	    <outfit5>Aircraft/Y12B/Human/Models/outfit/soldierVR.xml</outfit5>
+	    <outfit6>Aircraft/Y12B/Human/Models/outfit/soldierVR-rigged.xml</outfit6>
 	
 	</models>
 	
@@ -369,7 +370,20 @@
   </condition>
  </animation>
 
-
+<model> 
+  <path alias="../../models/outfit6"/>
+		<name>outfit6</name>
+	</model>
+ <animation>
+  <type>select</type>
+  <object-name>outfit6</object-name>
+  <condition>
+   <equals>
+		<property alias="../../../../appearence-props/outfit"/>
+    <value>6</value>
+   </equals>
+  </condition>
+ </animation>
 
  <animation>
   <type>select</type>

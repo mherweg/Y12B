@@ -237,6 +237,24 @@
 			   <value>0</value>
 			  </binding>
 		 </item>
+		  <item>
+			  <label>Outfit: soldierVR, rigged</label>
+			  <binding>
+			   <command>property-assign</command>
+			   <property>/sim/walker/outfit</property>
+			   <value>6</value>
+			  </binding>
+			  <binding>
+			   <command>property-assign</command>
+			   <property>/sim/walker/character</property>
+			   <value>5</value>
+			  </binding>
+			  <binding>
+			   <command>property-assign</command>
+			   <property>/sim/walker/headgear</property>
+			   <value>0</value>
+			  </binding>
+		 </item>
 		</menu>
 	   </default>
   </menubar>

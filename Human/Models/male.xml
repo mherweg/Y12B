@@ -72,7 +72,20 @@
   </condition>
  </animation>
 
-
+	<model> 
+		<path>Aircraft/Y12B/Human/Models/outfit/soldierVR.xml</path>
+		<name>Soldier, not rigged</name>
+	</model>
+ <animation>
+  <type>select</type>
+  <object-name>Soldier</object-name>
+  <condition>
+   <equals>
+    <property>sim/walker/outfit</property>
+    <value>5</value>
+   </equals>
+  </condition>
+ </animation>
 
 
 	<model> 

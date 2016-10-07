@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <sim>
+        <walker>
+            <theme-name>Soldier</theme-name>
+            <character>5</character>
+		        <gender>0</gender>
+	          <outfit>5</outfit>
+        </walker>
+
+  </sim>
+
+</PropertyList>
