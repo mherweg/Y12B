@@ -20,6 +20,7 @@ heading=90
 97 knots = 50m/s , 500m in 10 sec, 3km in 1 minute 
 -->
 
+<!--
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
@@ -32,7 +33,7 @@ heading=90
 		<target-speed-kt>97</target-speed-kt>
     </settings>
 </autopilot>
-
+-->
 
 
 <sim>

@@ -7,7 +7,7 @@
    
    <!-- Engine 1 exterior-->
 
-<prop>
+<prop1>
 	<name>propeller1</name>
 	<mode>looped</mode>
 	<path>Aircraft/Y12B/Sounds/fullpower.wav</path>
@@ -25,7 +25,8 @@
 	</condition>
 	<volume>
 		<property>controls/engines/engine[0]/throttle</property>
-		<factor>1.0</factor>
+		<factor>0.6</factor>
+		<offset>0.4</offset>
 	</volume>
 	<pitch>
 		 <property>controls/engines/engine[0]/throttle</property>
@@ -39,10 +40,10 @@
 	</position>
 	<reference-dist>2.0</reference-dist>
 	<max-dist>1000.0</max-dist>
-</prop>
+</prop1>
 
  <!-- Engine 1 interiour sound-->
-<propI>
+<prop1-int>
 	<name>propeller1-int</name> 
 	<mode>looped</mode>
 	<path>Aircraft/Y12B/Sounds/fullpower-int.wav</path>
@@ -63,7 +64,7 @@
 	</volume> 
 	<volume>
 		<property>controls/engines/engine[0]/throttle</property>
-		<factor>0.5</factor>
+		<factor>0.3</factor>
 	</volume>
 	<pitch>
 		 <property>controls/engines/engine[0]/throttle</property>
@@ -76,13 +77,12 @@
 		<z>2.33</z>
 	</position>
 	<reference-dist>2.0</reference-dist>
-	<max-dist>1000.0</max-dist>
-</propI>
+	<max-dist>40.0</max-dist>
+</prop1-int>
 
 
 <!-- Engine 2 external -->
-
-        <prop>
+        <prop2>
             <name>propeller2</name>
            
             <mode>looped</mode>
@@ -101,8 +101,8 @@
             </condition>
             <volume>
                 <property>controls/engines/engine[1]/throttle</property>
-                <factor>1.2</factor>
-                <offset>0.0</offset>
+                <factor>0.6</factor>
+                <offset>0.4</offset>
             </volume>
             <pitch>
                 <property>controls/engines/engine[1]/throttle</property>
@@ -116,12 +116,11 @@
             </position>
              <reference-dist>2.0</reference-dist>
             <max-dist>1000.0</max-dist>
-        </prop>
+        </prop2>
 <!-- Engine 2 internal -->
-        <prop>
+        <prop2-int>
             <name>propeller2-int</name>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>10.0</max-dist>
+           
             <mode>looped</mode>
             <path>Aircraft/Y12B/Sounds/fullpower-int.wav</path>
             <property>sim/sound/engine[1]</property>
@@ -137,10 +136,12 @@
             </condition>
             <volume>
                 <property>controls/engines/engine[1]/throttle</property>
-                <factor>0.5</factor>
-                <offset>0.3</offset>
+                <factor>0.3</factor>
             </volume>
-            
+             <volume>
+						<property>sim/multiplay/generic/float</property>
+						<factor>1</factor>
+			</volume>
             <pitch>
                 <property>controls/engines/engine[1]/throttle</property>
                 <factor>1.1</factor>
@@ -151,47 +152,18 @@
                 <y>2.6</y>
                 <z>2.33</z>
             </position>
-        </prop>
-
-        <rumble>
-            <name>rumble</name>
-            <reference-dist>5.0</reference-dist>
-            <max-dist>20.0</max-dist>
-            <mode>looped</mode>
-            <path>Aircraft/Y12B/Sounds/rumble.wav</path>
-            <condition>
-                <or>
-                    <property>gear/gear[0]/wow</property>
-                    <property>gear/gear[1]/wow</property>
-                    <property>gear/gear[2]/wow</property>
-                    <property>gear/gear[3]/wow</property>
-                </or>
-            </condition>
-            <volume>
-                <property>velocities/groundspeed-kt</property>
-                <factor>0.05</factor>
-                <max>1</max>
-            </volume>
-            <position>
-                <x>-3</x>
-                <y>0</y>
-                <z>-1</z>
-            </position>
-        </rumble>
-
+             <reference-dist>2.0</reference-dist>
+            <max-dist>40.0</max-dist>
+        </prop2-int>
+<!--
         <gear>
             <name>gear</name>
             <mode>in-transit</mode>
             <path>Sounds/gear.wav</path>
             <property>/gear/gear/position-norm</property>
             <volume>
-                <property>sim/sound/cabin</property>
+                <value>0.5</value>
             </volume>
-            <pitch>
-                <internal>dt_play</internal>
-                <offset>1.0</offset>
-                <factor>-0.001</factor>
-            </pitch>
             <position>
                 <x>-3</x>
                 <y>0</y>
@@ -201,17 +173,13 @@
             <max-dist>2.0</max-dist>
         </gear>
 
-        <gear>
+        <gear-lock>
             <name>gear-lock</name>
+            <mode>once</mode>
             <path>Sounds/gear-lck.wav</path>
-            <condition>
-                <equals>
-                    <property>gear/gear[0]/position-norm</property>
-                    <value>0</value>
-                </equals>
-            </condition>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>5.0</max-dist>
+           <condition>
+             <property>/controls/gear/gear-down</property>
+            </condition>       
             <position>
                 <x>-3</x>
                 <y>0</y>
@@ -219,48 +187,35 @@
             </position>
             <reference-dist>1.0</reference-dist>
             <max-dist>2.0</max-dist>
-        </gear>
-
+        </gear-lock>
+-->
      
-        <flap>
-            <name>flaps</name>
-            <mode>in-transit</mode>
-            <path>Sounds/flaps.wav</path>
-            <property>surface-positions/flap-pos-norm</property>
-            <volume>
-                <property>sim/sound/cabin</property>
-            </volume>
-            <position>
-                <x>-3</x>
-                <y>0</y>
-                <z>0.5</z>
-            </position>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>5.0</max-dist>
-        </flap>
 
       
 
                                       <!--   DOORS  -->
 
-  <!-- Cabin DOOR wind-->
+  <!-- Cabin DOOR wind  - not via MP ? -->
         <door>
             <name>cabin_door wind</name>
             <mode>looped</mode>
-            <path>Sounds/wind1.wav</path>
-            <condition>
+            <path>/Sounds/wind1.wav</path>
+             <condition>
 				
-                     <greater-than>
-                        <property>/velocities/airspeed-kt</property>
-                        <value>40.0</value>
-                    </greater-than>   
-              
-             </condition>
+                    <greater-than>
+                    <property>sim/multiplay/generic/float</property>
+                    <value>0.0</value>
+                    </greater-than>
+                    
+            </condition>
+            <volume>
+                <property>controls/engines/engine/throttle</property>
+                <factor>2</factor>
+            </volume>
             <volume>
                 <property>sim/multiplay/generic/float</property>
-                <factor>0.9</factor>
+                <factor>1</factor>
             </volume>
-           
             <position>
                 <x>-1</x>
                 <y>-1.0</y>
@@ -270,8 +225,7 @@
             <max-dist>50.0</max-dist>
         </door>
 
-       
-  <door>
+		<door>
             <name>cabin_door moving</name>
             <mode>looped</mode>
             <path>Aircraft/Y12B/Sounds/rumble.wav</path>
@@ -337,7 +291,7 @@
             <max-dist>100.0</max-dist>
         </door>
 
-		<light>
+		<readylight>
             <name>ready-signal</name>
             <path>Sounds/dhc6-alarm.wav</path>
             <condition>
@@ -353,9 +307,9 @@
             </position>
             <reference-dist>1.0</reference-dist>
             <max-dist>200.0</max-dist>
-        </light>
+        </readylight>
 
-		<light>
+		<jumplight>
             <name>jump-signal</name>
             <path>Sounds/dhc6-cabinalert.wav</path>
             <condition>
@@ -371,7 +325,7 @@
             </position>
             <reference-dist>1.0</reference-dist>
             <max-dist>200.0</max-dist>
-        </light>
+        </jumplight>
 
 
 

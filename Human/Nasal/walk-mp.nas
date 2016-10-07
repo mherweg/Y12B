@@ -946,6 +946,8 @@ var get_in = func (loc) {
 	
 	#### MH dual-control re-connect - not working yet ####
 	setprop("sim/remote/pilot-callsign", "Y-pilot");
+	dual_control.main.init();
+
 	
 }
 
