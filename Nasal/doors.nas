@@ -41,7 +41,7 @@ var toggle_right_arm = func {
 }
 
 # commander left arm
-var toggle_door4 = func {
+var toggle_left_arm = func {
 	door4 = aircraft.door.new ("/controls/doors/door4",1);
 	if(getprop("/controls/doors/door4/position-norm") > 0) {
 		door4.close();

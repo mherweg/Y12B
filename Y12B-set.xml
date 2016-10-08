@@ -36,7 +36,7 @@ heading=90
 -->
 
 
-<sim>
+<sim n="0">
 	
 	 <startup>
             <splash-texture>Aircraft/Y12B/splash.png</splash-texture>
@@ -338,22 +338,43 @@ heading=90
    <float n="0" alias="/controls/doors/door0/position-norm"/>
    <!-- cabin to cockpit door -->
    <float n="1" alias="/controls/doors/door2/position-norm"/>
+   
    <!-- turning propellers -->
    <float n="2" alias="/controls/engines/engine/throttle"/>
    <float n="3" alias="/controls/engines/engine[1]/throttle"/>
+  
    <int   n="0" alias="/controls/lighting/signal-light"/>
    
-   <!--alt-ft -->
-   <float n="4" alias="/sim/walker/altitude-ft"/>
-   <!-- lat -->
-   <float n="5" alias="/sim/walker/latitude-deg"/>
-   <!-- lon -->
-   <float n="6" alias="/sim/walker/longitude-deg"/>
-   
+   <!-- commader right arm -->
+   <float n="4" alias="/controls/doors/door3/position-norm"/>
+   <!-- commander left arm -->
+   <float n="5" alias="/controls/doors/door4/position-norm"/>
+  
    </generic>
       
 </multiplay>
            
+ 
+	<systems>
+		<autopilot>
+			<filter>
+			<name>right-arm</name>
+			<debug>true</debug>
+			<type>gain</type>
+			<gain>1.0</gain>
+			<input>
+				<property>controls/doors/door3/position-norm</property>
+				<scale>160.0</scale>
+				<offset>-80.0</offset>
+			</input>
+			<!-- arm down: -85 up: +80 -->
+			<output>
+				<property>sim/model/npc[2]/pose/position/limb[3]/x-deg</property>
+			</output>
+			</filter>
+      </autopilot>
+    </systems>
+ 
                
 </sim>
 
@@ -574,7 +595,6 @@ heading=90
 	<Y12B>
 		<file>Aircraft/Y12B/Nasal/doors.nas</file>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
-		
 	</Y12B>
 	
   <dual_control_tools>
