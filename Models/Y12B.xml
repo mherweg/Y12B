@@ -35,6 +35,10 @@
    
    rplayer.getNode("controls/lighting/signal-light", 1).
      alias(rplayer.getNode("sim/multiplay/generic/int[0]"));
+     
+   rplayer.getNode("sim/model/npc[2]/pose/position/limb[3]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
+   rplayer.getNode("sim/model/npc[2]/pose/position/limb[7]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
+      
        
    ##############################################################################
   

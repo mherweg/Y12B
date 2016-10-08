@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+  
+  <filter>
+			<name>right-arm</name>
+			<debug>false</debug>
+			<type>gain</type>
+			<gain>1.0</gain>
+			<input>
+				<property>controls/doors/door3/position-norm</property>
+				<scale>160.0</scale>
+				<offset>-80.0</offset>
+			</input>
+			<!-- arm down: -85 up: +80 -->
+			<output>
+				<property>sim/model/npc[2]/pose/position/limb[3]/x-deg</property>
+			</output>
+	</filter>
+  
+  <filter>
+			<name>left-arm</name>
+			<debug>false</debug>
+			<type>gain</type>
+			<gain>1.0</gain>
+			<input>
+				<property>controls/doors/door4/position-norm</property>
+				<scale>55.0</scale>
+				<offset>0.0</offset>
+			</input>
+			<!-- lower arm down: 0 forward: +55 -->
+			<output>
+				<property>sim/model/npc[2]/pose/position/limb[7]/z-deg</property>
+			</output>
+	</filter>
+
+</PropertyList>

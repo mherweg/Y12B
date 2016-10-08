@@ -526,7 +526,7 @@
 					<pose include = "Human/Models/Animations/commander_lift_right_arm.xml">
 					  <position>
 						 <limb n="3">
-							 <x-deg type="double">80</x-deg>
+							
 							 <y-deg type="double">180</y-deg>
 						 </limb>
 						 <limb n="5">

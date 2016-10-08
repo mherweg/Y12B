@@ -346,9 +346,9 @@ heading=90
    <int   n="0" alias="/controls/lighting/signal-light"/>
    
    <!-- commader right arm -->
-   <float n="4" alias="/controls/doors/door3/position-norm"/>
+   <float n="4" alias="/sim/model/npc[2]/pose/position/limb[3]/x-deg"/>
    <!-- commander left arm -->
-   <float n="5" alias="/controls/doors/door4/position-norm"/>
+   <float n="5" alias="/sim/model/npc[2]/pose/position/limb[7]/z-deg"/>
   
    </generic>
       
@@ -356,23 +356,10 @@ heading=90
            
  
 	<systems>
-		<autopilot>
-			<filter>
-			<name>right-arm</name>
-			<debug>true</debug>
-			<type>gain</type>
-			<gain>1.0</gain>
-			<input>
-				<property>controls/doors/door3/position-norm</property>
-				<scale>160.0</scale>
-				<offset>-80.0</offset>
-			</input>
-			<!-- arm down: -85 up: +80 -->
-			<output>
-				<property>sim/model/npc[2]/pose/position/limb[3]/x-deg</property>
-			</output>
-			</filter>
-      </autopilot>
+		<property-rule n="100">
+			<name>Jump Commander Arms</name>
+			<path>Systems/Y12B-propertyrules.xml</path>
+        </property-rule>
     </systems>
  
                
@@ -388,8 +375,13 @@ heading=90
 <controls>
 	<doors>
 		<door2>
-			<position-norm type="float">1.0</position-norm >
-		</door2>			
+			<position-norm type="float">1.0</position-norm>
+		</door2>
+		<door3>
+			<position-norm type="float">1.0</position-norm>
+			<position-out type="float">11.11</position-out>
+			
+		</door3>				
 	</doors>
 	<gear>
 		<gear-down type="int">1</gear-down>
