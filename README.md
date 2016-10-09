@@ -31,24 +31,30 @@ Auto-disconnects and reconnect to Y12B aircraft when toggled outside/inside
 
 ## step by step instructions (2016-10-09)
 
-* start the mp server:
+Start the mp server:
 
     ./fgms -c fgms_local.skel.conf
 
-* start the Y12B aircraft, enable the autopilot in the Y12B-set.xml file if you like.
+Start the Y12B aircraft, enable the autopilot in the Y12B-set.xml file if you like.
 
     fgfs --aircraft=Y12B --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000 --multiplay=in,25,CLIENT-IP,5001 --callsign=Y-pilot
 
-* start parachutist 1:
+Start parachutist 1:
 
     fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000 --multiplay=in,25,CLIENT-IP,5002 --callsign=one
 
-* start parachutist 2 (on the same PC):
+Start parachutist 2 (on the same PC, if you like):
 
     export FG_HOME=/home/user/dot-fgfs2
+    
     fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000   --multiplay=in,25,CLIENT-IP,5003 --callsign=two
 
-* start parachutist 3 :
+
+(One home folder for each running FlightGear.
+see: http://wiki.flightgear.org/$FG_HOME  )
+
+
+Start parachutist 3 :
 
     fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000  --multiplay=in,25,CLIENT-IP,5004 --callsign=three
 
