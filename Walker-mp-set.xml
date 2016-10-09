@@ -479,6 +479,14 @@
 	<Y12B>
 		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
 	</Y12B>
+	<scenery>
+		<script>
+		#experiment: seems to work fine!
+		#print("placing photoscenery..");
+		#geo.put_model("Scenery/planes_and_flat_houses_bingHD.ac",31.12676931,113.90421222,  44.3, 272.0 , 0, 0);	
+		</script>
+	</scenery>
+
 	
 	<dual_control_tools>
 		<file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>

@@ -59,6 +59,7 @@ Start parachutist 3 :
     fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000  --multiplay=in,25,CLIENT-IP,5004 --callsign=three
 
 
+If you do not like long command lines you can put all the options into the fgfsrc file, see http://wiki.flightgear.org/Fgfsrc
 
 Parachuters usually auto-connect to the aircraft with callsign "Y-pilot". If not, then use the menu to connect.
 
@@ -67,7 +68,21 @@ Parachuters are not visible after loading (outside=0) you only see the yellow ca
 When you press "o" to jump outside they disconnect from aircraft, become visible until you press o again,
 then they re-connect to the aircraft.
 
+## Workaround for slow scenery loading
+Put the .ac file and textures into the Scenery folder of the aircraft, then uncomment and edit the following line in the Walker-mp-set.xml file:
+
+    geo.put_model("Scenery/planes_and_flat_houses_bingHD.ac",31.12676931,113.90421222,  44.3, 272.0 , 0, 0);	
+    
+    
+Values are: (object-filename, lat, lon, elevation, heading* , 0,0);
+
+* take the heading from the stg file and add 180 to it. If you use this workaround do not forget to remove the STATIC_OBJECT line from the stg file.
+    
+
 Parachuters(Walker-mp) use Human/Nasal/walk-mp.nas, not walk.nas! Put all your custom code into walk-mp.nas!
+
+
+
 
 
 
