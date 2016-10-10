@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<model>
+		<path>soldierVR-head2.ac</path>
+		<offsets> 
+			<pitch-deg>-20.0</pitch-deg>
+			<x-m>0.45</x-m>
+			<z-m>0.06</z-m>
+		</offsets>
+	</model>
+	<model>
+		<!-- <path>outfit/soldierVR-body.ac</path>  -->
+		<path>sitting-arms-down.ac</path>
+ 		<offsets> 
+				<z-m>0.0</z-m>
+		</offsets>
+	</model>
+		<model>
+		<path>Aircraft/Y12B/Models/seat.ac</path>
+		<offsets> 
+			<heading-deg>-90</heading-deg>
+			<x-m>-0.03</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.2</z-m>
+		</offsets>
+	</model>
+</PropertyList>

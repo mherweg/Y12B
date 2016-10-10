@@ -543,12 +543,12 @@
 					  </position> 
 					</pose>
 					<gender>0</gender>
-					<character>0</character>
-				   <outfit>1</outfit>
-					<headgear>3</headgear>
+					<character>6</character>
+				    <outfit>6</outfit>
+					<headgear>0</headgear>
 					<eyewear>0</eyewear>
 					<mask>0</mask>
-					<hair>1</hair>
+					<hair>0</hair>
 				</npc>
 			</model>
 				<walker>

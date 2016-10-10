@@ -37,17 +37,17 @@ Start the mp server:
 
 Start the Y12B aircraft, enable the autopilot in the Y12B-set.xml file if you like.
 
-    fgfs --aircraft=Y12B --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000 --multiplay=in,25,CLIENT-IP,5001 --callsign=Y-pilot
+    fgfs --aircraft=Y12B --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000 --multiplay=in,25,,5001 --callsign=Y-pilot
 
 Start parachutist 1:
 
-    fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000 --multiplay=in,25,CLIENT-IP,5002 --callsign=one
+    fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000 --multiplay=in,25,,5002 --callsign=one
 
 Start parachutist 2 (on the same PC, if you like):
 
     export FG_HOME=/home/user/dot-fgfs2
     
-    fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000   --multiplay=in,25,CLIENT-IP,5003 --callsign=two
+    fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000   --multiplay=in,25,,5003 --callsign=two
 
 
 (One home folder for each running FlightGear.
@@ -56,7 +56,7 @@ see: http://wiki.flightgear.org/$FG_HOME  )
 
 Start parachutist 3 :
 
-    fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000  --multiplay=in,25,CLIENT-IP,5004 --callsign=three
+    fgfs --aircraft=Walker-mp --altitude=3000 --lon=113.872558 --lat=31.12665764 --heading=90 --multiplay=out,25,SERVER-IP,5000  --multiplay=in,25,,5004 --callsign=three
 
 
 If you do not like long command lines you can put all the options into the fgfsrc file, see http://wiki.flightgear.org/Fgfsrc

@@ -2,6 +2,7 @@
 <!--== Y12B                  ==-->
 
 <PropertyList>
+
 	<model>
 		<name>Y12B</name>
 		<offsets> 
@@ -10,7 +11,6 @@
 		<path>Aircraft/Y12B/Models/Y12B.ac</path>
 		
 	</model>
-
 
     <sound>
         <path>Aircraft/Y12B/Sounds/Y12B-mp-sound.xml</path>
@@ -46,14 +46,12 @@
 </nasal>
 
 
-<!-- can not see any effect?!  -->
+<!-- I can not see any effect?!  -->
 <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>wings</object-name>
 </effect>
-
-
 
 <!-- pilot  -->
 <model>
@@ -79,34 +77,76 @@
       </offsets>
 </model>
 
-<!--== person sitting in cabin ==-->	
+
+
+ <!-- == right row ==-->	
+<!-- == person sitting in seat 5r == -->	
 <model>
-		<name>npc1</name>
-		 <path>Aircraft/Y12B/Human/Models/npc1.xml</path>
+		<name>p5r</name>
+		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
 			<heading-deg>90</heading-deg>
 			<x-m>-3.2</x-m>
 			<y-m>0.65</y-m>
-			<!--== the pose from the bluebird has a Z offset of 0.9 ==-->
-			<z-m>0.8</z-m>
+			<z-m>1.2</z-m>
 		</offsets>
-</model>
- <!--== shrink sitting person in cabin from 1.73m to 1.38m ==-->	
-<animation>
-  <type>scale</type>
-  <object-name>npc1</object-name>
-  <x-offset>0.8</x-offset>
-  <y-offset>0.8</y-offset>
-  <z-offset>0.8</z-offset>
-   <center>
-   <x-m>-3.20</x-m>
-   <y-m> 0.7  </y-m>
-   <z-m> 1.8</z-m>
-  </center>
- </animation>
+</model> 
+ 
+<!--== person sitting in seat 4R ==-->	
+<model>
+		<name>p4r</name>
+		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
+		<nopreview/>
+		<offsets> 
+			<heading-deg>90</heading-deg>
+			<x-m>-3.72</x-m>
+			<y-m>0.693</y-m>
+			<z-m>1.2</z-m>
+		</offsets>
+</model> 
+ <!--== person sitting in seat 3R ==-->	
+<model>
+		<name>p3r</name>
+		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
+		<nopreview/>
+		<offsets> 
+			<heading-deg>90</heading-deg>
+			<x-m>-4.16</x-m>
+			<y-m>0.72</y-m>
+			<z-m>1.2</z-m>
+		</offsets>
+</model> 
 
-<!--== jump commander in cabin ==-->	
+ <!--== left row ==-->	
+ <!--== person sitting in seat 5L ==-->	
+<model>
+		<name>p5l</name>
+		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
+		<nopreview/>
+		<offsets> 
+			<heading-deg>-90</heading-deg>
+			<x-m>-3.34</x-m>
+			<y-m>-0.723</y-m>
+			<z-m>1.2</z-m>
+		</offsets>
+</model> 
+ <!--== person sitting in seat 4L ==-->	
+<model>
+		<name>p4l</name>
+		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
+		<nopreview/>
+		<offsets> 
+			<heading-deg>-90</heading-deg>
+			<x-m>-3.78</x-m>
+			<y-m>-0.723</y-m>
+			<z-m>1.2</z-m>
+		</offsets>
+</model> 
+
+
+
+<!-- == jump commander in cabin == -->	
 <model>
 		<name>npc2</name>
 		 <path>Aircraft/Y12B/Human/Models/npc2.xml</path>
@@ -133,29 +173,13 @@
   </center>
  </animation>
 
-
-
-<model>
-        <path>Aircraft/Y12B/Models/Instruments/altimeter.xml</path>
-        <name>Altimeter</name>
-        <offsets>
-            <x-m>-7.71</x-m>
-            <y-m>-0.594</y-m>
-            <z-m>2.364</z-m>
-        </offsets>
-    </model>
-
-
-
-
-
 <!--== propellers ==-->	
 	<animation>
 		<type>spin</type>
 		<object-name>left_prop</object-name>
 		<property>controls/engines/engine[1]/throttle</property>
 		<offset>10</offset>
-		<factor>5000</factor>
+		<factor>500</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>-2.74953</y-m>
@@ -172,7 +196,7 @@
 		<type>spin</type>
 		<object-name>right_prop</object-name>
 		<property>controls/engines/engine/throttle</property>
-		<factor>5000</factor>
+		<factor>500</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>2.66148</y-m>
@@ -193,7 +217,6 @@
 		<condition>
 				 <property>controls/gear/gear-down</property>
         </condition>        
-		
 </animation>
 
 <!--== cabin door ==-->
@@ -209,7 +232,6 @@
 			</binding>
 		</action>
 </animation>
-
 <animation>
 		<type>translate</type>
 		<object-name>cabin_door</object-name>
@@ -245,7 +267,6 @@
 			</binding>
 		</action>
 </animation>
-
 <animation>
 		<type>translate</type>
 		<object-name>cabin-cockpit-door</object-name>
@@ -268,57 +289,7 @@
 </animation>
 
 
-<!-- seat 5 -->
-<animation>
-		<type>pick</type>
-		<object-name>seat</object-name>
-		<object-name>seat-legs</object-name>
-		<object-name>seat-surface</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>Y12B.toggle_door1()</script>
-			</binding>
-		</action>
-</animation>
-<animation>
-        <type>rotate</type>
-        <object-name>seat</object-name>
-		<object-name>seat-legs</object-name>
-		<object-name>seat-surface</object-name>
-        <property>controls/doors/door1/position-norm</property>
-       
-		<center>
-			<x-m>-3.2</x-m>
-			<y-m>0.903</y-m>
-			<z-m>0.4</z-m>
-		</center>
-		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>1.0</ind><dep>-90.0</dep></entry>
-		</interpolation>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-</animation>
-<animation>
-        <type>select</type>
-		<object-name>seat-legs</object-name>
-		<condition>
-			 <less-than>
-				 <property>controls/doors/door1/position-norm</property>
-                 <value>1.0</value>
-           </less-than>	
-		</condition>
-</animation>
-
 <!-- jump signal lights -->
-
-
 <!-- light1: red -->
 <animation> 
   <type>material</type> 
@@ -374,6 +345,18 @@
   </emission>
 </animation>
 
+
+<!-- altimeter instrument in cockpit panel (disabled)
+<model>
+        <path>Aircraft/Y12B/Models/Instruments/altimeter.xml</path>
+        <name>Altimeter</name>
+        <offsets>
+            <x-m>-7.71</x-m>
+            <y-m>-0.594</y-m>
+            <z-m>2.364</z-m>
+        </offsets>
+</model>
+-->
 
 
 
