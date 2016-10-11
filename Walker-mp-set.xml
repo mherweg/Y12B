@@ -507,17 +507,6 @@
 		<multiplayer>
 			<sim>
 			<model>	
-				<!-- person sitting in Y12B. Y12B has to be the first in the list of players! -->
-				<npc n="1">
-					<!--   pose include = "Include/walker_sit.xml"   -->
-					<gender>0</gender>
-					<character>5</character>
-					<outfit>5</outfit>
-					<headgear>0</headgear>
-					<eyewear>0</eyewear>
-					<mask>0</mask>
-					<hair>0</hair>	
-				</npc>
 				 <!--  pilot -->
 				<npc n="3">
 				  <pose include = "Include/ju52_pilot.xml"></pose>
@@ -530,7 +519,7 @@
 						<hair>1</hair>
 				</npc> 
 				<!-- jump commander-->
-				 <npc n="2">
+				 <npc n="1">
 					<pose include = "Human/Models/Animations/commander_lift_right_arm.xml">
 					  <position>
 						 <limb n="3">
@@ -543,7 +532,7 @@
 					  </position> 
 					</pose>
 					<gender>0</gender>
-					<character>6</character>
+					<character>5</character>
 				    <outfit>6</outfit>
 					<headgear>0</headgear>
 					<eyewear>0</eyewear>
