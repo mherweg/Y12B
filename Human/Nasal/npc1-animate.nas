@@ -2117,12 +2117,12 @@ var stop_animation = func {
 }
 
 var check_walk_animations = func {	# keyboard handling for osg version
-	walking_momentum = getprop("sim/walker/walking-momentum");
+	walking_momentum = getprop("sim/npc1/walking-momentum");
 	if (triggers_enabled) {
 		var s = nil;
-		if (!getprop("sim/walker/airborne")) {	# on ground
-			var w_direction = getprop("sim/walker/key-triggers/forward");
-			var w_slide = getprop("sim/walker/key-triggers/slide");
+		if (!getprop("sim/npc1/airborne")) {	# on ground
+			var w_direction = getprop("sim/npc1/key-triggers/forward");
+			var w_slide = getprop("sim/npc1/key-triggers/slide");
 			if (walking_momentum) {
 				if (getprop("sim/current-view/view-number") != 0) {
 					if (w_direction < 0) {
@@ -2297,20 +2297,20 @@ var discover_triggers = func (verbose) {
 	# add listener for each animation.
 	if (trig_c > 0) {
 		if (tm_L_id == nil) {
-			tm_L_id = setlistener("sim/walker/walking-momentum", func {
+			tm_L_id = setlistener("sim/npc1/walking-momentum", func {
 				check_walk_animations();
 			},, 0);
 		}
 
 		if (tr_L_id == nil) {
-			tr_L_id = setlistener("sim/walker/key-triggers/speed", func(n) {
+			tr_L_id = setlistener("sim/npc1/key-triggers/speed", func(n) {
 				w_key_speed = n.getValue();
 				check_walk_animations();
 			},, 0);
 		}
 
 		if (ta_L_id == nil) {
-			ta_L_id = setlistener("sim/walker/airborne", func(n) {
+			ta_L_id = setlistener("sim/npc1/airborne", func(n) {
 				in_air = n.getValue();
 				if (w_outside and triggers_enabled) {
 					var s = nil;
@@ -2319,8 +2319,8 @@ var discover_triggers = func (verbose) {
 							s = int(trigger_falling_node.getValue());
 						}
 					} else {
-						var crash_landing = getprop("sim/walker/crashed");
-						if (!crash_landing and triggers_list[6] and getprop("sim/walker/parachute-opened-sec") > 2) {
+						var crash_landing = getprop("sim/npc1/crashed");
+						if (!crash_landing and triggers_list[6] and getprop("sim/npc1/parachute-opened-sec") > 2) {
 							s = int(trigger_landing_node.getValue());
 						} elsif (crash_landing and triggers_list[7]) {
 							s = int(trigger_crashing_node.getValue());
@@ -2339,7 +2339,7 @@ var discover_triggers = func (verbose) {
 		}
 
 		if (tj_L_id == nil) {
-			tj_L_id = setlistener("sim/walker/parachute-opened-altitude-ft", func(n) {
+			tj_L_id = setlistener("sim/npc1/parachute-opened-altitude-ft", func(n) {
 				parachute_deployed_ft = n.getValue();
 				if (w_outside and triggers_enabled) {
 					var s = nil;
@@ -2361,7 +2361,7 @@ var discover_triggers = func (verbose) {
 		}
 
 		if (to_L_id == nil) {
-			to_L_id = setlistener("sim/walker/outside", func(n) {
+			to_L_id = setlistener("sim/npc1/outside", func(n) {
 				if (n.getValue() == 0) {
 					stop_animation();
 					animate.reset_position();
@@ -2392,9 +2392,9 @@ var init_walker = func {
 		}
 	}, 0, 0);
 
-	setlistener("sim/walker/speed-mps", func(n) { w_speed_mps = n.getValue() }, 1, 0);
+	setlistener("sim/npc1/speed-mps", func(n) { w_speed_mps = n.getValue() }, 1, 0);
 
-	setlistener("sim/walker/outside", func(n) { w_outside = n.getValue() }, 1, 0);
+	setlistener("sim/npc1/outside", func(n) { w_outside = n.getValue() }, 1, 0);
 
 	setlistener("sim/model/npc[1]/animate/enabled-current", func(n) {
 		anim_enabled = n.getValue();
