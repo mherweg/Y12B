@@ -203,17 +203,17 @@
              <condition>
 				
                     <greater-than>
-                    <property>sim/multiplay/generic/float</property>
+                    <property>surface-positions/elevator-pos-norm</property>
                     <value>0.0</value>
                     </greater-than>
                     
             </condition>
             <volume>
-                <property>controls/engines/engine/throttle</property>
+                <property>surface-positions/left-aileron-pos-norm</property>
                 <factor>2</factor>
             </volume>
             <volume>
-                <property>sim/multiplay/generic/float</property>
+                <property>surface-positions/elevator-pos-norm</property>
                 <factor>1</factor>
             </volume>
             <position>
@@ -222,7 +222,7 @@
                 <z>2.5</z>
             </position>
             <reference-dist>0.5</reference-dist>
-            <max-dist>50.0</max-dist>
+            <max-dist>500.0</max-dist>
         </door>
 
 		<door>
@@ -232,12 +232,12 @@
             <condition>
 				<and>
                     <less-than>
-                    <property>sim/multiplay/generic/float</property>
+                    <property>surface-positions/elevator-pos-norm</property>
                     <value>1.0</value>
                     </less-than>
                     
                     <greater-than>
-                    <property>sim/multiplay/generic/float</property>
+                    <property>surface-positions/elevator-pos-norm</property>
                     <value>0.0</value>
                     </greater-than>
                 </and>
@@ -257,7 +257,7 @@
 
 
 
-  <!-- cabin-cockpit DOOR  -->
+  <!-- cabin-cockpit DOOR  (disabled)
 
         <door>
             <name>ccdoor moving</name>
@@ -290,13 +290,14 @@
             <reference-dist>0.5</reference-dist>
             <max-dist>100.0</max-dist>
         </door>
+-->
 
 		<readylight>
             <name>ready-signal</name>
             <path>Sounds/dhc6-alarm.wav</path>
             <condition>
                 <equals>
-                    <property>sim/multiplay/generic/int[0]</property>
+                    <property>sim/multiplay/generic/int[4]</property>
                     <value>2</value>
                 </equals>
             </condition>
@@ -314,7 +315,7 @@
             <path>Sounds/dhc6-cabinalert.wav</path>
             <condition>
                 <equals>
-                    <property>sim/multiplay/generic/int[0]</property>
+                    <property>sim/multiplay/generic/int[4]</property>
                     <value>3</value>
                 </equals>
             </condition>

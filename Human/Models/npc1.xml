@@ -43,38 +43,38 @@
 	</appearence-props>
 
 	<pivot-props>
-		<hip-rotate>sim/model/npc[1]/pose/position/limb[0]/y-deg</hip-rotate>
-		<hip-translate>sim/model/npc[1]/pose/position/limb[0]/z-m</hip-translate>
-		<chest-y>sim/model/npc[1]/pose/position/limb[1]/y-deg</chest-y>
-		<chest-z>sim/model/npc[1]/pose/position/limb[1]/z-deg</chest-z>
-		<head-y>sim/model/npc[1]/pose/position/limb[2]/y-deg</head-y>
-		<head-z>sim/model/npc[1]/pose/position/limb[2]/z-deg</head-z>
-		<arm1R-x>sim/model/npc[1]/pose/position/limb[3]/x-deg</arm1R-x>
-		<arm1R-y>sim/model/npc[1]/pose/position/limb[3]/y-deg</arm1R-y>
-		<arm1R-z>sim/model/npc[1]/pose/position/limb[3]/z-deg</arm1R-z>
-		<arm2R-y>sim/model/npc[1]/pose/position/limb[4]/y-deg</arm2R-y>
-		<arm2R-z>sim/model/npc[1]/pose/position/limb[4]/z-deg</arm2R-z>
-		<handR-x>sim/model/npc[1]/pose/position/limb[5]/x-deg</handR-x>
-		<handR-y>sim/model/npc[1]/pose/position/limb[5]/y-deg</handR-y>
-		<handR-num>sim/model/npc[1]/pose/position/limb[5]/hand-pose</handR-num>
-		<arm1L-x>sim/model/npc[1]/pose/position/limb[6]/x-deg</arm1L-x>
-		<arm1L-y>sim/model/npc[1]/pose/position/limb[6]/y-deg</arm1L-y>
-		<arm1L-z>sim/model/npc[1]/pose/position/limb[6]/z-deg</arm1L-z>
-		<arm2L-y>sim/model/npc[1]/pose/position/limb[7]/y-deg</arm2L-y>
-		<arm2L-z>sim/model/npc[1]/pose/position/limb[7]/z-deg</arm2L-z>
-		<handL-x>sim/model/npc[1]/pose/position/limb[8]/x-deg</handL-x>
-		<handL-y>sim/model/npc[1]/pose/position/limb[8]/y-deg</handL-y>
-		<handL-num>sim/model/npc[1]/pose/position/limb[8]/hand-pose</handL-num>
-		<leg1R-x>sim/model/npc[1]/pose/position/limb[9]/x-deg</leg1R-x>
-		<leg1R-y>sim/model/npc[1]/pose/position/limb[9]/y-deg</leg1R-y>
-		<leg1R-z>sim/model/npc[1]/pose/position/limb[9]/z-deg</leg1R-z>
-		<leg2R-y>sim/model/npc[1]/pose/position/limb[10]/y-deg</leg2R-y>
-		<footR-y>sim/model/npc[1]/pose/position/limb[11]/y-deg</footR-y>
-		<leg1L-x>sim/model/npc[1]/pose/position/limb[12]/x-deg</leg1L-x>
-		<leg1L-y>sim/model/npc[1]/pose/position/limb[12]/y-deg</leg1L-y>
-		<leg1L-z>sim/model/npc[1]/pose/position/limb[12]/z-deg</leg1L-z>
-		<leg2L-y>sim/model/npc[1]/pose/position/limb[13]/y-deg</leg2L-y>
-		<footL-y>sim/model/npc[1]/pose/position/limb[14]/y-deg</footL-y>
+		<hip-rotate>sim/model/npc[1]/limb[0]/y-deg</hip-rotate>
+		<hip-translate>sim/model/npc[1]/limb[0]/z-m</hip-translate>
+		<chest-y>sim/model/npc[1]/limb[1]/y-deg</chest-y>
+		<chest-z>sim/model/npc[1]/limb[1]/z-deg</chest-z>
+		<head-y>sim/model/npc[1]/limb[2]/y-deg</head-y>
+		<head-z>sim/model/npc[1]/limb[2]/z-deg</head-z>
+		<arm1R-x>sim/model/npc[1]/limb[3]/x-deg</arm1R-x>
+		<arm1R-y>sim/model/npc[1]/limb[3]/y-deg</arm1R-y>
+		<arm1R-z>sim/model/npc[1]/limb[3]/z-deg</arm1R-z>
+		<arm2R-y>sim/model/npc[1]/limb[4]/y-deg</arm2R-y>
+		<arm2R-z>sim/model/npc[1]/limb[4]/z-deg</arm2R-z>
+		<handR-x>sim/model/npc[1]/limb[5]/x-deg</handR-x>
+		<handR-y>sim/model/npc[1]/limb[5]/y-deg</handR-y>
+		<handR-num>sim/model/npc[1]/limb[5]/hand-pose</handR-num>
+		<arm1L-x>sim/model/npc[1]/limb[6]/x-deg</arm1L-x>
+		<arm1L-y>sim/model/npc[1]/limb[6]/y-deg</arm1L-y>
+		<arm1L-z>sim/model/npc[1]/limb[6]/z-deg</arm1L-z>
+		<arm2L-y>sim/model/npc[1]/limb[7]/y-deg</arm2L-y>
+		<arm2L-z>sim/model/npc[1]/limb[7]/z-deg</arm2L-z>
+		<handL-x>sim/model/npc[1]/limb[8]/x-deg</handL-x>
+		<handL-y>sim/model/npc[1]/limb[8]/y-deg</handL-y>
+		<handL-num>sim/model/npc[1]/limb[8]/hand-pose</handL-num>
+		<leg1R-x>sim/model/npc[1]/limb[9]/x-deg</leg1R-x>
+		<leg1R-y>sim/model/npc[1]/limb[9]/y-deg</leg1R-y>
+		<leg1R-z>sim/model/npc[1]/limb[9]/z-deg</leg1R-z>
+		<leg2R-y>sim/model/npc[1]/limb[10]/y-deg</leg2R-y>
+		<footR-y>sim/model/npc[1]/limb[11]/y-deg</footR-y>
+		<leg1L-x>sim/model/npc[1]/limb[12]/x-deg</leg1L-x>
+		<leg1L-y>sim/model/npc[1]/limb[12]/y-deg</leg1L-y>
+		<leg1L-z>sim/model/npc[1]/limb[12]/z-deg</leg1L-z>
+		<leg2L-y>sim/model/npc[1]/limb[13]/y-deg</leg2L-y>
+		<footL-y>sim/model/npc[1]/limb[14]/y-deg</footL-y>
 	</pivot-props>
 
 	</overlay>

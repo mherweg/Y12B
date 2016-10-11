@@ -28,88 +28,87 @@
     print("############ commander(instructor) loading...##############");
     
    #right hand pose  
-   rplayer.getNode("sim/model/walker[1]/limb[5]/hand-pose", 1).alias(rplayer.getNode("surface-positions/speedbrake-pos-norm"));
+   rplayer.getNode("sim/model/npc[1]/limb[5]/hand-pose", 1).alias(rplayer.getNode("surface-positions/speedbrake-pos-norm"));
    
    #left hand pose 
-   rplayer.getNode("sim/model/walker[1]/limb[8]/hand-pose", 1).alias(rplayer.getNode("surface-positions/flap-pos-norm"));
+   rplayer.getNode("sim/model/npc[1]/limb[8]/hand-pose", 1).alias(rplayer.getNode("surface-positions/flap-pos-norm"));
       
    #hip, body
-   rplayer.getNode("sim/model/walker[1]/limb[0]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[0]"));
-   rplayer.getNode("sim/model/walker[1]/limb[0]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[1]"));   
+   rplayer.getNode("sim/model/npc[1]/limb[0]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[0]"));
+   rplayer.getNode("sim/model/npc[1]/limb[0]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[1]"));   
  
    #chest
-   rplayer.getNode("sim/model/walker[1]/limb[1]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
-   rplayer.getNode("sim/model/walker[1]/limb[1]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
+   rplayer.getNode("sim/model/npc[1]/limb[1]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+   rplayer.getNode("sim/model/npc[1]/limb[1]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
    
-   rplayer.getNode("sim/model/walker[1]/limb[2]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
-   rplayer.getNode("sim/model/walker[1]/limb[2]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
+   rplayer.getNode("sim/model/npc[1]/limb[2]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
+   rplayer.getNode("sim/model/npc[1]/limb[2]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
    
    #right arm
-   rplayer.getNode("sim/model/walker[1]/limb[3]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
-   rplayer.getNode("sim/model/walker[1]/limb[3]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
-   rplayer.getNode("sim/model/walker[1]/limb[3]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
+   rplayer.getNode("sim/model/npc[1]/limb[3]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
+   rplayer.getNode("sim/model/npc[1]/limb[3]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
+   rplayer.getNode("sim/model/npc[1]/limb[3]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
    #right arm2  
-   rplayer.getNode("sim/model/walker[1]/limb[4]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[10]"));  
+   rplayer.getNode("sim/model/npc[1]/limb[4]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[10]"));  
        
    #right hand
-   rplayer.getNode("sim/model/walker[1]/limb[5]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[11]"));
-   rplayer.getNode("sim/model/walker[1]/limb[5]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[12]"));
+   rplayer.getNode("sim/model/npc[1]/limb[5]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[11]"));
+   rplayer.getNode("sim/model/npc[1]/limb[5]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[12]"));
   
    #left arm
-   rplayer.getNode("sim/model/walker[1]/limb[6]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[13]"));
-   rplayer.getNode("sim/model/walker[1]/limb[6]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[14]"));
-   rplayer.getNode("sim/model/walker[1]/limb[6]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[15]"));
+   rplayer.getNode("sim/model/npc[1]/limb[6]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[13]"));
+   rplayer.getNode("sim/model/npc[1]/limb[6]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[14]"));
+   rplayer.getNode("sim/model/npc[1]/limb[6]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[15]"));
    #left arm2
-   rplayer.getNode("sim/model/walker[1]/limb[7]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[16]"));
+   rplayer.getNode("sim/model/npc[1]/limb[7]/z-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[16]"));
    #left hand
-   rplayer.getNode("sim/model/walker[1]/limb[8]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[17]"));
-   rplayer.getNode("sim/model/walker[1]/limb[8]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[18]"));
+   rplayer.getNode("sim/model/npc[1]/limb[8]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[17]"));
+   rplayer.getNode("sim/model/npc[1]/limb[8]/y-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[18]"));
  
    #right leg1
-   rplayer.getNode("sim/model/walker[1]/limb[9]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[19]"));
+   rplayer.getNode("sim/model/npc[1]/limb[9]/x-deg", 1).alias(rplayer.getNode("sim/multiplay/generic/float[19]"));
  
 
-   rplayer.getNode("sim/model/walker[1]/limb[9]/y-deg", 1).alias(rplayer.getNode("surface-positions/wing-pos-norm"));
-   rplayer.getNode("sim/model/walker[1]/limb[9]/z-deg", 1).alias(rplayer.getNode("surface-positions/wing-fold-pos-norm"));    
+   rplayer.getNode("sim/model/npc[1]/limb[9]/y-deg", 1).alias(rplayer.getNode("surface-positions/wing-pos-norm"));
+   rplayer.getNode("sim/model/npc[1]/limb[9]/z-deg", 1).alias(rplayer.getNode("surface-positions/wing-fold-pos-norm"));    
    #right leg2
-   rplayer.getNode("sim/model/walker[1]/limb[10]/y-deg", 1).alias(rplayer.getNode("gear/gear[1]/compression-norm"));   
+   rplayer.getNode("sim/model/npc[1]/limb[10]/y-deg", 1).alias(rplayer.getNode("gear/gear[1]/compression-norm"));   
     
    #right foot
-   rplayer.getNode("sim/model/walker[1]/limb[11]/y-deg", 1).alias(rplayer.getNode("gear/gear[1]/position-norm"));   
+   rplayer.getNode("sim/model/npc[1]/limb[11]/y-deg", 1).alias(rplayer.getNode("gear/gear[1]/position-norm"));   
      
     
    #left leg1
-   rplayer.getNode("sim/model/walker[1]/limb[12]/x-deg", 1).alias(rplayer.getNode("gear/gear[2]/compression-norm"));
-   rplayer.getNode("sim/model/walker[1]/limb[12]/y-deg", 1).alias(rplayer.getNode("gear/gear[2]/position-norm"));
-   rplayer.getNode("sim/model/walker[1]/limb[12]/z-deg", 1).alias(rplayer.getNode("gear/gear[3]/compression-norm"));   
+   rplayer.getNode("sim/model/npc[1]/limb[12]/x-deg", 1).alias(rplayer.getNode("gear/gear[2]/compression-norm"));
+   rplayer.getNode("sim/model/npc[1]/limb[12]/y-deg", 1).alias(rplayer.getNode("gear/gear[2]/position-norm"));
+   rplayer.getNode("sim/model/npc[1]/limb[12]/z-deg", 1).alias(rplayer.getNode("gear/gear[3]/compression-norm"));   
     
    #left leg2
-   rplayer.getNode("sim/model/walker[1]/limb[13]/y-deg", 1).alias(rplayer.getNode("gear/gear[3]/position-norm"));
+   rplayer.getNode("sim/model/npc[1]/limb[13]/y-deg", 1).alias(rplayer.getNode("gear/gear[3]/position-norm"));
     
    #left foot
-   rplayer.getNode("sim/model/walker[1]/limb[14]/y-deg", 1).alias(rplayer.getNode("gear/gear[4]/compression-norm")); 
+   rplayer.getNode("sim/model/npc[1]/limb[14]/y-deg", 1).alias(rplayer.getNode("gear/gear[4]/compression-norm")); 
      
    #whole body up/down    
-   rplayer.getNode("sim/model/walker[1]/limb/z-m", 1).alias(rplayer.getNode("gear/gear[4]/position-norm"));   
+   rplayer.getNode("sim/model/npc[1]/limb/z-m", 1).alias(rplayer.getNode("gear/gear[4]/position-norm"));   
  
-   rplayer.getNode("sim/walker/parachute-opened-sec", 1).alias(rplayer.getNode("gear/launchbar/position-norm"));   
-   rplayer.getNode("sim/walker/parachute-opened-altitude-ft", 1).alias(rplayer.getNode("gear/launchbar/holdback-position-norm"));   
+   #not needed
+   #rplayer.getNode("sim/walker/parachute-opened-sec", 1).alias(rplayer.getNode("gear/launchbar/position-norm"));   
+   #rplayer.getNode("sim/walker/parachute-opened-altitude-ft", 1).alias(rplayer.getNode("gear/launchbar/holdback-position-norm"));   
+ 
  
    rplayer.getNode("sim/walker/character", 1).alias(rplayer.getNode("sim/multiplay/generic/int[0]"));
    rplayer.getNode("sim/walker/outfit", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[1]"));
    rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[2]"));
-   rplayer.getNode("sim/walker/outside", 1).alias(rplayer.getNode("sim/multiplay/generic/int[3]"));
+ 
+ #  rplayer.getNode("sim/walker/outside", 1).alias(rplayer.getNode("sim/multiplay/generic/int[3]"));
+ 
    rplayer.getNode("controls/lighting/signal-light", 1).alias(rplayer.getNode("sim/multiplay/generic/int[4]"));
    
    ##############################################################################
    
    rplayer.getNode("controls/doors/door0/position-norm", 1).alias(rplayer.getNode("surface-positions/elevator-pos-norm"));
-   
    rplayer.getNode("controls/engines/engine/throttle", 1).alias(rplayer.getNode("surface-positions/left-aileron-pos-norm"));
-  
-     
-       
-   ##############################################################################
   
   </load>
 </nasal>
@@ -222,10 +221,10 @@
 		<nopreview/>
 		<offsets> 
 			<heading-deg>0</heading-deg>
-			<x-m>-0.5</x-m>
+			<x-m>-0.7</x-m>
 			<y-m>0.0</y-m>
 			<!--== the pose from the bluebird has a Z offset ==-->
-			<z-m>1.15</z-m>
+			<z-m>1.25</z-m>
 		</offsets>
 </model>
 
