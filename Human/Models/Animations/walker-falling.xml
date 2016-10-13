@@ -5,7 +5,7 @@
 	<name type="string">falling</name>
 	<loop-enabled type="bool">false</loop-enabled>
 	<loop-to type="int">2</loop-to>
-	<trigger-upon type="string">Falling</trigger-upon>
+	<trigger-upon type="string">Disabled</trigger-upon>
 	<position>
 		<name type="string">neutral 0</name>
 		<rest-sec type="double">0.5</rest-sec>

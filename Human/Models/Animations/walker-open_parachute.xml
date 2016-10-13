@@ -7,11 +7,11 @@
 	<loop-to type="int">7</loop-to>
 	<trigger-upon type="string">Open-Parachute</trigger-upon>
 	<position>
-		<name type="string">spread eagle 0</name>
+		<name type="string">fall 0</name>
 		<rest-sec type="double">0</rest-sec>
 		<transit-sec type="double">0.5</transit-sec>
 		<limb>
-			<y-deg type="double">-90</y-deg>
+			<y-deg type="double">0</y-deg>
 			<z-m type="double">0</z-m>
 		</limb>
 		<limb n="1">
@@ -76,7 +76,7 @@
 		<rest-sec type="double">0</rest-sec>
 		<transit-sec type="double">0.25</transit-sec>
 		<limb>
-			<y-deg type="double">-90</y-deg>
+			<y-deg type="double">0</y-deg>
 			<z-m type="double">0</z-m>
 		</limb>
 		<limb n="1">
@@ -141,7 +141,7 @@
 		<rest-sec type="double">0</rest-sec>
 		<transit-sec type="double">1</transit-sec>
 		<limb>
-			<y-deg type="double">-90</y-deg>
+			<y-deg type="double">0</y-deg>
 			<z-m type="double">0</z-m>
 		</limb>
 		<limb n="1">
@@ -202,11 +202,11 @@
 		</limb>
 	</position>
 	<position n="3">
-		<name type="string">spread eagle 3</name>
+		<name type="string">fall 3</name>
 		<rest-sec type="double">0</rest-sec>
 		<transit-sec type="double">1</transit-sec>
 		<limb>
-			<y-deg type="double">-90</y-deg>
+			<y-deg type="double">0</y-deg>
 			<z-m type="double">0</z-m>
 		</limb>
 		<limb n="1">

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<model>
+		<path>soldierVR-standing.ac</path>
+		<offsets> 
+			<heading-deg>-90</heading-deg>
+			<!--  so that the nose is not distracting the walk view -->
+			<x-m>0.2</x-m>
+		</offsets>
+	</model>
+	
+</PropertyList>

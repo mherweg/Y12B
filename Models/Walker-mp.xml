@@ -39,9 +39,31 @@
 		<object-name>Walker-mp</object-name>
 	<!--	<object-name>Callsign</object-name>  -->
 		<condition>
+			<and>
 				 <property>/sim/walker/outside</property>
+				  <property>/sim/walker/airborne</property>
+			</and>
 		</condition>
 </animation>
+
+<model>
+	<name>Soldier-standing</name>
+	<path>Aircraft/Y12B/Human/Models/soldierVR-standing.xml</path>
+</model>
+<animation>
+        <type>select</type>
+		<object-name>Soldier-standing</object-name>
+		<condition>
+			<and>
+				 <property>/sim/walker/outside</property>
+				 <not>
+				  <property>/sim/walker/airborne</property>
+				  </not>
+			</and>
+		</condition>
+</animation>
+
+
 
 <!-- for debugging 
 <model>
@@ -132,6 +154,7 @@
    rplayer.getNode("sim/walker/outfit", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[1]"));
    rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[2]"));
    rplayer.getNode("sim/walker/outside", 1).alias(rplayer.getNode("sim/multiplay/generic/int[3]"));
+   rplayer.getNode("sim/walker/airborne", 1).alias(rplayer.getNode("sim/multiplay/generic/int[4]"));
    
    rplayer.getNode("sim/multiplay/callsign", 1).alias(rplayer.getNode("sim/multiplay/generic/string[1]"));
  

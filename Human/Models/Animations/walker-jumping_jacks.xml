@@ -6,7 +6,7 @@
 	<loop-enabled type="bool">true</loop-enabled>
 	<loop-to type="int">2</loop-to>
 	<!-- TODO: turn off this trigger /change to standing bored / move view with z-m-->
-	<trigger-upon type="string">Landing</trigger-upon>
+	<trigger-upon type="string">Disabled</trigger-upon>
 	<position>
 		<name type="string">standing quiet 0</name>
 		<rest-sec type="double">2</rest-sec>
