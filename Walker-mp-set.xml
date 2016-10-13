@@ -299,6 +299,7 @@
 		   <int n="1"   alias="/sim/walker/outfit"/>
 		   <int n="2"   alias="/sim/walker/gender"/>
 		   <int n="3"   alias="/sim/walker/outside"/>
+		   <int n="4"   alias="/sim/walker/airborne"/>
 		   <string n="1" alias="/sim/multiplay/callsign"/>
 	   </generic>
 	</multiplay>

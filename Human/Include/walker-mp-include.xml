@@ -154,6 +154,7 @@
 		<eyewear type="int">0</eyewear>
 		<tools type="int">0</tools>
 		<outside type="bool">false</outside>
+		<airborne type="bool">false</airborne>
 		<walking type="int">0</walking>
 		<walking-momentum type="bool">false</walking-momentum>
 		<speed-mps type="float">0.9</speed-mps>
