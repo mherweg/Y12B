@@ -142,17 +142,17 @@
 		</model>
 		
 	<walker>
-		<character>5</character>
+		<character type="int">5</character>
 		<!-- male -->
-		<gender>0</gender>
+		<gender type="int">0</gender>
 		<!--  1=green  5=soldier VR-->
-		<outfit>5</outfit>
-		<hair>0</hair>
+		<outfit type="int">5</outfit>
+		<hair type="int">0</hair>
 		<!--  headgear=3 - helmet -->
-		<headgear>0</headgear>
+		<headgear type="int">0</headgear>
 		<!-- TODO: orange glases fpr soldierVR -->
-		<eyewear>0</eyewear>
-		<tools>0</tools>
+		<eyewear type="int">0</eyewear>
+		<tools type="int">0</tools>
 		<outside type="bool">false</outside>
 		<walking type="int">0</walking>
 		<walking-momentum type="bool">false</walking-momentum>

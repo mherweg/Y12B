@@ -518,12 +518,11 @@
 						<mask>0</mask>
 						<hair>1</hair>
 				</npc> 
-				<!-- jump commander-->
+				<!-- jump commander
 				 <npc n="1">
 					<pose include = "Human/Models/Animations/commander_lift_right_arm.xml">
 					  <position>
 						 <limb n="3">
-							
 							 <y-deg type="double">180</y-deg>
 						 </limb>
 						 <limb n="5">
@@ -539,22 +538,8 @@
 					<mask>0</mask>
 					<hair>0</hair>
 				</npc>
+				-->
 			</model>
-				<walker>
-					<character>1</character>
-					<outfit>0</outfit>
-					<gender>0</gender>
-				</walker>
-			</sim>
-		</multiplayer>
-		
-		<multiplayer n="1">
-			<sim>
-				<walker>
-					<character>1</character>
-					<outfit>0</outfit>
-					<gender>0</gender>
-				</walker>
 			</sim>
 		</multiplayer>
 		
