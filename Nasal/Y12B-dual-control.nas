@@ -38,6 +38,7 @@ props.globals.initNode("/sim/remote/pilot-callsign", "", "STRING");
 ######################################################################
 # Used by dual_control to set up the mappings for the pilot.
 var pilot_connect_copilot = func (copilot) {
+	print("Y12B-dual-control.nas: pilot_connect_copilot");
     return 
         [
          ######################################################################
@@ -51,6 +52,7 @@ var pilot_connect_copilot = func (copilot) {
 
 ######################################################################
 var pilot_disconnect_copilot = func {
+   print("Y12B-dual-control.nas: pilot_disconnect_copilot");
 }
 
 
@@ -61,9 +63,10 @@ var pilot_disconnect_copilot = func {
 ######################################################################
 # Used by dual_control to set up the mappings for the copilot.
 var copilot_connect_pilot = func (pilot) {
+    
     # Initialize Nasal wrappers for copilot pick anaimations.
     set_copilot_wrappers(pilot);
-
+	print("Y12B-dual-control.nas: copilot_connect_pilot");
     return
         [
          ######################################################################
@@ -79,45 +82,25 @@ var copilot_connect_pilot = func (pilot) {
 var copilot_disconnect_pilot = func {
     # Reset local sound properties.
 
-#    p = "/gear/gear[0]/wow";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
-#    p = "/gear/gear[1]/wow";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
-#    p = "/gear/gear[2]/wow";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
     p = "/velocities/groundspeed-kt";
     props.globals.getNode(p).unalias();
     props.globals.getNode(p).setValue(0);
+    
     p = "/velocities/airspeed-kt";
     props.globals.getNode(p).unalias();
     props.globals.getNode(p).setValue(0);
+    
     p = "/position/altitude-ft";
     props.globals.getNode(p).unalias();
     props.globals.getNode(p).setValue(0);
-#    p = "/surface-positions/speedbrake-pos-norm";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
-#    p = "/fdm/jsbsim/aero/alpha-rad[0]";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
+    
     p = "/velocities/vertical-speed-fps";
     props.globals.getNode(p).unalias();
     props.globals.getNode(p).setValue(0);
+    
     p = "/velocities/speed-down-fps";
     props.globals.getNode(p).unalias();
     props.globals.getNode(p).setValue(0);
-#    p = "/accelerations/pilot-gdamped";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
-#    p = "/orientation/pitch-rate-degps";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
-#    p = "/sim/hitches/winch/open";
-#    props.globals.getNode(p).unalias();
-#    props.globals.getNode(p).setValue(0);
 }
 
 ######################################################################
@@ -130,30 +113,15 @@ var set_copilot_wrappers = func (pilot) {
 
     # Setup aliases to drive local sound.
 
-#    p = "/gear/gear[0]/wow";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/gear/gear[1]/wow";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/gear/gear[2]/wow";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/groundspeed-kt";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/airspeed-kt";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/position/altitude-ft";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/surface-positions/speedbrake-pos-norm";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/fdm/jsbsim/aero/alpha-rad[0]";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/vertical-speed-fps";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/speed-down-fps";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/accelerations/pilot-gdamped";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/orientation/pitch-rate-degps";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
-#    p = "/sim/hitches/winch/open";
-#    props.globals.getNode(p).alias(pilot.getNode(p));
+    #p = "/velocities/groundspeed-kt";
+    #props.globals.getNode(p).alias(pilot.getNode(p));
+    #p = "/velocities/airspeed-kt";
+    #props.globals.getNode(p).alias(pilot.getNode(p));
+    #p = "/position/altitude-ft";
+    #props.globals.getNode(p).alias(pilot.getNode(p));
+    #p = "/velocities/vertical-speed-fps";
+    #props.globals.getNode(p).alias(pilot.getNode(p));
+    #p = "/velocities/speed-down-fps";
+    #props.globals.getNode(p).alias(pilot.getNode(p));
+    
 }

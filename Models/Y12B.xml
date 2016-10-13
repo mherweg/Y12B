@@ -106,6 +106,7 @@
    
    rplayer.getNode("controls/lighting/signal-light", 1).alias(rplayer.getNode("sim/multiplay/generic/int[4]"));
    rplayer.getNode("controls/doors/door0/position-norm", 1).alias(rplayer.getNode("surface-positions/elevator-pos-norm"));
+   rplayer.getNode("controls/doors/door2/position-norm", 1).alias(rplayer.getNode("gear/launchbar/position-norm"));
    rplayer.getNode("controls/engines/engine/throttle", 1).alias(rplayer.getNode("surface-positions/left-aileron-pos-norm"));
   
   </load>
@@ -216,7 +217,7 @@
  
 <!--== person sitting in seat 7L ==-->	
 <model>
-		<name>p5l</name>
+		<name>p7l</name>
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
@@ -226,10 +227,21 @@
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
-
+<animation>
+		<type>select</type>
+		<object-name>p7l</object-name>
+		<condition>
+			<not>
+				<!-- if the Y12B aircraft is the first player that connects to the server, then multiplayer[1] is the first 
+				parachutist. generic/int[3] =  /sim/walker/outside
+				 -->
+				 <property>/ai/models/multiplayer[1]/sim/multiplay/generic/int[3]</property>
+			</not>
+        </condition>        
+</animation>
 <!--== person sitting in seat 9L ==-->	
 <model>
-		<name>p5l</name>
+		<name>p9l</name>
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
@@ -239,7 +251,15 @@
 			<z-m>1.2</z-m>
 		</offsets>
 </model>  
- 
+ <animation>
+		<type>select</type>
+		<object-name>p9l</object-name>
+		<condition>
+			<not>
+				 <property>/ai/models/multiplayer[2]/sim/multiplay/generic/int[3]</property>
+			</not>
+        </condition>        
+</animation>
  
  
  <!--== person sitting in seat 5L ==-->	
@@ -254,6 +274,16 @@
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
+ <animation>
+		<type>select</type>
+		<object-name>p5l</object-name>
+		<condition>
+			<not>
+				 <property>/ai/models/multiplayer[3]/sim/multiplay/generic/int[3]</property>
+			</not>
+        </condition>        
+</animation>
+ 
  <!--== person sitting in seat 4L ==-->	
 <model>
 		<name>p4l</name>
@@ -266,6 +296,16 @@
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
+ <animation>
+		<type>select</type>
+		<object-name>p4l</object-name>
+		<condition>
+			<not>
+				 <property>/ai/models/multiplayer[4]/sim/multiplay/generic/int[3]</property>
+			</not>
+        </condition>        
+</animation>
+ 
 
  <!--== person sitting in seat 3L ==-->	
 <model>
@@ -279,6 +319,16 @@
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
+ <animation>
+		<type>select</type>
+		<object-name>p3l</object-name>
+		<condition>
+			<not>
+				 <property>/ai/models/multiplayer[5]/sim/multiplay/generic/int[3]</property>
+			</not>
+        </condition>        
+</animation>
+ 
 
 
 <!-- == jump commander in cabin == 
@@ -393,7 +443,7 @@
 <animation>
 		<type>translate</type>
 		<object-name>cabin-cockpit-door</object-name>
-		<property>controls/doors/door2/position-norm</property>
+		<property>gear/launchbar/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>

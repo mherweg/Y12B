@@ -468,12 +468,12 @@ heading=90
 			<compression-norm alias="/sim/model/npc[1]/limb[14]/y-deg"/>
 			<position-norm    alias="/sim/model/npc[1]/limb/z-m"/>
 		</gear>
-		<!-- free to use
+		
 		<launchbar>
-			<position-norm          alias=""/>
-			<holdback-position-norm alias=""/>
+			<position-norm    alias="/controls/doors/door2/position-norm"/>
+			<!-- unused:  <holdback-position-norm alias=""/> -->
 		</launchbar>
-		-->
+		
 </gear>
 	
 	<!-- free to use
@@ -647,14 +647,12 @@ heading=90
   <dual_control>
    <file>Aircraft/Generic/DualControl/pilot-dual-control.nas</file>
   </dual_control>
-		<npc1>
-			<file>Aircraft/Y12B/Human/Nasal/npc1-animate.nas</file>
-		</npc1>
+  
 </nasal>
 
 
 <!-- static way of making up to 2 MP players visible 
-.. as a fallback to the dynamic MP properties, that the Walker-mp has now -->  
+.. as a fallback to the dynamic MP properties, that the Walker-mp has now  
 <ai>
 	<models>
 		<multiplayer>
@@ -677,7 +675,7 @@ heading=90
 		</multiplayer>
 	</models>
 </ai>
-
+-->
 
 </PropertyList>
 

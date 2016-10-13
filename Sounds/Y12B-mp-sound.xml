@@ -195,7 +195,7 @@
 
                                       <!--   DOORS  -->
 
-  <!-- Cabin DOOR wind  - not via MP ? -->
+  <!-- Cabin DOOR wind  -->
         <door>
             <name>cabin_door wind</name>
             <mode>looped</mode>
@@ -257,7 +257,7 @@
 
 
 
-  <!-- cabin-cockpit DOOR  (disabled)
+  <!-- cabin-cockpit DOOR  -->
 
         <door>
             <name>ccdoor moving</name>
@@ -266,12 +266,12 @@
             <condition>
 				<and>
                     <less-than>
-                    <property>sim/multiplay/generic/float[1]</property>
+                    <property>gear/launchbar/position-norm</property>
                     <value>1.0</value>
                     </less-than>
                     
                     <greater-than>
-                    <property>sim/multiplay/generic/float[1]</property>
+                    <property>gear/launchbar/position-norm</property>
                     <value>0.0</value>
                     </greater-than>
                 </and>
@@ -290,7 +290,7 @@
             <reference-dist>0.5</reference-dist>
             <max-dist>100.0</max-dist>
         </door>
--->
+
 
 		<readylight>
             <name>ready-signal</name>

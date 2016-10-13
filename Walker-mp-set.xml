@@ -542,6 +542,11 @@
 				-->
 			</model>
 			</sim>
+			<controls>
+			<doors>
+				<door2>1.0</door2>
+			</doors>
+			</controls>
 		</multiplayer>
 		
 	</models>
