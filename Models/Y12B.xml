@@ -153,9 +153,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>90</heading-deg>
+			<heading-deg>-90</heading-deg>
 			<x-m>-3.2</x-m>
-			<y-m>0.65</y-m>
+			<y-m>-0.723</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
@@ -166,9 +166,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>90</heading-deg>
+			<heading-deg>-90</heading-deg>
 			<x-m>-3.72</x-m>
-			<y-m>0.693</y-m>
+			<y-m>-0.693</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
@@ -178,9 +178,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>90</heading-deg>
+			<heading-deg>-90</heading-deg>
 			<x-m>-4.16</x-m>
-			<y-m>0.72</y-m>
+			<y-m>-0.72</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
@@ -191,9 +191,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>90</heading-deg>
+			<heading-deg>-90</heading-deg>
 			<x-m>-4.62</x-m>
-			<y-m>0.72</y-m>
+			<y-m>-0.72</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model>
@@ -204,9 +204,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>90</heading-deg>
+			<heading-deg>-90</heading-deg>
 			<x-m>-5.08</x-m>
-			<y-m>0.72</y-m>
+			<y-m>-0.72</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model>
@@ -221,9 +221,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>-90</heading-deg>
+			<heading-deg>90</heading-deg>
 			<x-m>-2.41</x-m>
-			<y-m>-0.723</y-m>
+			<y-m>0.693</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
@@ -245,9 +245,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>-90</heading-deg>
+			<heading-deg>90</heading-deg>
 			<x-m>-1.50</x-m>
-			<y-m>-0.723</y-m>
+			<y-m>0.693</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model>  
@@ -268,9 +268,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>-90</heading-deg>
+			<heading-deg>90</heading-deg>
 			<x-m>-3.34</x-m>
-			<y-m>-0.723</y-m>
+			<y-m>0.693</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
@@ -290,9 +290,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>-90</heading-deg>
+			<heading-deg>90</heading-deg>
 			<x-m>-3.78</x-m>
-			<y-m>-0.723</y-m>
+			<y-m>0.693</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 
@@ -313,9 +313,9 @@
 		 <path>Aircraft/Y12B/Human/Models/soldierVR-with-head.xml</path>
 		<nopreview/>
 		<offsets> 
-			<heading-deg>-90</heading-deg>
+			<heading-deg>90</heading-deg>
 			<x-m>-4.23</x-m>
-			<y-m>-0.723</y-m>
+			<y-m>0.693</y-m>
 			<z-m>1.2</z-m>
 		</offsets>
 </model> 

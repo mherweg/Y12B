@@ -77,7 +77,7 @@ heading=90
      <!--  jump commander 
      ready: /controls/lighting/signal-light1
      jump! /controls/lighting/signal-light3
-     -->
+     
      <npc n="1">
     	<animate>
 					<dialog-position type="int">0</dialog-position>
@@ -186,12 +186,13 @@ heading=90
             <character>5</character>
            <outfit>6</outfit>
      </npc>
+-->
 
 <!-- outside at cabin door -->
 	<map>
 	 <default_exit>
 	  <x-offset-m type ="float">-1.5</x-offset-m>
-	  <y-offset-m type ="float">1.5</y-offset-m>
+	  <y-offset-m type ="float">-1.5</y-offset-m>
 	 </default_exit>
 	</map>
  </model>
@@ -245,7 +246,7 @@ heading=90
 			<enabled archive="y" type="bool">false</enabled>
 			  <from-model type="bool">true</from-model>
 			  <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-			  <x-offset-m archive="y">  0.195 </x-offset-m>	<!-- Right -->
+			  <x-offset-m archive="y"> -0.195 </x-offset-m>	<!-- Right -->
 			  <y-offset-m archive="y">  2.355 </y-offset-m>	<!-- Up    -->
 			  <z-offset-m archive="y"> -1.289 </z-offset-m>	<!-- Back  -->
 			  <default-field-of-view-deg>90</default-field-of-view-deg>
@@ -622,11 +623,11 @@ heading=90
   <walkview>
    <file>Aircraft/Generic/WalkView/walkview.nas</file>
    <script>
-    # a 1.7m wide strip  path running in the fore-aft direction.
+    # a 1.5m wide strip  path running in the fore-aft direction.
     
     var cabinConstraint =
          walkview.LinePlane.new([-5.55, 0.0, 1.0],
-                                [-0.5, 0.0, 1.0],1.7);
+                                [-0.5, 0.0, 1.0],1.5);
 
     # Create the walker for the named view and the given movement restrictions.
     var rigger_walker = walkview.Walker.new("walk in cabin view", cabinConstraint);

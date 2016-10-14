@@ -12,7 +12,7 @@
    ##############################################################################
    var rplayer = cmdarg();
    
-   print("############remote walker loading...##############");
+   #print("############remote walker loading...##############");
     
    #right hand pose  
    rplayer.getNode("sim/model/walker[1]/limb[5]/hand-pose", 1).alias(rplayer.getNode("surface-positions/speedbrake-pos-norm"));
