@@ -1,7 +1,7 @@
 
 SIM_HZ=20
 MP_HZ=20
-MP_SERVER=i3
+MP_SERVER=mpserver01.flightgear.org
 
 #FG_HOME=/SDB2/dot-fgfs fgfs --prop:/sim/frame-rate-throttle-hz=$SIM_HZ  --fg-aircraft=/mh/submodules/Aircraft --aircraft=Walker-mp --airport=ZHCC --timeofday=noon --fg-scenery=/mh/scenery/2.0 --multiplay=in,$MP_HZ,,5001 --multiplay=out,$MP_HZ,$MP_SERVER,5000 --callsign=1 --altitude=5000 &
 

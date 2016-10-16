@@ -146,7 +146,7 @@
 
 
 
- <!-- == right row ==-->	
+ <!-- == left (door) row ==-->	
 <!-- == person sitting in seat 5r == -->	
 <model>
 		<name>p5r</name>
@@ -213,7 +213,7 @@
 
 
 
- <!--== left row ==-->	
+ <!--== right row ==-->	
  
 <!--== person sitting in seat 7L ==-->	
 <model>
@@ -231,12 +231,19 @@
 		<type>select</type>
 		<object-name>p7l</object-name>
 		<condition>
-			<not>
+			<and>
+			<equals>
 				<!-- if the Y12B aircraft is the first player that connects to the server, then multiplayer[1] is the first 
 				parachutist. generic/int[3] =  /sim/walker/outside
 				 -->
 				 <property>/ai/models/multiplayer[1]/sim/multiplay/generic/int[3]</property>
-			</not>
+				 <value>0</value>
+			</equals>
+			 <greater-than-equals>
+				  <property>/ai/models/multiplayer[1]/id</property>
+				 <value>0</value>
+			 </greater-than-equals>
+			</and>
         </condition>        
 </animation>
 <!--== person sitting in seat 9L ==-->	
@@ -255,10 +262,22 @@
 		<type>select</type>
 		<object-name>p9l</object-name>
 		<condition>
-			<not>
+			<and>
+			<equals>
+				<!-- if the Y12B aircraft is the first player that connects to the server, then multiplayer[1] is the first 
+				parachutist. generic/int[3] =  /sim/walker/outside
+				 -->
 				 <property>/ai/models/multiplayer[2]/sim/multiplay/generic/int[3]</property>
-			</not>
-        </condition>        
+				 <value>0</value>
+			</equals>
+			 <greater-than-equals>
+				  <property>/ai/models/multiplayer[2]/id</property>
+				 <value>0</value>
+			 </greater-than-equals>
+			</and>
+        </condition>  
+		
+		
 </animation>
  
  
@@ -278,10 +297,21 @@
 		<type>select</type>
 		<object-name>p5l</object-name>
 		<condition>
-			<not>
+			<and>
+			<equals>
+				<!-- if the Y12B aircraft is the first player that connects to the server, then multiplayer[1] is the first 
+				parachutist. generic/int[3] =  /sim/walker/outside
+				 -->
 				 <property>/ai/models/multiplayer[3]/sim/multiplay/generic/int[3]</property>
-			</not>
-        </condition>        
+				 <value>0</value>
+			</equals>
+			 <greater-than-equals>
+				  <property>/ai/models/multiplayer[3]/id</property>
+				 <value>0</value>
+			 </greater-than-equals>
+			</and>
+        </condition>  
+		    
 </animation>
  
  <!--== person sitting in seat 4L ==-->	
@@ -300,10 +330,22 @@
 		<type>select</type>
 		<object-name>p4l</object-name>
 		<condition>
-			<not>
+			<and>
+			<equals>
+				<!-- if the Y12B aircraft is the first player that connects to the server, then multiplayer[1] is the first 
+				parachutist. generic/int[3] =  /sim/walker/outside
+				 -->
 				 <property>/ai/models/multiplayer[4]/sim/multiplay/generic/int[3]</property>
-			</not>
-        </condition>        
+				 <value>0</value>
+			</equals>
+			 <greater-than-equals>
+				  <property>/ai/models/multiplayer[4]/id</property>
+				 <value>0</value>
+			 </greater-than-equals>
+			</and>
+        </condition>  
+		
+		  
 </animation>
  
 
@@ -323,10 +365,22 @@
 		<type>select</type>
 		<object-name>p3l</object-name>
 		<condition>
-			<not>
-				 <property>/ai/models/multiplayer[5]/sim/multiplay/generic/int[3]</property>
-			</not>
-        </condition>        
+			<and>
+			<equals>
+				<!-- if the Y12B aircraft is the first player that connects to the server, then multiplayer[1] is the first 
+				parachutist. generic/int[3] =  /sim/walker/outside
+				 -->
+				 <property>/ai/models/multiplayer/sim/multiplay/generic/int[3]</property>
+				 <value>0</value>
+			</equals>
+			 <greater-than-equals>
+				  <property>/ai/models/multiplayer/id</property>
+				 <value>0</value>
+			 </greater-than-equals>
+			</and>
+        </condition>  
+		
+		    
 </animation>
  
 
