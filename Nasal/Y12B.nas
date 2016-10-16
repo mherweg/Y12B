@@ -6,6 +6,11 @@ var maxspeed = props.globals.getNode("engines/engine/speed-max-mps");
 var speed = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000];
 var current = 3;
 
+var start_lon = 0.0;
+var start_lat = 0.0;
+var start_alt = 0.0;
+var start_heading = 0.0;
+
 
 controls.flapsDown = func(x) {
 	if (!x)
@@ -86,7 +91,22 @@ var update_main = func {
 settimer(update_main, 1);
 }
 
-# is this needed ??
+var jump_to_start = func {
+
+	
+	#print (start_lon);
+	#print (start_lat);
+	#print (start_alt);
+	#print (start_heading);
+	setprop("position/longitude-deg", start_lon);
+	setprop("position/latitude-deg", start_lat);
+	setprop("position/altitude-ft", start_alt);
+	setprop("orientation/heading-deg", start_heading);
+	
+}
+
+
+
 var prestart_main = func {
 	var gnd_elev = getprop("position/ground-elev-ft");
 	var altitude = getprop("position/altitude-ft");
@@ -95,6 +115,19 @@ var prestart_main = func {
 		settimer(prestart_main, 0.1);
 	} else {
 		print ("Y-12B.nas - prestart_main");
+		
+		# remember starting location and heading
+		start_lon = getprop ("position/longitude-deg");
+		start_lat = getprop("position/latitude-deg");
+		start_heading = getprop("orientation/heading-deg");
+		start_alt = altitude;
+		
+		# not needed, using global vars
+		#setprop("position/start-logitude-deg", start_lon);
+		#setprop("position/start-latitude-ft", start_lat);						
+		#setprop("position/start-altitude-ft", altitude);
+		
+		
 		update_main();
 	}
 }

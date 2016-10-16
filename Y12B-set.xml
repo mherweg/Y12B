@@ -20,7 +20,7 @@ heading=90
 97 knots = 50m/s , 500m in 10 sec, 3km in 1 minute 
 -->
 
-<!--
+
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
@@ -33,7 +33,6 @@ heading=90
 		<target-speed-kt>97</target-speed-kt>
     </settings>
 </autopilot>
--->
 
 
 <sim n="0">
@@ -564,16 +563,17 @@ heading=90
 				<script>walk.open_chute()</script>
 			</binding>
 		</key>
-		
-		<!-- not used -->
-		<key n="107">
-			<name>k</name>
-			<desc>Toggle venting/contrails</desc>
-			<binding>
-				<command>nasal</command>
-				<script>Y12B.foo</script>
-			</binding>
-		</key>
+			
+		 <key n="107">
+			  <name>k</name>
+			  <desc>jump to start location</desc>
+			  <binding>
+				   <command>nasal</command>
+				   <script>Y12B.jump_to_start()</script>
+			  </binding>
+		 </key>
+ 
+	
 		
 		
 		<key n="362">
