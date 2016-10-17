@@ -137,7 +137,9 @@
 	<!--	<object-name>Callsign</object-name>  -->
 		<condition>
 			<and>
+				<!-- outside -->
 				 <property>sim/multiplay/generic/int[3]</property>
+				 <!-- airborne -->
 				 <property>sim/multiplay/generic/int[4]</property>
 			</and>
 		</condition>
@@ -152,8 +154,10 @@
 		<object-name>Soldier-standing</object-name>
 		<condition>
 			<and>
+				<!-- outside -->
 				 <property>sim/multiplay/generic/int[3]</property>
 				 <not>
+					 <!-- airborne -->
 				    <property>sim/multiplay/generic/int[4]</property>
 				 </not>
 			</and>

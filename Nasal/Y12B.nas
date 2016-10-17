@@ -10,6 +10,8 @@ var start_lon = 0.0;
 var start_lat = 0.0;
 var start_alt = 0.0;
 var start_heading = 0.0;
+var flight_time = 0.0;
+var jump_lock = 0;
 
 
 controls.flapsDown = func(x) {
@@ -91,9 +93,9 @@ var update_main = func {
 settimer(update_main, 1);
 }
 
+#move the aircraft back to the startin location and heading
 var jump_to_start = func {
 
-	
 	#print (start_lon);
 	#print (start_lat);
 	#print (start_alt);
@@ -103,6 +105,21 @@ var jump_to_start = func {
 	setprop("position/altitude-ft", start_alt);
 	setprop("orientation/heading-deg", start_heading);
 	
+	setprop("controls/lighting/signal-light", 1);
+	
+	setprop ("/controls/doors/door0/position-norm",0);
+	settimer(start_signal_seq, flight_time); 
+}
+
+# start yellow light, then green light
+var start_signal_seq = func {
+	toggle_door0();
+	setprop("controls/lighting/signal-light", 2);
+	settimer(green_light_on, 2);
+}
+
+var green_light_on = func {
+	setprop("controls/lighting/signal-light", 3);
 }
 
 
@@ -127,7 +144,11 @@ var prestart_main = func {
 		#setprop("position/start-latitude-ft", start_lat);						
 		#setprop("position/start-altitude-ft", altitude);
 		
-		
+		#after n seconds of flight, start yellow light:
+		flight_time = getprop("sim/Y12B/flight-time");
+		print(flight_time);
+		settimer(start_signal_seq, flight_time); 
+	    
 		update_main();
 	}
 }

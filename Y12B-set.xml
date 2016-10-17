@@ -32,6 +32,7 @@ heading=90
 		<target-altitude-ft type="double">3000</target-altitude-ft>
 		<target-speed-kt>97</target-speed-kt>
     </settings>
+
 </autopilot>
 
 
@@ -40,7 +41,7 @@ heading=90
 	 <startup>
             <splash-texture>Aircraft/Y12B/splash.png</splash-texture>
      </startup>
-	<aero>Y-12B</aero>
+	
   <description>Harbin Y-12B</description>
    <long-description>Harbin Y-12B with UFO FDM as a test and development platform for Walker, WalkView and parachute jumping.  
 	    https://en.wikipedia.org/wiki/Harbin_Y-12
@@ -56,11 +57,17 @@ heading=90
 	
 	<flight-model>ufo</flight-model>
 
+	<!-- seconds of flight before the jump signal starts see: Y12B.nas -->
+	<Y12B>
+		<flight-time type="float">55.0</flight-time>
+	</Y12B>
+
+
  <model>
   <path>Aircraft/Y12B/Models/Y12B.xml</path>
   
   
-   <!--  pilot -->
+   <!--  pilot - not the right outfit, not visible via MP -->
 	<npc n="3">
 	  <pose include = "Include/ju52_pilot.xml"></pose>
 	  <gender>0</gender>
@@ -380,24 +387,79 @@ heading=90
 						</binding>
 					</item>
 				 -->	 
-             
+				 
+				  <!-- for single player usage: -->
+						 <item>
+						  <label>Outfit: green, rigged</label>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/outfit</property>
+						   <value>1</value>
+						  </binding>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/character</property>
+						   <value>0</value>
+						  </binding>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/headgear</property>
+						   <value>3</value>
+						  </binding>
+					 </item>
+					  <item>
+						  <label>Outfit: soldierVR, not rigged</label>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/outfit</property>
+						   <value>5</value>
+						  </binding>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/character</property>
+						   <value>5</value>
+						  </binding>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/headgear</property>
+						   <value>0</value>
+						  </binding>
+					 </item>
+					  <item>
+						  <label>Outfit: soldierVR, rigged</label>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/outfit</property>
+						   <value>6</value>
+						  </binding>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/character</property>
+						   <value>5</value>
+						  </binding>
+						  <binding>
+						   <command>property-assign</command>
+						   <property>/sim/walker/headgear</property>
+						   <value>0</value>
+						  </binding>
+					 </item>
                   </menu>
         </default>
     </menubar>
            
-<!-- 2-arm animation will be replaced with full body animation -->
+<!-- 2-arm animation - still wanted ?
 	<systems>
 		<property-rule n="100">
 			<name>Jump Commander Arms</name>
 			<path>Systems/Y12B-propertyrules.xml</path>
         </property-rule>
     </systems>
-            
+ -->
            
 	<multiplay>
 		<generic>
 			<!-- MP  properties -->
-		   <!-- hip,body,chest,head -->
+		   <!-- npc[1]  hip,body,chest,head -->
 		   <float n="0" alias="/sim/model/npc[1]/limb[0]/y-deg"/>
 		   <float n="1" alias="/sim/model/npc[1]/limb[0]/z-deg"/>
 		   <float n="2" alias="/sim/model/npc[1]/limb[1]/y-deg"/>
