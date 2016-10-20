@@ -1,14 +1,10 @@
 <?xml version="1.0"?>
 
 <!--
-  Multiplayer copilot view and control.
-
-  Copyright (C) 2007 - 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  Multiplayer walker
   This file is licensed under the GPL license version 2 or later.
 -->
-<!--
-  Usage: fgfs - -prop:/sim/remote/pilot-callsign="callsign" - -aircraft=Y12B-pax1
--->
+
 <PropertyList include="Aircraft/Y12B/Human/Include/walker-mp-include.xml">
 
 <sim>
@@ -43,7 +39,7 @@
 			<pilot-callsign type="string">Y-pilot</pilot-callsign>
 	  </remote>
 
-  
+
 	<view n="0">
 	   <name>Passenger View</name>
 	   <type>lookfrom</type>

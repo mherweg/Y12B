@@ -20,7 +20,6 @@ heading=90
 97 knots = 50m/s , 500m in 10 sec, 3km in 1 minute 
 -->
 
-
 <autopilot>
 	<locks>
 		<heading type="string">true-heading-hold</heading>
@@ -61,6 +60,12 @@ heading=90
 	<Y12B>
 		<flight-time type="float">55.0</flight-time>
 	</Y12B>
+	
+	<!-- for custom model view -->
+	
+	<current-view>
+		<z-offset-m>0.0</z-offset-m>
+	</current-view>
 
 
  <model>
@@ -242,6 +247,16 @@ heading=90
 			<enabled archive="y" type="bool">false</enabled>
 		</config>
 	</view>
+	
+	
+	<!-- "lookfrom" modified model view -->
+	<view n="7">
+		<config>
+			<enabled archive="y" type="bool">true</enabled>
+		</config>
+		<type>lookfrom</type>
+	</view>
+	
 <!-- x/y/z == right/up/back -->
 	<view n="102">
 		<name>Fixed Cabin View</name>

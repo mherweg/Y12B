@@ -88,12 +88,44 @@ var update_main = func {
 		}	else {
 			setprop("/controls/gear/gear-down", 1);
 		}	
+		
 	
+
+# custom "look from" model view	
+	vn = getprop("/sim/current-view/view-number");
+	if (vn == 7){
+		setprop("/sim/current-view/z-offset-m", -0.2);
+		
+		#print("cmv ...set");
+	} 
+
 	
-settimer(update_main, 1);
+		
+		
+settimer(update_main, 0.5);
 }
 
-#move the aircraft back to the startin location and heading
+
+
+# custom "look from" model view	
+var cmv = func{
+	
+	    # Z does not work here. view.nas overwrites it :-(
+		setprop("/sim/current-view/z-offset-m", -0.2);
+		
+		# y = up/down y=0 look at feet
+		setprop("/sim/current-view/y-offset-m", 1.7);
+		
+		
+		setprop("/sim/current-view/x-offset-m", 0.2);
+		
+		#print("custom model view ...set");
+}
+setlistener("/sim/current-view/model-view", cmv );
+
+
+
+#move the aircraft back to the starting location and heading
 var jump_to_start = func {
 
 	#print (start_lon);
@@ -146,7 +178,7 @@ var prestart_main = func {
 		
 		#after n seconds of flight, start yellow light:
 		flight_time = getprop("sim/Y12B/flight-time");
-		print(flight_time);
+		#print(flight_time);
 		settimer(start_signal_seq, flight_time); 
 	    
 		update_main();
