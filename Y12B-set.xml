@@ -34,6 +34,11 @@ heading=90
 
 </autopilot>
 
+<scenery>
+	<share-events type="bool">true</share-events>
+</scenery>
+	
+
 
 <sim n="0">
 	
@@ -58,7 +63,7 @@ heading=90
 
 	<!-- seconds of flight before the jump signal starts see: Y12B.nas -->
 	<Y12B>
-		<flight-time type="float">55.0</flight-time>
+		<flight-time type="float">20.0</flight-time>
 	</Y12B>
 	
 	<!-- for custom model view -->

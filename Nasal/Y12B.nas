@@ -102,7 +102,7 @@ var update_main = func {
 	
 		
 		
-settimer(update_main, 0.5);
+settimer(update_main, 0.1);
 }
 
 
@@ -178,7 +178,7 @@ var prestart_main = func {
 		
 		#after n seconds of flight, start yellow light:
 		flight_time = getprop("sim/Y12B/flight-time");
-		#print(flight_time);
+		print(flight_time);
 		settimer(start_signal_seq, flight_time); 
 	    
 		update_main();
