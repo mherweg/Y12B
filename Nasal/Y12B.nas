@@ -147,7 +147,9 @@ var jump_to_start = func {
 var start_signal_seq = func {
 	toggle_door0();
 	setprop("controls/lighting/signal-light", 2);
-	settimer(green_light_on, 2);
+	# 3 seconds yello , then green
+	# if yellow is less than 3 seconds, then the camera-dolly.nas can not make all the way to the door
+	settimer(green_light_on, 3);
 }
 
 var green_light_on = func {

@@ -343,6 +343,8 @@ setlistener("sim/walker/walking", func(n) {
 
 setlistener("sim/walker/key-triggers/outside-toggle", func {
 	var c_view = getprop ("sim/current-view/view-number");
+	
+	
 	if (c_view == 0) {
 		if (getprop("sim/walker/outside")) {
 			setprop("sim/current-view/view-number", view.indexof("Walk View"));
@@ -350,8 +352,10 @@ setlistener("sim/walker/key-triggers/outside-toggle", func {
 		} else {
 			get_out(0);
 		}
+		
 	} elsif (c_view == view.indexof("Walk View")) {
 		get_in(0);
+		
 	} else {
 		if (getprop("sim/walker/outside")) {
 			get_in(0);
@@ -767,7 +771,7 @@ setlistener("sim/current-view/heading-offset-deg", func(n) {
 
 var get_out = func (loc) {
 	################
-	print(sprintf("get out !"));
+	print("get out !");
 	##############
 	
 	var c_view = getprop("sim/current-view/view-number");
@@ -777,13 +781,13 @@ var get_out = func (loc) {
 	}
 	var c_airspeed_mps = getprop("velocities/airspeed-kt") * 0.51444444;
 	var walk_dir = getprop("sim/walker/walking");
-	if (walk_dir and loc == hatch_specs.rear_hatch_loc) {
-		if (c_airspeed_mps > 0) {
-			c_airspeed_mps -= 1;	# add momentum toward rear
-		} else {
-			c_airspeed_mps += 1;
-		}
-	}
+	#if (walk_dir and loc == hatch_specs.rear_hatch_loc) {
+	#	if (c_airspeed_mps > 0) {
+	#		c_airspeed_mps -= 1;	# add momentum toward rear
+	#	} else {
+	#		c_airspeed_mps += 1;
+	#	}
+	#}
 	var c_head_deg = getprop("orientation/heading-deg");
 	var c_pitch = getprop("orientation/pitch-deg");
 	# for powered ejections, add to the next line the rocket thrust
@@ -818,7 +822,9 @@ var get_out = func (loc) {
 	setprop("sim/walker/longitude-deg" , (getprop("position/longitude-deg")));
 	setprop("sim/walker/roll-deg" , (getprop("orientation/roll-deg")));
 	setprop("sim/walker/pitch-deg" , (getprop("orientation/pitch-deg")));
-	setprop("sim/walker/heading-deg" , (getprop("orientation/heading-deg")));
+	
+	setprop("sim/walker/heading-deg" , (getprop("orientation/heading-deg") -90 ));
+	
 	setprop("sim/view[100]/enabled", 1);
 	setprop("sim/view[101]/enabled", 1);
 	
@@ -833,7 +839,7 @@ var get_out = func (loc) {
 		setprop("sim/current-view/roll-offset-deg", 0);
 		setprop("sim/current-view/heading-offset-deg", head);
 	}
-	setprop("sim/walker/heading-deg", 0);
+	#setprop("sim/walker/heading-deg", 0);
 	setprop("sim/walker/roll-deg", 0);
 	setprop("sim/walker/pitch-deg", 0);
 	setprop("sim/walker/latitude-deg", new_coord[0]);
@@ -854,8 +860,22 @@ var get_out = func (loc) {
 	walker_model.add();
 	
 	#### MH dual-control disconnect ####
-	setprop("sim/remote/pilot-callsign", "no-no");
+	print("disconnect from aircraft");
+	
 	dual_control.main.reset();
+	setprop("sim/remote/pilot-callsign", "no-no");
+	
+	#print("disconnected from aircraft.........");
+	
+	var disconnect_heading = getprop("orientation/heading-deg");
+	disconnect_heading = normheading(disconnect_heading-90.0);
+	setprop("orientation/heading-deg", disconnect_heading);
+	setprop("sim/walker/heading-deg", disconnect_heading);
+	setprop("sim/current-view/heading-offset-deg", 0.0);
+	
+	#printf(".......... heading after disconnect: %d", disconnect_heading);
+	
+	
 
 }
 
@@ -863,74 +883,6 @@ var get_in = func (loc) {
 	walker_model.remove();
     #MH 
 	var c_view = getprop("sim/current-view/view-number");
-	# the following section is aircraft specific for locations of entry hatches and doors
-#	var new_pos = 4;
-#	var c_pos = getprop("sim/model/bluebird/crew/cockpit-position");
-#	if (c_view > 0) {
-#		if (loc == 0) {	# find open hatch
-	#			loc = 1;
-	#			setprop("sim/model/bluebird/crew/cockpit-position", 4);
-	#			c_pos = 5;
-	#		} elsif (getprop("sim/model/bluebird/doors/door[1]/position-norm") > 0.2) {
-	#			loc = 2;
-	#			setprop("sim/model/bluebird/crew/cockpit-position", 4);
-	#			c_pos = 5;
-	#		} elsif (getprop("sim/model/bluebird/doors/door[5]/position-norm") > 0.2) {
-	#			loc = 5;
-	#			setprop("sim/model/bluebird/crew/cockpit-position", 4);
-	#			c_pos = 5;
-	#		}
-	#	}
-	#	if (loc >= 1) {
-	#		if (c_pos == 5) {
-	#			var new_walker_x = (loc == 1 ? -2.55 : (loc == 2 ? -2.55 : 10.0));
-	#			var new_walker_y = (loc == 1 ? -2.8 : (loc == 2 ? 2.8 : 0));
-	#		} else {
-	#			if (loc == 1) {
-	#				var new_walker_x = -2.55;
-	#				var new_walker_y = -1.9;
-	#			} elsif (loc == 2) {
-	#				var new_walker_x = -2.55;
-	#				var new_walker_y = 1.9;
-	#			} else {
-	#				var new_walker_x = getprop("sim/model/bluebird/crew/walker/x-offset-m");
-	#				var new_walker_y = getprop("sim/model/bluebird/crew/walker/y-offset-m");
-	#				if (new_walker_x < 9) {
-	#					new_walker_x = 10.4;
-	#				}
-	#				if (new_walker_y < -1.6) {
-	#					new_walker_y = -1.6;
-	#				} elsif (new_walker_y > 1.6) {
-	#					new_walker_y = 1.6;
-	#				}
-	#			}
-	#		}
-	#		var c_head_deg = getprop("orientation/heading-deg");
-	#		c_pos = 5;
-	#		var new_walker_h = normheading(getprop("sim/current-view/heading-offset-deg") + c_head_deg);
-	#	} else {
-	#		var new_walker_x = bluebird.cockpit_locations[c_pos].x;
-	#		var new_walker_y = bluebird.cockpit_locations[c_pos].y;
-	#		var new_walker_h = bluebird.cockpit_locations[c_pos].h;
-	#	}
-	#	var new_walker_z = bluebird.cockpit_locations[c_pos].z[0];
-	#	var new_walker_p = bluebird.cockpit_locations[c_pos].p;
-	#	var new_walker_fov = bluebird.cockpit_locations[c_pos].fov;
-		# end aircraft specific
-	#	if (c_view == view.indexof("Walk View")) {
-	#		setprop("sim/current-view/view-number", 0);
-	#		setprop("sim/current-view/z-offset-m", new_walker_x);
-	#		setprop("sim/current-view/x-offset-m", new_walker_y);
-	#		setprop("sim/current-view/y-offset-m", new_walker_z);
-	#		setprop("sim/current-view/goal-heading-offset-deg", new_walker_h);
-	#		setprop("sim/current-view/heading-offset-deg", new_walker_h);
-	#		setprop("sim/current-view/goal-pitch-offset-deg", new_walker_p);
-	#		setprop("sim/current-view/pitch-offset-deg", new_walker_p);
-	#		setprop("sim/current-view/field-of-view", new_walker_fov);
-	#	}
-	#	setprop("sim/model/bluebird/crew/walker/x-offset-m", new_walker_x);
-	#	setprop("sim/model/bluebird/crew/walker/y-offset-m", new_walker_y);
-	#}
 	
 	#MH Y12B
 	setprop("sim/current-view/view-number", 0);

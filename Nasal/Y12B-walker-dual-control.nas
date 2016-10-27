@@ -65,7 +65,7 @@ var copilot_connect_pilot = func (pilot) {
     # Initialize Nasal wrappers for copilot pick anaimations.
     set_copilot_wrappers(pilot);
     
-    print (" Y12B-walker-dual-control.nas: copilot_connect_pilot");
+    #print (" Y12B-walker-dual-control.nas: copilot_connect_pilot");
     
     return
         [
@@ -139,20 +139,20 @@ var set_copilot_wrappers = func (pilot) {
 #    props.globals.getNode(p).alias(pilot.getNode(p));
 #    p = "/gear/gear[2]/wow";
 #    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/groundspeed-kt";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/airspeed-kt";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/position/altitude-ft";
-    props.globals.getNode(p).alias(pilot.getNode(p));
+#    p = "/velocities/groundspeed-kt";
+#    props.globals.getNode(p).alias(pilot.getNode(p));
+#    p = "/velocities/airspeed-kt";
+#    props.globals.getNode(p).alias(pilot.getNode(p));
+#    p = "/position/altitude-ft";
+#    props.globals.getNode(p).alias(pilot.getNode(p));
 #    p = "/surface-positions/speedbrake-pos-norm";
 #    props.globals.getNode(p).alias(pilot.getNode(p));
 #    p = "/fdm/jsbsim/aero/alpha-rad[0]";
 #    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/vertical-speed-fps";
-    props.globals.getNode(p).alias(pilot.getNode(p));
-    p = "/velocities/speed-down-fps";
-    props.globals.getNode(p).alias(pilot.getNode(p));
+#    p = "/velocities/vertical-speed-fps";
+#    props.globals.getNode(p).alias(pilot.getNode(p));
+#    p = "/velocities/speed-down-fps";
+#    props.globals.getNode(p).alias(pilot.getNode(p));
 #    p = "/accelerations/pilot-gdamped";
 #    props.globals.getNode(p).alias(pilot.getNode(p));
 #    p = "/orientation/pitch-rate-degps";

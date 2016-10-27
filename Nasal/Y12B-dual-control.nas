@@ -38,7 +38,7 @@ props.globals.initNode("/sim/remote/pilot-callsign", "", "STRING");
 ######################################################################
 # Used by dual_control to set up the mappings for the pilot.
 var pilot_connect_copilot = func (copilot) {
-	print("Y12B-dual-control.nas: pilot_connect_copilot");
+	#print("Y12B-dual-control.nas: pilot_connect_copilot");
     return 
         [
          ######################################################################
@@ -52,7 +52,7 @@ var pilot_connect_copilot = func (copilot) {
 
 ######################################################################
 var pilot_disconnect_copilot = func {
-   print("Y12B-dual-control.nas: pilot_disconnect_copilot");
+   #print("Y12B-dual-control.nas: pilot_disconnect_copilot");
 }
 
 
@@ -66,7 +66,7 @@ var copilot_connect_pilot = func (pilot) {
     
     # Initialize Nasal wrappers for copilot pick anaimations.
     set_copilot_wrappers(pilot);
-	print("Y12B-dual-control.nas: copilot_connect_pilot");
+	#print("Y12B-dual-control.nas: copilot_connect_pilot");
     return
         [
          ######################################################################
