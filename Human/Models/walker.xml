@@ -88,25 +88,99 @@
 
 
 <model>
-  <!-- old: <path>Aircraft/Y12B/Human/Models/chute.xml</path>   -->
-  <path>Aircraft/Y12B/Human/Models/round_chute.xml</path>
-  <offsets>
-   <z-m>1.4</z-m>
-   <heading-deg>-90</heading-deg>
-  </offsets>
+	<name>round-white-chute</name>
+    <path>Aircraft/Y12B/Human/Models/round-white-chute/round-white-chute.xml</path>
+	<offsets>
+		<z-m>2.3</z-m>
+		<y-m>0.4</y-m>
+		<heading-deg>-90</heading-deg>
+	</offsets>
 </model>
+<animation>
+  <type>select</type>
+  <object-name>round-white-chute</object-name>
+  <condition>
+	  <and>
+				<greater-than>
+					<property>sim/walker/parachute-opened-sec</property>
+					<value>0.0</value>
+				</greater-than>
+				<greater-than>
+					<property>sim/walker/parachute-opened-altitude-ft</property>
+					<value>0.0</value>
+				</greater-than>
+			<equals>
+				<property>sim/walker/parachute-style</property>
+				<value>0</value>
+			</equals>
+	</and>
+  </condition>
+</animation>
 
 
-
-
-<!-- does not fit
 <model>
-<path>Aircraft/Y12B/Human/Models/backpack.xml</path>
-   <offsets>
-   <z-m>0.9</z-m>
-  </offsets>
+	<name>round-color-chute</name>
+    <path>Aircraft/Y12B/Human/Models/round-color-chute/round_chute.xml</path>
+	<offsets>
+		<z-m>2.3</z-m>
+		<y-m>0.4</y-m>
+		<heading-deg>-90</heading-deg>
+	</offsets>
 </model>
--->
+<animation>
+  <type>select</type>
+  <object-name>round-color-chute</object-name>
+  <condition>
+	   <and>
+				<greater-than>
+					<property>sim/walker/parachute-opened-sec</property>
+					<value>0.0</value>
+				</greater-than>
+				<greater-than>
+					<property>sim/walker/parachute-opened-altitude-ft</property>
+					<value>0.0</value>
+				</greater-than>
+			<equals>
+				<property>sim/walker/parachute-style</property>
+				<value>1</value>
+			</equals>
+	</and>
+  </condition>
+</animation>
+
+
+<model>
+	<name>square-chute</name>
+    <path>Aircraft/Y12B/Human/Models/square-chute/square-chute.xml</path>
+	<offsets>
+		<z-m>-0.1</z-m>
+		<heading-deg>-90</heading-deg>
+	</offsets>
+</model>
+<animation>
+  <type>select</type>
+  <object-name>square-chute</object-name>
+  <condition>
+	   <and>
+				<greater-than>
+					<property>sim/walker/parachute-opened-sec</property>
+					<value>0.0</value>
+				</greater-than>
+				<greater-than>
+					<property>sim/walker/parachute-opened-altitude-ft</property>
+					<value>0.0</value>
+				</greater-than>
+			<equals>
+				<property>sim/walker/parachute-style</property>
+				<value>2</value>
+			</equals>
+	</and>
+  </condition>
+</animation>
+
+
+
+
 
 
 

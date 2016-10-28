@@ -66,6 +66,7 @@ heading=90
 		<flight-time type="float">20.0</flight-time>
 	</Y12B>
 	
+	
 	<!-- for custom model view -->
 	
 	<current-view>
@@ -344,10 +345,13 @@ heading=90
 			<target-y-offset-m type="double">1.5</target-y-offset-m>
 			<target-z-offset-m type="double">0</target-z-offset-m>
 			<ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
-			<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+			<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
 			<x-offset-m type="double">0</x-offset-m>
 			<y-offset-m type="double">1</y-offset-m>
-			<z-offset-m type="double">5</z-offset-m>
+			
+			<!-- so that we can see the chute , too -->
+			<z-offset-m type="double">15</z-offset-m>
+			
 			<heading-offset-deg>0</heading-offset-deg>
 			<pitch-offset-deg>0</pitch-offset-deg>
 			<roll-offset-deg>0</roll-offset-deg>
@@ -396,6 +400,7 @@ heading=90
 							<value>3</value>
 						</binding>
 					</item>
+					
              <!-- not needed
 					<item>
 						<label>Select MP passenger</label>
@@ -463,6 +468,31 @@ heading=90
 						   <value>0</value>
 						  </binding>
 					 </item>
+					<item>
+						  <label>Parachute: round,white</label>
+						  <binding>
+							   <command>property-assign</command>
+							   <property>/sim/walker/parachute-style</property>
+							   <value>0</value>
+						  </binding>
+					</item>
+					 <item>
+						  <label>Parachute: round,color</label>
+						  <binding>
+							   <command>property-assign</command>
+							   <property>/sim/walker/parachute-style</property>
+							   <value>1</value>
+						  </binding>
+					</item>
+					 <item>
+						  <label>Parachute: square</label>
+						  <binding>
+							   <command>property-assign</command>
+							   <property>/sim/walker/parachute-style</property>
+							   <value>2</value>
+						  </binding>
+					</item>
+					 
                   </menu>
         </default>
     </menubar>

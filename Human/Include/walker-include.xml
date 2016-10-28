@@ -152,14 +152,14 @@
 			</walker>
 		</model>
 	<walker>
-		<character>0</character>
+		<character>5</character>
 		<!-- male -->
 		<gender>0</gender>
 		<!--  green -->
-		<outfit>1</outfit>
-		<hair>1</hair>
-		<!--  helmet -->
-		<headgear>3</headgear>
+		<outfit>5</outfit>
+		<hair>0</hair>
+		<!--  3= helmet -->
+		<headgear>0</headgear>
 		<eyewear>0</eyewear>
 		<tools>0</tools>
 		<outside type="bool">false</outside>
@@ -188,6 +188,9 @@
 		<parachute-opened-altitude-ft type="double">0.0</parachute-opened-altitude-ft>
 		<parachute-opened-sec type="double">0.0</parachute-opened-sec>
 		<parachute-equipped type="bool">true</parachute-equipped>
+		
+		<parachute-style type="int">0</parachute-style>
+		
 		<crashed type="bool">false</crashed>
 		<key-triggers>
 			<outside-toggle type="bool">false</outside-toggle>

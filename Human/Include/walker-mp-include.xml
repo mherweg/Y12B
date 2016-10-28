@@ -145,12 +145,16 @@
 		<character type="int">5</character>
 		<!-- male -->
 		<gender type="int">0</gender>
+		
 		<!--  1=green  5=soldier VR-->
 		<outfit type="int">5</outfit>
+		
 		<hair type="int">0</hair>
+		
 		<!--  headgear=3 - helmet -->
 		<headgear type="int">0</headgear>
-		<!-- TODO: orange glases fpr soldierVR -->
+		
+		<!-- TODO: orange glases for soldierVR -->
 		<eyewear type="int">0</eyewear>
 		<tools type="int">0</tools>
 		<outside type="bool">false</outside>
@@ -182,6 +186,9 @@
 		<parachute-opened-altitude-ft type="float">0.0</parachute-opened-altitude-ft>
 		<parachute-opened-sec type="float">0.0</parachute-opened-sec>
 		<parachute-equipped type="bool">true</parachute-equipped>
+		
+		<parachute-style type="int">0</parachute-style>
+		
 		<crashed type="bool">false</crashed>
 		<key-triggers>
 			<outside-toggle type="bool">true</outside-toggle>

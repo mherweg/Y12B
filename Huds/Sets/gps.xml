@@ -299,10 +299,10 @@ see Read-Me.txt for all copyrights in the base folder of this aircraft
 	      <height>2</height>
 	      <x>460</x>
 	      <y>-15</y>
-	      <format>Cargo:%6.1f..................................LBS</format>
+	      <format>Parachute sytyle:%4d.....................................</format>
 	      <halign>left</halign>
 	      <input>
-		<property>sim/weight[1]/weight-lb</property>
+		<property>sim/walker/parachute-style</property>
 	      </input>
 	    </label>
 	    

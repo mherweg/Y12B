@@ -128,8 +128,12 @@
 
 <model>
 	<name>Walker-mp</name>
+	
+	<!-- the same walker.xml that the Y12b single player version uses -->
 	<path>Aircraft/Y12B/Human/Models/walker.xml</path>
 </model>
+
+
 <!-- hide walker when inside cabin-->
 <animation>
         <type>select</type>
