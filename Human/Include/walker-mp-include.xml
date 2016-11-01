@@ -187,7 +187,8 @@
 		<parachute-opened-sec type="float">0.0</parachute-opened-sec>
 		<parachute-equipped type="bool">true</parachute-equipped>
 		
-		<parachute-style type="int">0</parachute-style>
+		<!-- 0=round-white   1 = round-color,  2 = square  -->
+		<parachute-style type="int">2</parachute-style>
 		
 		<crashed type="bool">false</crashed>
 		<key-triggers>

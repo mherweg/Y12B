@@ -242,18 +242,38 @@ heading=90
 		</config>
 	</view>
 
+  
+    <!-- Chase View-->
 	<view n="2">
 		<config>
 			<enabled archive="y" type="bool">false</enabled>
 		</config>
 	</view>
-
+	<!-- Tower View-->
+	<view n="3">
+		<config>
+			<enabled archive="y" type="bool">false</enabled>
+		</config>
+	</view>
+	<!-- Tower View Lok From-->
+	<view n="4">
+		<config>
+			<enabled archive="y" type="bool">false</enabled>
+		</config>
+	</view>
+	<!-- Chase View Without Yaw-->
 	<view n="5">
 		<config>
 			<enabled archive="y" type="bool">false</enabled>
 		</config>
 	</view>
-	
+	<!-- Fly-By View-->
+	<view n="6">
+		<config>
+			<enabled archive="y" type="bool">false</enabled>
+		</config>
+	</view>
+
 	
 	<!-- "lookfrom" modified model view -->
 	<view n="7">

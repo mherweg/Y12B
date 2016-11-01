@@ -23,6 +23,7 @@ var poll_yellow = func(){
 	path = sprintf("/ai/models/multiplayer[%d]/sim/multiplay/generic/int[4]",pilot_index);
 	light = getprop(path);
 	#printf ("pilot_index=%d",pilot_index);
+	#print(light);
 	
 	# walk while light is yellow and z_pos <= -2.0m
 	# 0.2m per 0.1 seconds

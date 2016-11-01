@@ -1,13 +1,31 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-	<path>soldierVR-head.ac</path>
+	
+	
+	<model>
+	<path>soldierVR-head-new.ac</path>
 	<offsets> 
-			<z-m>-0.7</z-m>
+		<!--	<z-m>-0.7</z-m>  -->
 	</offsets>
+	</model>
+	
 	
 	<animation>
 		<enable-hot type="bool">false</enable-hot>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>head</object-name>
+		<object-name>hair</object-name>
+		<object-name>toukuinew</object-name>
+		<condition>
+			<not-equals>
+					<property>sim/current-view/name</property>
+					<value>Walk View</value>
+			</not-equals>
+		</condition>
 	</animation>
 
 

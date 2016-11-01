@@ -23,8 +23,9 @@
   <status>experimental</status>
   <aircraft-version>0.1</aircraft-version>
 
- <!-- <flight-model>  ufo  or null </flight-model>   -->
-  <flight-model>ufo</flight-model>
+ <!-- flight-model:  ufo - so it can move like ufo when not falling
+                  or null - to make sure it will not move by throttle, elevator, aileron,rudde    -->
+  <flight-model>null</flight-model>
 
   <model>
 	   <path>Aircraft/Y12B/Models/Walker-mp.xml</path>
@@ -319,6 +320,8 @@
 		   <int n="2"   alias="/sim/walker/gender"/>
 		   <int n="3"   alias="/sim/walker/outside"/>
 		   <int n="4"   alias="/sim/walker/airborne"/>
+		   <int n="5"   alias="/sim/walker/parachute-style"/>
+		   
 		   <string n="1" alias="/sim/multiplay/callsign"/>
 	   </generic>
 	</multiplay>
@@ -504,6 +507,11 @@
 		#geo.put_model("Scenery/planes_and_flat_houses_bingHD.ac",31.12676931,113.90421222,  44.3, 272.0 , 0, 0);	
 		</script>
 	</scenery>
+
+	<!-- for easy (ufo-like) movement after landing with Home, End, "," and "."  keys 
+ 	<Y12B>
+		<file>Aircraft/Y12B/Nasal/Y12B.nas</file>
+	</Y12B> -->
 
 	
 	<dual_control_tools>

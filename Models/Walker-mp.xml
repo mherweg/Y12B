@@ -87,6 +87,7 @@
    rplayer.getNode("sim/walker/gender", 1).alias(rplayer.getNode(  "sim/multiplay/generic/int[2]"));
    rplayer.getNode("sim/walker/outside", 1).alias(rplayer.getNode("sim/multiplay/generic/int[3]"));
    rplayer.getNode("sim/walker/airborne", 1).alias(rplayer.getNode("sim/multiplay/generic/int[4]"));
+   rplayer.getNode("sim/walker/parachute-style", 1).alias(rplayer.getNode("sim/multiplay/generic/int[5]"));
    
    rplayer.getNode("sim/multiplay/callsign", 1).alias(rplayer.getNode("sim/multiplay/generic/string[1]"));
  
@@ -104,7 +105,7 @@
 	  <name>Callsign</name>
 	  <offsets> 
 			<z-m>1.2</z-m>
-			<x-m>0.1</x-m>
+			<x-m>0.5</x-m>
 		</offsets>
     <alignment>center-bottom</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -129,7 +130,7 @@
 <model>
 	<name>Walker-mp</name>
 	
-	<!-- the same walker.xml that the Y12b single player version uses -->
+	<!-- the same walker.xml that the Y12B single player version uses -->
 	<path>Aircraft/Y12B/Human/Models/walker.xml</path>
 </model>
 

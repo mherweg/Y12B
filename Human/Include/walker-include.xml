@@ -189,7 +189,7 @@
 		<parachute-opened-sec type="double">0.0</parachute-opened-sec>
 		<parachute-equipped type="bool">true</parachute-equipped>
 		
-		<parachute-style type="int">0</parachute-style>
+		<parachute-style type="int">2</parachute-style>
 		
 		<crashed type="bool">false</crashed>
 		<key-triggers>

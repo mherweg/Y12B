@@ -2,8 +2,12 @@
 
 <PropertyList>
 
- <path>Parachute1.ac</path>
-
+ <path>square-chute.ac</path>
+	<offsets> 
+			<z-m>1.02</z-m>  
+			<heading-deg>90</heading-deg>  
+	</offsets>
+	
 
 
 <animation>
