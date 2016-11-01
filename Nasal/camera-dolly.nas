@@ -19,7 +19,8 @@ eye_height = getprop("sim/current-view/y-offset-m");
 
 var poll_yellow = func(){
 	running=1;
-	
+	view_num = getprop("sim/current-view/view-number");
+
 	path = sprintf("/ai/models/multiplayer[%d]/sim/multiplay/generic/int[4]",pilot_index);
 	light = getprop(path);
 	#printf ("pilot_index=%d",pilot_index);
@@ -27,7 +28,7 @@ var poll_yellow = func(){
 	
 	# walk while light is yellow and z_pos <= -2.0m
 	# 0.2m per 0.1 seconds
-	if (light == 2){
+	if (light == 2 and view_num == 0){
 		
 			if (z_pos < -1.5){
 				z_pos = z_pos + 0.2;
@@ -59,7 +60,7 @@ var poll_yellow = func(){
 			
 	}
 	# red light
-	if (light==1){
+	if (light==1 and view_num == 0){
 		z_pos= -5.5;
 		setprop("sim/current-view/z-offset-m",z_pos);
 		x_pos= 0.0;
