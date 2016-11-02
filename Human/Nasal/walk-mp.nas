@@ -761,9 +761,12 @@ setlistener("sim/current-view/heading-offset-deg", func(n) {
 	if (c_view == 0) {
 		var head_v = n.getValue();
 		setprop("sim/model/bluebird/crew/walker/head-offset-deg" , head_v);
+		
 	} elsif (c_view == view.indexof("Walk View")) {
 		var head_v = n.getValue();
 		setprop("sim/walker/model-heading-deg" , 360 - head_v);
+		#MH
+		setprop("orientation/heading-deg" , 360 - head_v);
 #	} elsif (c_view == view.indexof("Walker Orbit View")) {
 #		var head_v = getprop("sim/current-view/heading-offset-deg");
 	}
